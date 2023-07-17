@@ -157,6 +157,7 @@ jobs:
         with:
           name: dotmarkdown
           path: docs/dotmarkdown/api
+      - run: npm install
       - run: npm run build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
