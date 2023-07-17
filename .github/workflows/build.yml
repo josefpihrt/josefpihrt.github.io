@@ -50,6 +50,7 @@ jobs:
         with:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
+      - run: ls src -R
       - run: |
           cd tools
           ./generate_metadata.ps1
