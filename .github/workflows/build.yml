@@ -3,8 +3,6 @@ on:
     branches:
       - main
   pull_request:
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
 
 env:
   Configuration: Release
@@ -72,10 +70,9 @@ jobs:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
       - run: |
-          ls src/CommandLine -R
           cd tools
-          ls
           ./generate_ref_docs.ps1
+        name: Generate reference documentation
         shell: pwsh
       - uses: actions/upload-artifact@v3
         with:
@@ -90,10 +87,6 @@ jobs:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
           path: roslynator
-      - run: |
-          dotnet restore
-          dotnet build --no-restore
-        working-directory: "roslynator/src/CommandLine"
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/dotmarkdown
@@ -102,8 +95,11 @@ jobs:
       - run: |
           dotnet restore
           dotnet build --no-restore
+        working-directory: "roslynator/src/CommandLine"
+      - run: |
+          dotnet restore
+          dotnet build --no-restore
         working-directory: "dotmarkdown/src/DotMarkdown"
-      - run: ls
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln"
           --properties "Configuration=Release"
@@ -128,26 +124,18 @@ jobs:
         with:
           name: orang
           path: docs/orang/cli
-      - run: ls docs/orang/cli
-
       - uses: actions/download-artifact@v3
         with:
           name: roslynator_cli
           path: docs/roslynator/cli
-      - run: ls docs/roslynator/cli
-
       - uses: actions/download-artifact@v3
         with:
           name: roslynator_ref
           path: docs/roslynator/api
-      - run: ls docs/roslynator/api
-
       - uses: actions/download-artifact@v3
         with:
           name: dotmarkdown
           path: docs/dotmarkdown/api
-      - run: ls docs/dotmarkdown/api
-
       - run: npm install
       - run: npm run build
       - uses: actions/upload-artifact@v3
@@ -166,7 +154,7 @@ jobs:
         with:
           name: build
           path: build
-      - name: Setup Pages
+      - name: Configure Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
