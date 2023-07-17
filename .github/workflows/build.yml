@@ -8,6 +8,9 @@ on:
 
 env:
   Configuration: Release
+  TreatWarningsAsErrors: true
+  WarningsNotAsErrors: 1591
+  RunCodeAnalysis: false
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -59,12 +62,12 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
-      - run: ls -R 
+      - run: ls -R
       - run: dotnet "bin/Release/net7.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_cli
-          path: _build
+          path: src/CommandLine.DocumentationGenerator/_build
 
   build_roslynator_ref:
     runs-on: ubuntu-latest
@@ -79,6 +82,7 @@ jobs:
       - run: dotnet build src/CommandLine.sln --no-restore
       - run: |
           cd tools
+          ls
           generate_ref_docs.ps1
       - uses: actions/upload-artifact@v3
         with:
