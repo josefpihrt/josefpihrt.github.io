@@ -132,7 +132,7 @@ jobs:
           name: dotmarkdown
           path: _build
 
-  build:
+  build_docusaurus:
     needs: [ build_orang, build_roslynator, build_roslynator_cli, build_roslynator_ref, build_dotmarkdown ]
     runs-on: ubuntu-latest
     steps:
@@ -165,7 +165,7 @@ jobs:
           path: build
 
   deploy:
-    needs: build
+    needs: build_docusaurus
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
