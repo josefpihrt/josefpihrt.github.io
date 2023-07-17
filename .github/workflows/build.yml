@@ -84,6 +84,7 @@ jobs:
           cd tools
           ls
           generate_ref_docs.ps1
+        shell: pwsh
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_ref
