@@ -32,6 +32,7 @@ jobs:
           ref: feature/docusaurus
       - run: dotnet restore
       - run: dotnet build --no-restore
+      - run: ls "bin/Release/netcoreapp3.1"
       - run: dotnet "bin/Release/netcoreapp3.1/Orang.DocumentationGenerator" "_build" "data"
       - uses: actions/upload-artifact@v3
         with:
