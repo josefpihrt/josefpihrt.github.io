@@ -20,10 +20,34 @@ concurrency:
 
 jobs:
 
+  build_orang:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "src/DocumentationGenerator"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/orang
+          ref: feature/docusaurus
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: dotnet "bin/Release/netcoreapp3.1/Orang.DocumentationGenerator.dll" "_build" "data"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: orang
+          path: src/DocumentationGenerator/bin/Release/netcoreapp3.1/_build
+
   build:
+    needs: [ build_orang ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: orang
+          path: docs/orang/cli
+      - run: ls docs/orang/cli
       - run: npm install
       - run: npm run build
       - uses: actions/upload-artifact@v3
