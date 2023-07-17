@@ -39,9 +39,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
-      - run: ls -R 
       - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
-      - run: ls -R 
       - uses: actions/upload-artifact@v3
         with:
           name: orang
@@ -52,8 +50,6 @@ jobs:
     defaults:
       run:
         working-directory: "src/CommandLine.DocumentationGenerator"
-    env:
-      RoslynatorDotNetCli: true
     steps:
       - uses: actions/checkout@v3
         with:
@@ -62,7 +58,6 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
-      - run: ls -R
       - run: dotnet "bin/Release/net7.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
       - uses: actions/upload-artifact@v3
         with:
@@ -71,15 +66,13 @@ jobs:
 
   build_roslynator_ref:
     runs-on: ubuntu-latest
-    env:
-      RoslynatorDotNetCli: true
     steps:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
-      - run: dotnet restore src/CommandLine.sln
-      - run: dotnet build src/CommandLine.sln --no-restore
+      # - run: dotnet restore src/CommandLine.sln
+      # - run: dotnet build src/CommandLine.sln --no-restore
       - run: |
           ls src/CommandLine -R
           cd tools
@@ -91,53 +84,67 @@ jobs:
           name: roslynator_ref
           path: docs/api
 
-  build:
-    needs: [ build_orang, build_roslynator_cli, build_roslynator_ref ]
+  build_dotmarkdown:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/download-artifact@v3
         with:
-          name: orang
-          path: docs/orang/cli
-      - run: ls docs/orang/cli
+          repository: josefpihrt/roslynator
+          ref: feature/docs-docusaurus
+          path: roslynator
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/dotmarkdown
+          ref: feature/docusaurus
+      - run: ls
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: roslynator_cli
-          path: docs/roslynator/cli
-      - run: ls docs/roslynator/cli
+  # build:
+  #   needs: [ build_orang, build_roslynator_cli, build_roslynator_ref, build_dotmarkdown ]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: orang
+  #         path: docs/orang/cli
+  #     - run: ls docs/orang/cli
 
-      - uses: actions/download-artifact@v3
-        with:
-          name: roslynator_ref
-          path: docs/roslynator/api
-      - run: ls docs/roslynator/api
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: roslynator_cli
+  #         path: docs/roslynator/cli
+  #     - run: ls docs/roslynator/cli
 
-      - run: npm install
-      - run: npm run build
-      - uses: actions/upload-artifact@v3
-        with:
-          name: build
-          path: build
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: roslynator_ref
+  #         path: docs/roslynator/api
+  #     - run: ls docs/roslynator/api
 
-  deploy:
-    needs: build
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/download-artifact@v3
-        with:
-          name: build
-          path: build
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v2
-        with:
-          path: build
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
+  #     - run: npm install
+  #     - run: npm run build
+  #     - uses: actions/upload-artifact@v3
+  #       with:
+  #         name: build
+  #         path: build
+
+  # deploy:
+  #   needs: build
+  #   environment:
+  #     name: github-pages
+  #     url: ${{ steps.deployment.outputs.page_url }}
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: build
+  #         path: build
+  #     - name: Setup Pages
+  #       uses: actions/configure-pages@v3
+  #     - name: Upload artifact
+  #       uses: actions/upload-pages-artifact@v2
+  #       with:
+  #         path: build
+  #     - name: Deploy to GitHub Pages
+  #       id: deployment
+  #       uses: actions/deploy-pages@v2
