@@ -41,7 +41,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: orang
-          path: src/DocumentationGenerator/bin/Release/net7.0/_build
+          path: _build
 
   build:
     needs: [ build_orang ]
