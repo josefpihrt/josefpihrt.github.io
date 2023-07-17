@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: "src/DocumentationGenerator"
+        working-directory: src/DocumentationGenerator
     steps:
       - uses: actions/checkout@v3
         with:
@@ -42,7 +42,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: orang
-          path: _build
+          path: src/DocumentationGenerator/_build
 
   build:
     needs: [ build_orang ]
