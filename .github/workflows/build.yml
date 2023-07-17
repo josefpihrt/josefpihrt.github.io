@@ -36,6 +36,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: ls -R 
+      - run: mkdir "_build"
       - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
       - uses: actions/upload-artifact@v3
         with:
