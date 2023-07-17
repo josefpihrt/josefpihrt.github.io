@@ -54,7 +54,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: josefpihrt/orang
+          repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
       - run: dotnet restore
       - run: dotnet build --no-restore
