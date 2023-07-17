@@ -99,6 +99,10 @@ jobs:
           repository: josefpihrt/dotmarkdown
           ref: feature/docusaurus
           path: dotmarkdown
+      - run: |
+          dotnet restore
+          dotnet build --no-restore
+        working-directory: "dotmarkdown/src/DotMarkdown"
       - run: ls
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln"
