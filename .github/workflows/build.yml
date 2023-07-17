@@ -91,12 +91,12 @@ jobs:
         with:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
-          path: _roslynator
+          path: roslynator
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/dotmarkdown
           ref: feature/docusaurus
-          clean: false
+          path: main
       - run: ls
 
   # build:
