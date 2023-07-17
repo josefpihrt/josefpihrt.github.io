@@ -55,7 +55,7 @@ jobs:
           ref: feature/docs-docusaurus
       - run: dotnet restore
       - run: dotnet build --no-restore
-      - run: dotnet "bin/Release/net7.0/Roslynator.MetadataGenerator" "../.." "_build"
+      - run: dotnet "bin/Release/net7.0/Roslynator.MetadataGenerator.dll" "../.." "_build"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator
