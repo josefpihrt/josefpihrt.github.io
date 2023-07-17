@@ -60,14 +60,33 @@ jobs:
       - run: dotnet build --no-restore
       - run: mkdir "_build"
       - run: ls -R 
-      - run: dotnet "bin/Release/net7.0/Roslynator.CommandLine.DocumentationGenerator.exe" "_build" "data" "help,migrate"
+      - run: dotnet "bin/Release/net7.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_cli
           path: _build
 
+  build_roslynator_ref:
+    runs-on: ubuntu-latest
+    env:
+      RoslynatorDotNetCli: true
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+          ref: feature/docs-docusaurus
+      - run: dotnet restore src/CommandLine.sln
+      - run: dotnet build src/CommandLine.sln --no-restore
+      - run: |
+          cd tools
+          generate_ref_docs.ps1
+      - uses: actions/upload-artifact@v3
+        with:
+          name: roslynator_ref
+          path: docs/api
+
   build:
-    needs: [ build_orang, build_roslynator_cli ]
+    needs: [ build_orang, build_roslynator_cli, build_roslynator_ref ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -76,6 +95,19 @@ jobs:
           name: orang
           path: docs/orang/cli
       - run: ls docs/orang/cli
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: roslynator_cli
+          path: docs/roslynator/cli
+      - run: ls docs/roslynator/cli
+
+      - uses: actions/download-artifact@v3
+        with:
+          name: roslynator_ref
+          path: docs/roslynator/api
+      - run: ls docs/roslynator/api
+
       - run: npm install
       - run: npm run build
       - uses: actions/upload-artifact@v3
