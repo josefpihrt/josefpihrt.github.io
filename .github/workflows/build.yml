@@ -92,12 +92,30 @@ jobs:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
           path: roslynator
+      - run: |
+          dotnet restore
+          dotnet build --no-restore
+        working-directory: "roslynator/src/CommandLine"
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/dotmarkdown
           ref: feature/docusaurus
           path: main
       - run: ls
+      - run: >
+          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln" `
+          --properties "Configuration=Release" `
+          --projects "DotMarkdown(netstandard1.3)" `
+          --heading "DotMarkdown Reference" `
+          -o _build `
+          --host docusaurus `
+          --group-by-common-namespace `
+          --ignored-common-parts content `
+          --max-derived-types 10
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dotmarkdown
+          path: _build
 
   # build:
   #   needs: [ build_orang, build_roslynator_cli, build_roslynator_ref, build_dotmarkdown ]
@@ -121,6 +139,12 @@ jobs:
   #         name: roslynator_ref
   #         path: docs/roslynator/api
   #     - run: ls docs/roslynator/api
+
+  #     - uses: actions/download-artifact@v3
+  #       with:
+  #         name: dotmarkdown
+  #         path: docs/dotmarkdown/api
+  #     - run: ls docs/dotmarkdown/api
 
   #     - run: npm install
   #     - run: npm run build
