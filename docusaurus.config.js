@@ -64,6 +64,12 @@ const config = {
             position: 'left',
             label: 'Roslynator',
           },
+          {
+            type: 'docSidebar',
+            sidebarId: 'orangSidebar',
+            position: 'left',
+            label: 'Orang',
+          },
         ],
       },
       footer: {

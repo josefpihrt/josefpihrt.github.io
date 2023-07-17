@@ -54,7 +54,7 @@ Value | Comment
 
 ## Which MSBuild Instance to Use
 
-If you are using version 0.1.5 or lower it may be necessary to specify MSBuild instance  - a directory where MSBuild binaries are located.
+If you are using version `0.1.5` or lower it may be necessary to specify MSBuild instance  - a directory where MSBuild binaries are located.
 
 ### Roslynator.CommandLine
 
