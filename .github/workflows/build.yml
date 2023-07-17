@@ -45,20 +45,21 @@ jobs:
 
   build_roslynator:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "src/Tools/MetadataGenerator"
     steps:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
-      - run: |
-          cd tools
-          ./generate_metadata.ps1
-        name: Generate documentation
-        shell: pwsh
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: dotnet "bin/Release/net7.0/Roslynator.MetadataGenerator" "../.." "_build"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator
-          path: docs
+          path: _build
 
   build_roslynator_cli:
     runs-on: ubuntu-latest
