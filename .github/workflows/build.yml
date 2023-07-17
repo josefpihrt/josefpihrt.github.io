@@ -43,6 +43,23 @@ jobs:
           name: orang
           path: src/DocumentationGenerator/_build
 
+  build_roslynator:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+          ref: feature/docs-docusaurus
+      - run: |
+          cd tools
+          ./generate_metadata.ps1
+        name: Generate documentation
+        shell: pwsh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: roslynator
+          path: docs
+
   build_roslynator_cli:
     runs-on: ubuntu-latest
     defaults:
@@ -116,7 +133,7 @@ jobs:
           path: _build
 
   build:
-    needs: [ build_orang, build_roslynator_cli, build_roslynator_ref, build_dotmarkdown ]
+    needs: [ build_orang, build_roslynator, build_roslynator_cli, build_roslynator_ref, build_dotmarkdown ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -124,6 +141,10 @@ jobs:
         with:
           name: orang
           path: docs/orang/cli
+      - uses: actions/download-artifact@v3
+        with:
+          name: roslynator
+          path: docs/roslynator
       - uses: actions/download-artifact@v3
         with:
           name: roslynator_cli
