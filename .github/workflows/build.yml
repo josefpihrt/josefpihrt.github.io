@@ -119,59 +119,59 @@ jobs:
           name: dotmarkdown
           path: _build
 
-  # build:
-  #   needs: [ build_orang, build_roslynator_cli, build_roslynator_ref, build_dotmarkdown ]
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/checkout@v3
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: orang
-  #         path: docs/orang/cli
-  #     - run: ls docs/orang/cli
+  build:
+    needs: [ build_orang, build_roslynator_cli, build_roslynator_ref, build_dotmarkdown ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        with:
+          name: orang
+          path: docs/orang/cli
+      - run: ls docs/orang/cli
 
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: roslynator_cli
-  #         path: docs/roslynator/cli
-  #     - run: ls docs/roslynator/cli
+      - uses: actions/download-artifact@v3
+        with:
+          name: roslynator_cli
+          path: docs/roslynator/cli
+      - run: ls docs/roslynator/cli
 
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: roslynator_ref
-  #         path: docs/roslynator/api
-  #     - run: ls docs/roslynator/api
+      - uses: actions/download-artifact@v3
+        with:
+          name: roslynator_ref
+          path: docs/roslynator/api
+      - run: ls docs/roslynator/api
 
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: dotmarkdown
-  #         path: docs/dotmarkdown/api
-  #     - run: ls docs/dotmarkdown/api
+      - uses: actions/download-artifact@v3
+        with:
+          name: dotmarkdown
+          path: docs/dotmarkdown/api
+      - run: ls docs/dotmarkdown/api
 
-  #     - run: npm install
-  #     - run: npm run build
-  #     - uses: actions/upload-artifact@v3
-  #       with:
-  #         name: build
-  #         path: build
+      - run: npm install
+      - run: npm run build
+      - uses: actions/upload-artifact@v3
+        with:
+          name: build
+          path: build
 
-  # deploy:
-  #   needs: build
-  #   environment:
-  #     name: github-pages
-  #     url: ${{ steps.deployment.outputs.page_url }}
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: actions/download-artifact@v3
-  #       with:
-  #         name: build
-  #         path: build
-  #     - name: Setup Pages
-  #       uses: actions/configure-pages@v3
-  #     - name: Upload artifact
-  #       uses: actions/upload-pages-artifact@v2
-  #       with:
-  #         path: build
-  #     - name: Deploy to GitHub Pages
-  #       id: deployment
-  #       uses: actions/deploy-pages@v2
+  deploy:
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: build
+          path: build
+      - name: Setup Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: build
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2

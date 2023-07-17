@@ -70,6 +70,12 @@ const config = {
             position: 'left',
             label: 'Orang',
           },
+          {
+            type: 'docSidebar',
+            sidebarId: 'dotmarkdownSidebar',
+            position: 'left',
+            label: 'DotMarkdown',
+          },
         ],
       },
       footer: {
