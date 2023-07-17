@@ -38,6 +38,7 @@ jobs:
       - run: mkdir "_build"
       - run: ls -R 
       - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
+      - run: ls -R 
       - uses: actions/upload-artifact@v3
         with:
           name: orang
