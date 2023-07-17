@@ -81,6 +81,7 @@ jobs:
       - run: dotnet restore src/CommandLine.sln
       - run: dotnet build src/CommandLine.sln --no-restore
       - run: |
+          ls src/CommandLine -R
           cd tools
           ls
           ./generate_ref_docs.ps1
