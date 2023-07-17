@@ -71,8 +71,6 @@ jobs:
         with:
           repository: josefpihrt/roslynator
           ref: feature/docs-docusaurus
-      # - run: dotnet restore src/CommandLine.sln
-      # - run: dotnet build src/CommandLine.sln --no-restore
       - run: |
           ls src/CommandLine -R
           cd tools
@@ -100,7 +98,7 @@ jobs:
         with:
           repository: josefpihrt/dotmarkdown
           ref: feature/docusaurus
-          path: main
+          path: dotmarkdown
       - run: ls
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln"
