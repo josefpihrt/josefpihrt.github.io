@@ -103,14 +103,14 @@ jobs:
           path: main
       - run: ls
       - run: >
-          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln" `
-          --properties "Configuration=Release" `
-          --projects "DotMarkdown(netstandard1.3)" `
-          --heading "DotMarkdown Reference" `
-          -o _build `
-          --host docusaurus `
-          --group-by-common-namespace `
-          --ignored-common-parts content `
+          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln"
+          --properties "Configuration=Release"
+          --projects "DotMarkdown(netstandard1.3)"
+          --heading "DotMarkdown Reference"
+          -o _build
+          --host docusaurus
+          --group-by-common-namespace
+          --ignored-common-parts content
           --max-derived-types 10
       - uses: actions/upload-artifact@v3
         with:
