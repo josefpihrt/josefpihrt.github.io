@@ -153,7 +153,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: orang
-          path: docs/orang/cli
+          path: docs/orang
       - uses: actions/download-artifact@v3
         with:
           name: roslynator
@@ -161,7 +161,7 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: roslynator_cli
-          path: docs/roslynator/cli
+          path: docs/roslynator
       - uses: actions/download-artifact@v3
         with:
           name: roslynator_ref
