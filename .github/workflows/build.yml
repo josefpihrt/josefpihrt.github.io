@@ -175,7 +175,6 @@ jobs:
         with:
           name: dotmarkdown
           path: docs/dotmarkdown
-      - run: ls -R
       - run: npm install
       - run: npm run build
         env:
