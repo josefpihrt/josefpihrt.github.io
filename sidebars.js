@@ -15,7 +15,7 @@
 const sidebars = {
 
   roslynatorSidebar: [
-    { type: 'doc', id: 'roslynator/intro', label: "Intro" },
+    { type: 'doc', id: 'roslynator/index', label: "Intro" },
     {
       type: 'category',
       label: 'Guides',
@@ -126,7 +126,7 @@ const sidebars = {
     {
       type: 'category',
       label: 'Intro',
-      link: { type: 'doc', id: 'dotmarkdown/intro' },
+      link: { type: 'doc', id: 'dotmarkdown/index' },
       items: [
         {
           type: 'category',
