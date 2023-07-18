@@ -96,7 +96,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_ref
-          path: docs/api
+          path: docs/ref
 
   build_dotmarkdown:
     runs-on: ubuntu-latest
@@ -124,11 +124,22 @@ jobs:
           --properties "Configuration=Release"
           --projects "DotMarkdown(netstandard1.3)"
           --heading "DotMarkdown Reference"
-          -o _build
+          -o _build/ref
           --host docusaurus
           --group-by-common-namespace
           --ignored-common-parts content
+          --ignored-root-parts all
           --max-derived-types 10
+      - run: >
+          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc-root "dotmarkdown/src/DotMarkdown.sln"
+          --properties "Configuration=Release" `
+          --projects "DotMarkdown(netstandard1.3)" `
+          -o "_build/ref.md" `
+          --host docusaurus `
+          --heading "DotMarkdown Reference" `
+          --ignored-parts content `
+          --root-directory-url "ref"
+        
       - uses: actions/upload-artifact@v3
         with:
           name: dotmarkdown
@@ -154,11 +165,11 @@ jobs:
       - uses: actions/download-artifact@v3
         with:
           name: roslynator_ref
-          path: docs/roslynator/api
+          path: docs/roslynator
       - uses: actions/download-artifact@v3
         with:
           name: dotmarkdown
-          path: docs/dotmarkdown/api
+          path: docs/dotmarkdown
       - run: npm install
       - run: npm run build
         env:

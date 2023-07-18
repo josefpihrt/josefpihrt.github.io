@@ -20,13 +20,13 @@ sidebar_label: Roslynator CLI
 
 ## Packages
 
-### Roslynator.DotNet.Cli &ensp;[![NuGet](https://img.shields.io/nuget/v/Roslynator.DotNet.Cli.svg)](https://nuget.org/packages/Roslynator.DotNet.Cli)
+### [Roslynator.DotNet.Cli](https://nuget.org/packages/Roslynator.DotNet.Cli)
 
 * [.NET Core global tool](https://docs.microsoft.com/dotnet/core/tools/global-tools)
   * cross-platform
   * can be run directly from command line
 * It is recommended to use this tool.
-* Version 0.2.0 or higher requires .NET Core SDK 5.0
+* Version `0.2.0` or higher requires .NET Core SDK 5.0
 
 Run following command to install it:
 
@@ -34,7 +34,7 @@ Run following command to install it:
 dotnet tool install -g roslynator.dotnet.cli
 ```
 
-### Roslynator.CommandLine &ensp;[![NuGet](https://img.shields.io/nuget/v/Roslynator.CommandLine.svg)](https://nuget.org/packages/Roslynator.CommandLine)
+### [Roslynator.CommandLine](https://nuget.org/packages/Roslynator.CommandLine)
 
 * Stand-alone application that requires .NET Framework (Windows only).
 * It can be used for .NET Framework projects (old style `csproj`).
