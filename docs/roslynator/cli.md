@@ -7,16 +7,16 @@ sidebar_label: Roslynator CLI
 
 ## Commands
 
-* [analyze](cli/commands/analyze/index.md)
-* [fix](cli/commands/fix/index.md)
-* [format](cli/commands/format/index.md)
-* [generate-doc](cli/commands/generate-doc/index.md)
-* [generate-doc-root](cli/commands/generate-doc-root/index.md)
-* [list-symbols](cli/commands/list-symbols/index.md)
-* [loc](cli/commands/loc/index.md)
-* [lloc](cli/commands/lloc/index.md)
-* [rename-symbol](cli/commands/rename-symbol/index.md)
-* [spellcheck](cli/commands/spellcheck/index.md)
+* [analyze](cli/commands/analyze.md)
+* [fix](cli/commands/fix.md)
+* [format](cli/commands/format.md)
+* [generate-doc](cli/commands/generate-doc.md)
+* [generate-doc-root](cli/commands/generate-doc-root.md)
+* [list-symbols](cli/commands/list-symbols.md)
+* [loc](cli/commands/loc.md)
+* [lloc](cli/commands/lloc.md)
+* [rename-symbol](cli/commands/rename-symbol.md)
+* [spellcheck](cli/commands/spellcheck.md)
 
 ## Packages
 
