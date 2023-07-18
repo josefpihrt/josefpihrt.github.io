@@ -92,11 +92,11 @@ jobs:
           ref: feature/docs-docusaurus
       - run: dotnet restore
       - run: dotnet build --no-restore
-      - run: dotnet "bin/Release/net7.0/Roslynator.ConfigurationFileGenerator.dll" "../.."
+      - run: dotnet "bin/Release/net7.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_configuration
-          path: src/Tools/ConfigurationFileGenerator/bin/Release/net7.0/configuration.md
+          path: src/Tools/ConfigurationFileGenerator/configuration.md
 
   build_orang:
     runs-on: ubuntu-latest
