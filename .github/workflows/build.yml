@@ -151,25 +151,31 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: actions/download-artifact@v3
+        name: "Download Orang CLI artifacts"
         with:
           name: orang
           path: docs/orang
       - uses: actions/download-artifact@v3
+        name: "Download Roslynator artifacts"
         with:
           name: roslynator
           path: docs/roslynator
       - uses: actions/download-artifact@v3
+        name: "Download Roslynator CLI artifacts"
         with:
           name: roslynator_cli
           path: docs/roslynator
       - uses: actions/download-artifact@v3
+        name: "Download Roslynator ref artifacts"
         with:
           name: roslynator_ref
           path: docs/roslynator
       - uses: actions/download-artifact@v3
+        name: "Download DotMarkdown artifacts"
         with:
           name: dotmarkdown
           path: docs/dotmarkdown
+      - run: ls -R
       - run: npm install
       - run: npm run build
         env:
