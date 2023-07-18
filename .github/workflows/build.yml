@@ -96,7 +96,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_ref
-          path: tools/build/ref
+          path: tools/build
 
   build_dotmarkdown:
     runs-on: ubuntu-latest
