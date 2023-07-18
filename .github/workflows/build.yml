@@ -60,7 +60,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator
-          path: _build
+          path: src/Tools/MetadataGenerator/_build
 
   build_roslynator_cli:
     runs-on: ubuntu-latest
