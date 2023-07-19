@@ -84,6 +84,12 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: // https://prismjs.com/#supported-languages
+        [
+          'powershell',
+          'csharp',
+          'editorconfig'
+        ], 
       },
     }),
 };

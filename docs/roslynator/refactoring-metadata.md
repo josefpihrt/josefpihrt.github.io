@@ -8,7 +8,7 @@ Refactorings metadata are stored in [Refactorings.xml](https://github.com/JosefP
 
 ## XML
 
-```xml
+```xml title="Refactorings.xml"
 <Refactoring Id="" Identifier="" Title="">
   <OptionKey></OptionKey>
   <Syntaxes>
@@ -52,3 +52,49 @@ Refactorings metadata are stored in [Refactorings.xml](https://github.com/JosefP
     - `Link` - **\[optional\]** A link to a related website.
       - `Url`- **\[required\]**
       - `Text` - **\[required\]**
+
+## Example
+
+### Metadata
+
+```xml title="Refactorings.xml"
+<Refactoring Id="RR0217" Identifier="DeconstructForeachVariable" Title="Deconstruct foreach variable">
+  <OptionKey>deconstruct_foreach_variable</OptionKey>
+  <Syntaxes>
+    <Syntax>foreach statement</Syntax>
+  </Syntaxes>
+  <Span></Span>
+  <Summary>type or identifier</Summary>
+  <Samples>
+    <Sample>
+      <Before><![CDATA[var dic = new Dictionary<string, object>();
+
+foreach (var kvp in dic)
+{
+  var k = kvp.Key;
+  var v = kvp.Value.ToString();
+}
+]]></Before>
+      <After><![CDATA[var dic = new Dictionary<string, object>();
+
+foreach (var (key, value) in dic)
+{
+  var k = key;
+  var v = value.ToString();
+}
+]]></After>
+    </Sample>
+  </Samples>
+</Refactoring>
+```
+
+### Generated Code
+
+
+```cs title="RefactoringIdentifiers.Generated.cs"
+public const string DeconstructForeachVariable = Prefix + "0217";
+```
+
+### Generated Documentation
+
+See [RR0217](refactorings/RR0217).
