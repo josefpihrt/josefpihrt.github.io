@@ -40,6 +40,18 @@ const sidebars = {
     },
     {
       type: 'category',
+      label: 'Developers',
+      link: {
+        type: 'generated-index',
+        title: 'Developers',
+        slug: 'roslynator/developers'
+      },
+      items: [
+        'roslynator/how-to-add-new-refactoring',
+      ],
+    },
+    {
+      type: 'category',
       label: 'List of Analyzers',
       link: { type: 'doc', id: 'roslynator/analyzers' },
       items: [
