@@ -1,6 +1,6 @@
 # Roslynator
 
-* A collection of 500+ [analyzers](https://josefpihrt.github.io/docs/roslynator/analyzers), [refactorings](https://josefpihrt.github.io/docs/roslynator/refactorings) and [fixes](https://josefpihrt.github.io/docs/roslynator/docs/fixes) for C#, powered by [Roslyn](https://github.com/dotnet/roslyn).
+* A collection of 500+ [analyzers](analyzers), [refactorings](refactorings) and [fixes](fixes) for C#, powered by [Roslyn](https://github.com/dotnet/roslyn).
 * [Release notes](https://github.com/JosefPihrt/Roslynator/blob/main/ChangeLog.md)
 * Follow on [Twitter](https://twitter.com/roslynator)
 
@@ -11,11 +11,13 @@
 
 ## Extensions
 
-| IDE | Extension | Comment |
-| --- | --- | --- |
-| VS | [Roslynator 2022](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022) | contains analyzers, refactorings and fixes for C# compiler diagnostics. |
-| VS Code | [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator) | contains analyzers, refactorings and fixes for C# compiler diagnostics. |
-| Open VSX | [Roslynator](https://open-vsx.org/extension/josefpihrt-vscode/roslynator) | contains analyzers, refactorings and fixes for C# compiler diagnostics. |
+| IDE | Extension |
+| --- | --- |
+| Visual Studio | [Roslynator 2022](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022) |
+| VS Code | [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator) |
+| Open VSX | [Roslynator](https://open-vsx.org/extension/josefpihrt-vscode/roslynator) |
+
+Extensions contains analyzers, refactorings and fixes for C# compiler diagnostics.
 
 ## NuGet Packages
 
@@ -34,7 +36,7 @@ Run following command to install Roslynator command line tool:
 dotnet tool install -g roslynator.dotnet.cli
 ```
 
-* [Documentation](https://josefpihrt.github.io/docs/cli)
+See [documentation](cli) for further information.
 
 ## Roslynator Testing Framework
 
@@ -49,7 +51,7 @@ dotnet tool install -g roslynator.dotnet.cli
 
 * Roslynator client libraries are meant be used for development of your own analyzers/refactorings.
 * It does not contain any analyzers/refactorings itself.
-* See [reference](https://josefpihrt.github.io/docs/api).
+* See [reference](ref).
 
 | Package | Version | Built on top of |
 | --- | --- | --- |
