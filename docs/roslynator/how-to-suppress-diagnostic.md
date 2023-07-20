@@ -67,15 +67,3 @@ namespace N1.N2
     }
 }
 ```
-
-### Suppress Diagnostic Globally
-
-*Note: this option is applicable for Roslynator 2017*
-
-Go to Visual Studio Tools > Options > Roslynator > Global Suppressions
-
-![Global Suppressions](/img/roslynator/global-suppressions-options.png)
-
-## See Also
-
-* [Use code analyzers](https://docs.microsoft.com/en-us/visualstudio/code-quality/use-roslyn-analyzers)

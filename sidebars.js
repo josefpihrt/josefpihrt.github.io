@@ -22,17 +22,13 @@ const sidebars = {
       link: {
         type: 'generated-index',
         title: 'Roslynator Guides',
-        slug: 'roslynator/guides'
+        slug: 'roslynator/category/guides'
       },
       items: [
         'roslynator/configuration',
-        'roslynator/how-to-configure-analyzers',
-        'roslynator/how-to-configure-refactorings',
-        'roslynator/how-to-configure-ruleset-file',
-        'roslynator/how-to-customize-rules-for-projects',
-        'roslynator/how-to-fix-all-diagnostics',
-        'roslynator/how-to-suppress-diagnostic',
         'roslynator/analyzers-vs-refactorings',
+        'roslynator/how-to-suppress-diagnostic',
+        'roslynator/how-to-fix-all-diagnostics',
       ],
     },
     {
@@ -44,7 +40,9 @@ const sidebars = {
         slug: 'roslynator/developers'
       },
       items: [
+        'roslynator/how-to-add-new-analyzer',
         'roslynator/how-to-add-new-refactoring',
+        'roslynator/testing',
         'roslynator/how-to-update-documentation',
         {
           type: 'category',
@@ -52,7 +50,7 @@ const sidebars = {
           link: {
             type: 'generated-index',
             title: 'Metadata Reference',
-            slug: 'roslynator/developers/metadata-reference'
+            slug: 'roslynator/category/metadata'
           },
           items: [
             'roslynator/analyzer-metadata',
@@ -67,7 +65,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
         title: 'Code Analysis Reference',
-        slug: 'roslynator/code-analysis-reference'
+        slug: 'roslynator/category/code-analysis'
       },
       items: [
         {

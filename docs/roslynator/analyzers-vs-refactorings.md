@@ -45,7 +45,3 @@ When it is requested IDE will suggest a list of refactorings that are applicable
 Hotkey `Ctrl` + `.` will display available refactorings. Refactorings have lower precedence so they are displayed below diagnostics. There is no identifier and no description in the fly-out menu.
 
 ![Refactoring in Context Menu](/img/roslynator/refactoring-in-context-menu.png)
-
-### Configuration
-
-Roslynator refactorings can be configured in Visual Studio options.
