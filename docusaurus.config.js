@@ -79,7 +79,7 @@ const config = {
         ],
       },
       footer: {
-        copyright: `Copyright © 2022-${new Date().getFullYear()} Josef Pihrt and Contributors. Built with Docusaurus.`,
+        copyright: `Copyright © 2022-${new Date().getFullYear()} Josef Pihrt. Built with Docusaurus.`,
       },
       prism: {
         theme: lightCodeTheme,

@@ -28,7 +28,7 @@ It's rare, but it's possible to introduce new project/package.
 
 ## Add Metadata
 
-Add new element `<Analyzer>` to [Analyzers.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Analyzers/Analyzers.xml) file. It's possible to use [Analyzers.Template.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Analyzers/Analyzers.Template.xml) as a template.
+Add new element `<Analyzer>` to [Analyzers.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Analyzers.xml) file. It's possible to use a [template](https://github.com/JosefPihrt/Roslynator/blob/main/src/Template.Analyzers.xml).
 
 See [metadata reference](analyzer-metadata) for further information.
 

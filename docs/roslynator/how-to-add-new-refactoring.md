@@ -6,7 +6,7 @@ It is recommended to create [issue](https://github.com/JosefPihrt/Roslynator/iss
 
 ## Add Metadata
 
-Add new element `<Refactoring>` to [Refactorings.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings/Refactorings.xml) file. It's possible to use [Refactorings.Template.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings/Refactorings.Template.xml) as a template.
+Add new element `<Refactoring>` to [Refactorings.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings.xml) file. It's possible to use [template](https://github.com/JosefPihrt/Roslynator/blob/main/src/Template.Refactorings.xml).
 
 See [metadata reference](refactoring-metadata) for further information.
 
