@@ -10,6 +10,6 @@ Documentation for refactorings can be updated by updating following file:
 
 - [Refactorings.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings/Refactorings.xml)
 
-See [metadata reference](metadata-reference) for further information.
+See [metadata reference](category/metadata) for further information.
 
 Documentation will be published to by running a [workflow](https://github.com/JosefPihrt/josefpihrt.github.io/actions/workflows/build.yml).
