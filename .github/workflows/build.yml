@@ -205,7 +205,7 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=4096"
       - uses: actions/upload-artifact@v3
         with:
-          name: build
+          name: docusaurus
           path: build
 
   deploy:
@@ -217,14 +217,14 @@ jobs:
     steps:
       - uses: actions/download-artifact@v3
         with:
-          name: build
-          path: build
+          name: docusaurus
+          path: docusaurus
       - name: Configure Pages
         uses: actions/configure-pages@v3
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: build
+          path: docusaurus
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2

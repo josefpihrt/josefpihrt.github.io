@@ -4,7 +4,7 @@ Roslynator is a set of code analysis tools for C#, powered by [Roslyn](https://g
 
 ## Tools
 
-- IDE Extensions for:
+- IDE extensions for:
   - [Visual Studio](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
   - [VS Code](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator)
   - [Open VSX](https://open-vsx.org/extension/josefpihrt-vscode/roslynator)
@@ -13,7 +13,7 @@ Roslynator is a set of code analysis tools for C#, powered by [Roslyn](https://g
   - [Roslynator.CodeAnalysis.Analyzers](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers)
   - [Roslynator.Formatting.Analyzers](https://www.nuget.org/packages/Roslynator.Formatting.Analyzers)
 - [Testing framework](testing) that allows unit testing of analyzers, refactoring and code fixes
-- [.NET client libraries](ref) that enriches original Roslyn API
+- [.NET client libraries](ref) that extend Roslyn API
 - [Command line tool](cli)
 
 ## Contributions
@@ -48,7 +48,7 @@ See [documentation](cli) for further information.
 - It does not contain any analyzers/refactorings itself.
 - See [reference](ref).
 
-| Package | Version | Built on top of |
+| Package | Version | Extends |
 | --- | --- | --- |
 | [Roslynator.Core](https://www.nuget.org/packages/Roslynator.Core) | [![NuGet](https://img.shields.io/nuget/v/Roslynator.Core.svg)](https://www.nuget.org/packages/Roslynator.Core) | [Microsoft.CodeAnalysis.Common](https://www.nuget.org/packages/Microsoft.CodeAnalysis.Common) |
 | [Roslynator.Workspaces.Core](https://www.nuget.org/packages/Roslynator.Workspaces.Core) | [![NuGet](https://img.shields.io/nuget/v/Roslynator.Workspaces.Core.svg)](https://www.nuget.org/packages/Roslynator.Workspaces.Core) | [Microsoft.CodeAnalysis.Workspaces.Common](https://www.nuget.org/packages/Microsoft.CodeAnalysis.Workspaces.Common) |
