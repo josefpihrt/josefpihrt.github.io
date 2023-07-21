@@ -2,8 +2,8 @@
 
 There are two basic concepts in code analysis:
 
-* **Analyzer** (+ **Code Fix**)
-* **Refactoring**
+- **Analyzer** (+ **Code Fix**)
+- **Refactoring**
 
 Unfortunately, some developers do not distinguish between these two concepts which causes confusion.
 
@@ -29,10 +29,6 @@ All diagnostics are displayed in the Error List. Each diagnostic is visible by s
 Hotkey `Ctrl` + `.` will display available code fixes. Code fixes have precedence over refactorings so they are displayed first. There is an identifier and a description in the fly-out menu. Also there is 'Suppress ...' item at the bottom of the context menu.
 
 ![Code Fix in Context Menu](/img/roslynator/code-fix-in-context-menu.png)
-
-### Configuration
-
-Analyzers can be configured by using **rule set** file (see [How to Configure Analyzers](https://github.com/JosefPihrt/Roslynator/blob/main/docs/HowToConfigureAnalyzers.md)).
 
 ## Refactorings
 

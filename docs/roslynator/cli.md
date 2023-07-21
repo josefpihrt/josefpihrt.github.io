@@ -6,38 +6,26 @@ sidebar_label: Roslynator CLI
 
 ## Commands
 
-* [analyze](cli/commands/analyze.md)
-* [fix](cli/commands/fix.md)
-* [format](cli/commands/format.md)
-* [generate-doc](cli/commands/generate-doc.md)
-* [generate-doc-root](cli/commands/generate-doc-root.md)
-* [list-symbols](cli/commands/list-symbols.md)
-* [loc](cli/commands/loc.md)
-* [lloc](cli/commands/lloc.md)
-* [rename-symbol](cli/commands/rename-symbol.md)
-* [spellcheck](cli/commands/spellcheck.md)
+- [analyze](cli/commands/analyze)
+- [fix](cli/commands/fix)
+- [format](cli/commands/format)
+- [generate-doc](cli/commands/generate-doc)
+- [generate-doc-root](cli/commands/generate-doc-root)
+- [list-symbols](cli/commands/list-symbols)
+- [loc](cli/commands/loc)
+- [lloc](cli/commands/lloc)
+- [rename-symbol](cli/commands/rename-symbol)
+- [spellcheck](cli/commands/spellcheck)
 
-## Packages
+## Installation
 
-### [Roslynator.DotNet.Cli](https://nuget.org/packages/Roslynator.DotNet.Cli)
+Run `dotnet tool install -g roslynator.dotnet.cli`
 
-* [.NET Core global tool](https://docs.microsoft.com/dotnet/core/tools/global-tools)
-  * cross-platform
-  * can be run directly from command line
-* It is recommended to use this tool.
-* Version `0.2.0` or higher requires .NET Core SDK 5.0
+## Requirements
 
-Run following command to install it:
-
-```
-dotnet tool install -g roslynator.dotnet.cli
-```
-
-### [Roslynator.CommandLine](https://nuget.org/packages/Roslynator.CommandLine)
-
-* Stand-alone application that requires .NET Framework (Windows only).
-* It can be used for .NET Framework projects (old style `csproj`).
-* [Download package](https://www.nuget.org/api/v2/package/Roslynator.CommandLine/0.2.0) and run `Roslynator.exe`.
+- Version `0.5.0` or higher required .NET Core SDK 6 or 7
+- Version `0.4.0` or higher requires .NET Core SDK 6
+- Version `0.2.0` or higher requires .NET Core SDK 5
 
 ## Exit Code
 
@@ -51,14 +39,8 @@ Value | Comment
 
 \*\* A diagnostic was found (`analyze` command) or not all diagnostics were fixed (`fix` command) etc.
 
-## Which MSBuild Instance to Use
+### Legacy .NET Framework Package
 
-If you are using version `0.1.5` or lower it may be necessary to specify MSBuild instance  - a directory where MSBuild binaries are located.
-
-### Roslynator.CommandLine
-
-You should specify MSBuild instance that is part of Visual Studio installation. It should be similar to `C:/Program Files/Microsoft Visual Studio/2019/Community/MSBuild/Current/Bin`
-
-### Roslynator.DotNet.Cli
-
-You should specify MSBuild instance that is part of .NET Core SDK installation. It should be similar to `C:/Program Files/dotnet/sdk/3.1.200`
+- Stand-alone application that requires .NET Framework (Windows only).
+- It can be used for .NET Framework projects (old style `csproj`).
+- Download [package](https://www.nuget.org/packages/Roslynator.CommandLine) and run `Roslynator.exe`.
