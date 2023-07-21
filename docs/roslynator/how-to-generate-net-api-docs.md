@@ -8,15 +8,15 @@ Documentation can be published to following hosts:
 - [GitHub](https://github.com)
 - [Sphinx](https://www.sphinx-doc.org/en)
 
+### Generate Documentation Files
+
 Run following command to generate documentation:
 
-`roslynator generate-doc`
+```sh
+roslynator generate-doc
+```
 
-Run following command to generate documentation root file:
-
-`roslynator generate-doc-root`
-
-## Usage
+#### Usage
 
 ```powershell title="generate-doc-files.ps1"
 roslynator generate-doc MY_SOLUTION.sln `
@@ -30,6 +30,16 @@ roslynator generate-doc MY_SOLUTION.sln `
  --max-derived-types 10
 ```
 
+### Generate Documentation Root File
+
+Run following command to generate documentation root file:
+
+```sh
+roslynator generate-doc-root
+```
+
+#### Usage
+
 ```powershell title="generate-doc-root-file.ps1"
 roslynator generate-doc-root MY_SOLUTION.sln `
  --properties Configuration=Release `
@@ -40,5 +50,4 @@ roslynator generate-doc-root MY_SOLUTION.sln `
  --root-directory-url "ref"
  ```
 
- See the actual [script](https://github.com/JosefPihrt/Roslynator/blob/main/tools/generate_ref_docs.ps1
-).
+ See the actual [script](https://github.com/JosefPihrt/Roslynator/blob/main/tools/generate_ref_docs.ps1).
