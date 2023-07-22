@@ -6,13 +6,15 @@ It is recommended to create [issue](https://github.com/JosefPihrt/Roslynator/iss
 
 ## Add Metadata
 
-Add new element `<Refactoring>` to [Refactorings.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings.xml) file. It's possible to use [template](https://github.com/JosefPihrt/Roslynator/blob/main/src/Template.Refactorings.xml).
+Add new refactoring metadata to [Refactorings.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings.xml) file. It's possible to use [template](https://github.com/JosefPihrt/Roslynator/blob/main/src/Template.Refactorings.xml).
 
 See [metadata reference](refactoring-metadata) for further information.
 
 ## Generate Code
 
 Run script [`tools/generate_code.ps1`](https://github.com/JosefPihrt/Roslynator/blob/main/tools/generate_code.ps1).
+
+Another option is to launch project `CodeGenerator` from Visual Studio.
 
 ## Implement Refactoring
 
@@ -26,9 +28,9 @@ Go to class [RefactoringContext](https://github.com/JosefPihrt/Roslynator/blob/m
 When writing a test code, tokens `[|` and `|]` represents start and end of a selected text respectively.
 :::
 
-## Update [Changelog](https://github.com/JosefPihrt/Roslynator/blob/main/ChangeLog.md)
+## Update Changelog
 
-```markdown
+```markdown title="CHANGELOG.md"
 ### Added
 
 - Add refactoring "REFACTORING_TITLE" ([REFACTORING_ID](https://josefpihrt.github.io/docs/roslynator/refactorings/REFACTORING_ID)) ([#PR_ID](https://github.com/josefpihrt/roslynator/pull/PR_ID))

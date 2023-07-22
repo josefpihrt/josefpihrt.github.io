@@ -9,6 +9,10 @@ Search, replace, rename and delete files and its content using the power of \.NE
 
 ## CLI
 
-- Run `dotnet tool install -g orang.dotnet.cli` to install.
+Run following command to install Orang CLI:
 
-- See [documentation](cli).
+```sh
+dotnet tool install -g orang.dotnet.cli
+```
+
+See [documentation](cli) for further information.
