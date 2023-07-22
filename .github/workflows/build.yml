@@ -1,0 +1,224 @@
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+  workflow_dispatch:
+
+env:
+  Configuration: Release
+  TreatWarningsAsErrors: true
+  WarningsNotAsErrors: 1591
+  RunCodeAnalysis: false
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+
+  build_roslynator:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "src/Tools/MetadataGenerator"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: mkdir _build
+      - run: dotnet "bin/Release/net7.0/Roslynator.MetadataGenerator.dll" "../.." "_build"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: roslynator
+          path: src/Tools/MetadataGenerator/_build
+
+  build_roslynator_cli:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "src/CommandLine.DocumentationGenerator"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: mkdir "_build"
+      - run: dotnet "bin/Release/net7.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: roslynator_cli
+          path: src/CommandLine.DocumentationGenerator/_build
+
+  build_roslynator_ref:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+      - run: |
+          cd tools
+          ./generate_ref_docs.ps1
+        name: Generate reference documentation
+        shell: pwsh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: roslynator_ref
+          path: tools/build
+
+  build_roslynator_configuration:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "src/Tools/ConfigurationFileGenerator"
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: dotnet "bin/Release/net7.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: roslynator_configuration
+          path: src/Tools/ConfigurationFileGenerator/configuration.md
+
+  build_orang:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: src/DocumentationGenerator
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/orang
+      - run: dotnet restore
+      - run: dotnet build --no-restore
+      - run: mkdir "_build"
+      - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: orang
+          path: src/DocumentationGenerator/_build
+
+  build_dotmarkdown:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+          path: roslynator
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/dotmarkdown
+          path: dotmarkdown
+      - run: |
+          dotnet restore
+          dotnet build --no-restore
+        working-directory: "roslynator/src/CommandLine"
+      - run: |
+          dotnet restore
+          dotnet build --no-restore
+        working-directory: "dotmarkdown/src/DotMarkdown"
+      - run: >
+          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln"
+          --properties "Configuration=Release"
+          --projects "DotMarkdown(netstandard1.3)"
+          --heading "DotMarkdown Reference"
+          -o _build/ref
+          --host docusaurus
+          --group-by-common-namespace
+          --ignored-common-parts content
+          --ignored-root-parts all
+          --max-derived-types 10
+      - run: >
+          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc-root "dotmarkdown/src/DotMarkdown.sln"
+          --properties "Configuration=Release"
+          --projects "DotMarkdown(netstandard1.3)"
+          -o "_build/ref.md"
+          --host docusaurus
+          --heading "DotMarkdown Reference"
+          --ignored-parts content
+          --root-directory-url ref
+        
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dotmarkdown
+          path: _build
+
+  build_docusaurus:
+    needs: [ build_roslynator, build_roslynator_cli, build_roslynator_ref, build_roslynator_configuration, build_orang, build_dotmarkdown ]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/download-artifact@v3
+        name: "Download Roslynator metadata documentation"
+        with:
+          name: roslynator
+          path: docs/roslynator
+      - uses: actions/download-artifact@v3
+        name: "Download Roslynator CLI documentation"
+        with:
+          name: roslynator_cli
+          path: docs/roslynator
+      - uses: actions/download-artifact@v3
+        name: "Download Roslynator reference documentation"
+        with:
+          name: roslynator_ref
+          path: docs/roslynator
+      - uses: actions/download-artifact@v3
+        name: "Download Roslynator configuration"
+        with:
+          name: roslynator_configuration
+          path: docs/roslynator
+      - uses: actions/download-artifact@v3
+        name: "Download Orang documentation"
+        with:
+          name: orang
+          path: docs/orang
+      - uses: actions/download-artifact@v3
+        name: "Download DotMarkdown documentation"
+        with:
+          name: dotmarkdown
+          path: docs/dotmarkdown
+      - run: npm install
+      - run: npm run build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: docusaurus
+          path: build
+
+  deploy:
+    if: github.ref_type == 'branch' && github.ref_name == 'main' 
+    needs: build_docusaurus
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v3
+        with:
+          name: docusaurus
+          path: docusaurus
+      - name: Configure Pages
+        uses: actions/configure-pages@v3
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: docusaurus
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
