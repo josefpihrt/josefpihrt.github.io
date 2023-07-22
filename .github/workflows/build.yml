@@ -34,7 +34,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: feature/docs-docusaurus
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir _build
@@ -53,7 +52,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: feature/docs-docusaurus
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
@@ -69,7 +67,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: feature/docs-docusaurus
       - run: |
           cd tools
           ./generate_ref_docs.ps1
@@ -89,7 +86,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: feature/docs-docusaurus
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet "bin/Release/net7.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
@@ -122,7 +118,6 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: feature/docs-docusaurus
           path: roslynator
       - uses: actions/checkout@v3
         with:
@@ -207,6 +202,7 @@ jobs:
           path: build
 
   deploy:
+    # if: github.ref_type == 'branch' && github.ref_name == 'main' 
     needs: build_docusaurus
     environment:
       name: github-pages
