@@ -24,7 +24,7 @@ Contributions are welcome! If you are interested please see documentation for [d
 Bugfixes or small improvements can be implemented right away. Larger task like adding new analyzer or refactoring should be discussed first.
 :::
 
-## Roslynator Command Line Tool
+## Command Line Tool
 
 Run following command to install Roslynator command line tool:
 ```sh
@@ -33,7 +33,7 @@ dotnet tool install -g roslynator.dotnet.cli
 
 See [documentation](cli) for further information.
 
-## Roslynator Testing Framework
+## Testing Framework
 
 - Roslynator Testing Framework can be used for unit testing of analyzers, refactorings and code fixes.
 - Framework is distributed as NuGet [package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit). &ensp;[![NuGet](https://img.shields.io/nuget/v/Roslynator.Testing.CSharp.Xunit.svg)](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit)
@@ -42,7 +42,7 @@ See [documentation](cli) for further information.
   - Tests of refactorings are [here](https://github.com/JosefPihrt/Roslynator/tree/main/src/Tests/Refactorings.Tests)
   - Tests of fixes of compiler diagnostics are [here](https://github.com/JosefPihrt/Roslynator/tree/main/src/Tests/CodeFixes.Tests)
 
-## Roslynator Client Libraries
+## Client Libraries
 
 - Roslynator client libraries are meant be used for development of your own analyzers/refactorings.
 - It does not contain any analyzers/refactorings itself.
