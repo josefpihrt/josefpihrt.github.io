@@ -16,3 +16,5 @@ Remove-Item "../docs/orang/cli/commands" -Recurse -Force
 Remove-Item "../docs/orang/cli/commands.md"
 Remove-Item "../docs/orang/cli/option-values.md"
 Remove-Item "../docs/orang/cli.md"
+Remove-Item "../docs/orang/ref" -Recurse -Force
+Remove-Item "../docs/orang/ref.md"

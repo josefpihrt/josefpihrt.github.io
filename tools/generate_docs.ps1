@@ -10,6 +10,7 @@ Remove-Item "build" -Recurse
 
 Set-Location ../../orang/tools
 ./generate_cli_docs.ps1
+./generate_ref_docs.ps1
 Copy-Item "build/*" "$currentDirectory/../docs/orang" -Recurse -Force
 Remove-Item "build" -Recurse
 
