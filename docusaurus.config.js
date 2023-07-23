@@ -82,7 +82,7 @@ const config = {
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
           },
-      ],
+        ],
       },
       footer: {
         copyright: `Copyright © 2022-${new Date().getFullYear()} Josef Pihrt. Built with Docusaurus.`,
@@ -91,19 +91,19 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
         additionalLanguages: // https://prismjs.com/#supported-languages
-        [
-          'powershell',
-          'csharp',
-          'editorconfig',
-          'markdown'
-        ], 
+          [
+            'powershell',
+            'csharp',
+            'editorconfig',
+            'markdown'
+          ],
       },
       docs: {
         sidebar: {
           hideable: true,
         },
       },
-   }),
+    }),
 };
 
 module.exports = config;
