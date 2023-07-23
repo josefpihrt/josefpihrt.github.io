@@ -76,7 +76,13 @@ const config = {
             position: 'left',
             label: 'DotMarkdown',
           },
-        ],
+          {
+            href: 'https://github.com/josefpihrt',
+            position: 'right',
+            className: 'header-github-link',
+            'aria-label': 'GitHub repository',
+          },
+      ],
       },
       footer: {
         copyright: `Copyright © 2022-${new Date().getFullYear()} Josef Pihrt. Built with Docusaurus.`,
@@ -92,7 +98,12 @@ const config = {
           'markdown'
         ], 
       },
-    }),
+      docs: {
+        sidebar: {
+          hideable: true,
+        },
+      },
+   }),
 };
 
 module.exports = config;
