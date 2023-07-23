@@ -169,6 +169,7 @@ const sidebars = {
 
   dotmarkdownSidebar: [
     { type: 'doc', id: 'dotmarkdown/index', label: "Intro" },
+    { type: 'doc', id: 'dotmarkdown/docusaurus-markdown' },
     {
       type: 'category',
       label: 'DotMarkdown Reference',

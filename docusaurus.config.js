@@ -89,7 +89,8 @@ const config = {
           'powershell',
           'csharp',
           'editorconfig',
-          'markdown'
+          'markdown',
+          'bash'
         ], 
       },
     }),
