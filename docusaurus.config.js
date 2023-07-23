@@ -90,12 +90,29 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+
+        // languages supported by default (https://github.com/FormidableLabs/prism-react-renderer/blob/30a01dcfb3db66f0bfa3b7815e3652b1a3828927/packages/generate-prism-languages/index.ts#L10-L23)
+        // cpp
+        // go
+        // graphql
+        // html
+        // jsx
+        // js-extras
+        // kotlin
+        // markdown
+        // objectivec
+        // reason
+        // rust
+        // swift
+        // tsx
+        // yaml
+
         additionalLanguages: // https://prismjs.com/#supported-languages
           [
             'powershell',
             'csharp',
             'editorconfig',
-            'markdown'
+            'bash',
           ],
       },
       docs: {
