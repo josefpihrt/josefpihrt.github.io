@@ -43,12 +43,14 @@ using Orang.FileSystem;
 using Orang.FileSystem.Fluent;
 
 IOperationResult result = new SearchBuilder()
-    .DirectoryName(Pattern.Any("bin", "obj", PatternOptions.Equals))
+    .MatchDirectory(d => d
+        .Name(Pattern.Any("bin", "obj", PatternOptions.Equals))
+        .NonEmptyOnly())
     .SkipDirectory(Pattern.Any(".git", ".vs", "node_modules", PatternOptions.Equals | PatternOptions.Literal))
-    .Delete()
-    .ContentOnly()
-    .DryRun()
-    .LogOperation(o => Console.WriteLine(o.Path))
+    .Delete(d => d
+        .ContentOnly()
+        .DryRun()
+        .LogOperation(o => Console.WriteLine(o.Path)))
     .Run("<DIRECTORY_PATH>", CancellationToken.None);
 
 Console.WriteLine(result.Telemetry.MatchingDirectoryCount);
