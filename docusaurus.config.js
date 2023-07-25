@@ -77,6 +77,12 @@ const config = {
             label: 'DotMarkdown',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'gitaliasSidebar',
+            position: 'left',
+            label: 'gitalias',
+          },
+          {
             href: 'https://github.com/josefpihrt',
             position: 'right',
             className: 'header-github-link',
