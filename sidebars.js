@@ -172,7 +172,7 @@ const sidebars = {
     { type: 'doc', id: 'dotmarkdown/docusaurus-markdown' },
     {
       type: 'category',
-      label: 'DotMarkdown Reference',
+      label: '.NET API Reference',
       link: { type: 'doc', id: 'dotmarkdown/ref' },
       items: [
         {
