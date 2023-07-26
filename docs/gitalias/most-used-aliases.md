@@ -1,42 +1,42 @@
 # Most Used Aliases
 
-| Command | Alias |
+| Alias | Command |
 | --- | --- |
-| `add --all` | `aa` |
-| `branch --all` | `ba` |
-| `branch --delete --force` | `bdf` |
-| `branch --move` | `bm` |
-| `branch --remotes` | `br` |
-| `commit --all` | `ca` |
-| `commit --message` | `cm` |
-| `diff --cached` | `dc` |
-| `rebase main` | `em` |
-| `fetch --all` | `fa` |
-| `fetch --tags` | `ft` |
-| `log --max-count` | `gmc` |
-| `log --oneline` | `go` |
-| `log --patch` | `gp` |
-| `stash list` | `hl` |
-| `stash pop` | `hp` |
-| `pull --all` | `la` |
-| `pull --rebase` | `lr` |
-| `merge main` | `mm` |
-| `merge --no-commit` | `mnc` |
-| `merge --no-commit --squash` | `mncs` |
-| `merge --squash` | `ms` |
-| `clean --dry-run` | `ndr` |
-| `clean --force` | `nf` |
-| `clean --force --dry-run` | `nfdr` |
-| `remote add origin` | `oao` |
-| `remote prune origin` | `opo` |
-| `push --force` | `pf` |
-| `push --delete origin` | `pdo` |
-| `push --set-upstream origin` | `psuo` |
-| `push --tags` | `pt` |
-| `restore --staged` | `rs` |
-| `switch --create` | `sc` |
-| `switch main` | `sm` |
-| `reset --hard` | `th` |
-| `reset --mixed` | `tm` |
-| `revert --no-commit` | `vnc` |
-| `cherry-pick --no-commit` | `ync` |
+| `aa` | `add --all` |
+| `ba` | `branch --all` |
+| `bdf` | `branch --delete --force` |
+| `bm` | `branch --move` |
+| `br` | `branch --remotes` |
+| `ca` | `commit --all` |
+| `cm` | `commit --message` |
+| `dc` | `diff --cached` |
+| `em` | `rebase main` |
+| `fa` | `fetch --all` |
+| `ft` | `fetch --tags` |
+| `gmc` | `log --max-count` |
+| `go` | `log --oneline` |
+| `gp` | `log --patch` |
+| `hl` | `stash list` |
+| `hp` | `stash pop` |
+| `la` | `pull --all` |
+| `lr` | `pull --rebase` |
+| `mm` | `merge main` |
+| `mnc` | `merge --no-commit` |
+| `mncs` | `merge --no-commit --squash` |
+| `ms` | `merge --squash` |
+| `ndr` | `clean --dry-run` |
+| `nf` | `clean --force` |
+| `nfdr` | `clean --force --dry-run` |
+| `oao` | `remote add origin` |
+| `opo` | `remote prune origin` |
+| `pf` | `push --force` |
+| `pdo` | `push --delete origin` |
+| `psuo` | `push --set-upstream origin` |
+| `pt` | `push --tags` |
+| `rs` | `restore --staged` |
+| `sc` | `switch --create` |
+| `sm` | `switch main` |
+| `th` | `reset --hard` |
+| `tm` | `reset --mixed` |
+| `vnc` | `revert --no-commit` |
+| `ync` | `cherry-pick --no-commit` |
