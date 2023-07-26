@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add reference documentation for [DotMarkdown.Docusaurus](https://www.nuget.org/packages/DotMarkdown.Docusaurus)
+
 ## [0.1.0] - 2023-07-23
 
 ### Added
