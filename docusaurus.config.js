@@ -77,6 +77,12 @@ const config = {
             label: 'DotMarkdown',
           },
           {
+            type: 'docSidebar',
+            sidebarId: 'snippeticaSidebar',
+            position: 'left',
+            label: 'Snippetica',
+          },
+          {
             href: 'https://github.com/josefpihrt',
             position: 'right',
             className: 'header-github-link',

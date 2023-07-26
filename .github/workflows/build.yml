@@ -157,8 +157,35 @@ jobs:
           name: dotmarkdown
           path: _build
 
+  build_snippetica:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/snippetica
+      - run: |
+          dotnet restore src/Tools/DocumentationGenerator
+          dotnet build src/Tools/DocumentationGenerator --no-restore
+      - run: |
+          cd tools
+          ./generate_docs.ps1
+        name: Generate documentation
+        shell: pwsh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: snippetica
+          path: tools/build
+
   build_docusaurus:
-    needs: [ build_roslynator, build_roslynator_cli, build_roslynator_ref, build_roslynator_configuration, build_orang, build_dotmarkdown ]
+    needs: [
+      build_roslynator,
+      build_roslynator_cli,
+      build_roslynator_ref,
+      build_roslynator_configuration,
+      build_orang,
+      build_dotmarkdown,
+      build_snippetica
+    ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -192,6 +219,11 @@ jobs:
         with:
           name: dotmarkdown
           path: docs/dotmarkdown
+      - uses: actions/download-artifact@v3
+        name: "Download Snippetica documentation"
+        with:
+          name: snippetica
+          path: docs/snippetica
       - run: npm install
       - run: npm run build
         env:
