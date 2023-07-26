@@ -7,27 +7,30 @@ sidebar_label: Intro
 
 A collection of snippets for C\#, C\+\+, HTML, VB and other languages\.
 
-## Snippetica for Visual Studio
+## Snippets for Visual Studio
+
+### Installation
 
 Install extension from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Snippetica)\.
 
 ### Languages
 
-- [C#](snippetica/vs/csharp)
-- [Visual Basic](snippetica/vs/vb)
 - [C++](snippetica/vs/cpp)
+- [C#](snippetica/vs/csharp)
 - [HTML](snippetica/vs/html)
-- [XAML](snippetica/vs/xaml)
+- [Visual Basic](snippetica/vs/vb)
 - [XML](snippetica/vs/xml)
 
-## Extensions for VS Code
+## Snippets for VS Code
 
-Install extension from [VS Code Marketplace](https://marketplace.visualstudio.com/search?term=snippetica&target=VSCode&category=All%20categories&sortBy=Relevance)\.
+### Installation
+
+Install extensions from [VS Code Marketplace](https://marketplace.visualstudio.com/search?term=snippetica&target=VSCode&category=All%20categories&sortBy=Relevance)\.
 
 ### Languages
 
-- [C#](snippetica/vscode/csharp)
-- [Visual Basic](snippetica/vscode/vb)
 - [C++](snippetica/vscode/cpp)
+- [C#](snippetica/vscode/csharp)
 - [HTML](snippetica/vscode/html)
+- [Visual Basic](snippetica/vscode/vb)
 - [XML](snippetica/vscode/xml)
