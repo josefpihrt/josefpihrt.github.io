@@ -132,8 +132,8 @@ jobs:
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln"
           --properties "Configuration=Release"
-          --projects "DotMarkdown(netstandard1.3)"
-          --heading "DotMarkdown Reference"
+          --projects "DotMarkdown(netstandard1.3) DotMarkdown.Docusaurus(netstandard1.3)"
+          --heading ".NET API Reference"
           -o _build/ref
           --host docusaurus
           --group-by-common-namespace
@@ -143,10 +143,10 @@ jobs:
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc-root "dotmarkdown/src/DotMarkdown.sln"
           --properties "Configuration=Release"
-          --projects "DotMarkdown(netstandard1.3)"
+          --projects "DotMarkdown(netstandard1.3) DotMarkdown.Docusaurus(netstandard1.3)"
           -o "_build/ref.md"
           --host docusaurus
-          --heading "DotMarkdown Reference"
+          --heading ".NET API Reference"
           --ignored-parts content
           --root-directory-url ref
         
