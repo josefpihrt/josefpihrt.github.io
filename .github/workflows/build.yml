@@ -125,6 +125,7 @@ jobs:
           dotnet restore
           dotnet build --no-restore
         working-directory: "roslynator/src/CommandLine"
+      - run: ls orang -R
       - run: |
           dotnet restore
           dotnet build --no-restore
