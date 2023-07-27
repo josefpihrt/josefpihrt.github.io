@@ -129,7 +129,7 @@ jobs:
       - run: |
           dotnet restore
           dotnet build --no-restore
-        working-directory: "orang/src/Orang"
+        working-directory: "orang/src"
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "orang/src/Orang.sln"
           --properties "Configuration=Release"
