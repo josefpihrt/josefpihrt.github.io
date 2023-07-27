@@ -121,6 +121,7 @@ jobs:
         with:
           repository: josefpihrt/orang
           path: orang
+          ref: feature/client-lib
       - run: |
           dotnet restore
           dotnet build --no-restore
