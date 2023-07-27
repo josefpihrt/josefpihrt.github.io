@@ -134,7 +134,7 @@ jobs:
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "orang/src/Orang.sln"
           --properties "Configuration=Release"
-          --projects "Core" "FileSystem"
+          --projects "Common" "FileSystem"
           --heading ".NET API Reference"
           -o "_build/ref"
           --host docusaurus
@@ -145,7 +145,7 @@ jobs:
       - run: >
           "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc-root "orang/src/Orang.sln"
           --properties "Configuration=Release"
-          --projects "Core" "FileSystem"
+          --projects "Common" "FileSystem"
           -o "_build/ref.md"
           --host docusaurus
           --heading ".NET API Reference"
