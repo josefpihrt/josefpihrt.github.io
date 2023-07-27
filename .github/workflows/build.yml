@@ -92,7 +92,7 @@ jobs:
           name: roslynator_configuration
           path: src/Tools/ConfigurationFileGenerator/configuration.md
 
-  build_orang:
+  build_orang_cli:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -107,8 +107,53 @@ jobs:
       - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
       - uses: actions/upload-artifact@v3
         with:
-          name: orang
+          name: orang_cli
           path: src/DocumentationGenerator/_build
+
+  build_orang_ref:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/roslynator
+          path: roslynator
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/orang
+          path: orang
+      - run: |
+          dotnet restore
+          dotnet build --no-restore
+        working-directory: "roslynator/src/CommandLine"
+      - run: |
+          dotnet restore
+          dotnet build --no-restore
+        working-directory: "orang/src/Orang"
+      - run: >
+          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "orang/src/Orang.sln"
+          --properties "Configuration=Release"
+          --projects "Core" "FileSystem"
+          --heading ".NET API Reference"
+          -o "_build/ref"
+          --host docusaurus
+          --group-by-common-namespace
+          --ignored-common-parts content
+          --ignored-root-parts all
+          --max-derived-types 10
+      - run: >
+          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc-root "orang/src/Orang.sln"
+          --properties "Configuration=Release"
+          --projects "Core" "FileSystem"
+          -o "_build/ref.md"
+          --host docusaurus
+          --heading ".NET API Reference"
+          --ignored-parts content
+          --root-directory-url "ref"
+        
+      - uses: actions/upload-artifact@v3
+        with:
+          name: orang_ref
+          path: _build
 
   build_dotmarkdown:
     runs-on: ubuntu-latest
@@ -156,7 +201,15 @@ jobs:
           path: _build
 
   build_docusaurus:
-    needs: [ build_roslynator, build_roslynator_cli, build_roslynator_ref, build_roslynator_configuration, build_orang, build_dotmarkdown ]
+    needs: [
+      build_roslynator,
+      build_roslynator_cli,
+      build_roslynator_ref,
+      build_roslynator_configuration,
+      build_orang_cli,
+      build_orang_ref,
+      build_dotmarkdown
+    ]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -181,9 +234,14 @@ jobs:
           name: roslynator_configuration
           path: docs/roslynator
       - uses: actions/download-artifact@v3
-        name: "Download Orang documentation"
+        name: "Download Orang CLI documentation"
         with:
-          name: orang
+          name: orang_cli
+          path: docs/orang
+      - uses: actions/download-artifact@v3
+        name: "Download Orang reference documentation"
+        with:
+          name: orang_ref
           path: docs/orang
       - uses: actions/download-artifact@v3
         name: "Download DotMarkdown documentation"
