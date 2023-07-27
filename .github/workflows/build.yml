@@ -17,11 +17,9 @@ permissions:
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
-# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
 concurrency:
-  group: "pages"
-  cancel-in-progress: false
+    group: ${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
 
@@ -235,6 +233,11 @@ jobs:
           path: build
 
   deploy:
+    # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+    # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
     if: github.ref_type == 'branch' && github.ref_name == 'main'
     needs: build_docusaurus
     environment:
