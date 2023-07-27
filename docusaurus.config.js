@@ -66,15 +66,21 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'dotmarkdownSidebar',
+            position: 'left',
+            label: 'DotMarkdown',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'orangSidebar',
             position: 'left',
             label: 'Orang',
           },
           {
             type: 'docSidebar',
-            sidebarId: 'dotmarkdownSidebar',
+            sidebarId: 'gitaliasSidebar',
             position: 'left',
-            label: 'DotMarkdown',
+            label: 'gitalias',
           },
           {
             type: 'docSidebar',
