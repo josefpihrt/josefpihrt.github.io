@@ -202,7 +202,7 @@ jobs:
           path: build
 
   deploy:
-    if: github.ref_type == 'tag'
+    if: github.ref_type == 'branch' && github.ref_name == 'main'
     needs: build_docusaurus
     environment:
       name: github-pages
