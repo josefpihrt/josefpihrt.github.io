@@ -166,12 +166,12 @@ const sidebars = {
       ],
     },
   ],
-
   dotmarkdownSidebar: [
     { type: 'doc', id: 'dotmarkdown/index', label: "Intro" },
+    { type: 'doc', id: 'dotmarkdown/docusaurus-markdown' },
     {
       type: 'category',
-      label: 'DotMarkdown Reference',
+      label: '.NET API Reference',
       link: { type: 'doc', id: 'dotmarkdown/ref' },
       items: [
         {
@@ -180,6 +180,11 @@ const sidebars = {
         },
       ],
     },
+  ],
+  gitaliasSidebar: [
+    { type: 'doc', id: 'gitalias/index', label: "Intro" },
+    { type: 'doc', id: 'gitalias/commands-aliases', label: "Commands Aliases" },
+    { type: 'doc', id: 'gitalias/most-used-aliases', label: "Most Used Aliases" },
   ],
 };
 

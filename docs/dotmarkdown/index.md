@@ -1,12 +1,23 @@
 # DotMarkdown
 
-- DotMarkdown is a framework for creating markdown content 
-- The library is distributed as [![NuGet](https://img.shields.io/nuget/v/DotMarkdown.svg)](https://nuget.org/packages/DotMarkdown).
+DotMarkdown is a framework for creating markdown content.
 
 ## Supported Target Frameworks
 
 - .NET Standard 1.3
 - .NET Framework 4.5
+
+## Installation
+
+Run following command to install DotMarkdown basic package:
+```sh
+dotnet add package DotMarkdown
+```
+
+Run following command to include support for Docusaurus markdown:
+```sh
+dotnet add package DotMarkdown.Docusaurus
+```
 
 ## Documentation
 
