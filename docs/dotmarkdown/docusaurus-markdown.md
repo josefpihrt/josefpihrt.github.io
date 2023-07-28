@@ -12,7 +12,7 @@ dotnet add package DotMarkdown.Docusaurus
 using DotMarkdown.Docusaurus;
 using DotMarkdown.Docusaurus.Linq;
 using static DotMarkdown.Linq.MFactory;
-using static DotMarkdown.Docusaurus.Linq.DocusaurusMarkdownFactory;
+using static DotMarkdown.Docusaurus.DocusaurusMarkdownFactory;
 
 var docusaurusDocument = Document(
     FrontMatter(

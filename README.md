@@ -5,6 +5,7 @@ This website contains documentation for following projects:
 - [Roslynator](https://github.com/josefpihrt/roslynator)
 - [DotMarkdown](https://github.com/josefpihrt/dotmarkdown)
 - [Orang](https://github.com/josefpihrt/orang)
+- [Snippetica](https://github.com/josefpihrt/snippetica)
 
 This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
@@ -15,6 +16,7 @@ For local development it's necessary to pull following repositories and place th
 - [Roslynator](https://github.com/josefpihrt/roslynator)
 - [DotMarkdown](https://github.com/josefpihrt/dotmarkdown)
 - [Orang](https://github.com/josefpihrt/orang)
+- [Snippetica](https://github.com/josefpihrt/snippetica)
 
 Folder structure (example):
 
@@ -23,6 +25,7 @@ Folder structure (example):
   - `roslynator` (required name)
   - `dotmarkdown` (required name)
   - `orang` (required name)
+  - `snippetica` (required name)
 
 Then run script `tools/generate_docs.ps1` (generated documentation can be deleted with script `tools/delete_docs.ps1`).
 

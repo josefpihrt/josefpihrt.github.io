@@ -19,4 +19,9 @@ Set-Location ../../dotmarkdown/tools
 Copy-Item "build/*" "$currentDirectory/../docs/dotmarkdown" -Recurse -Force
 Remove-Item "build" -Recurse
 
+Set-Location ../../snippetica/tools
+./generate_docs.ps1
+Copy-Item "build/*" "$currentDirectory/../docs/snippetica" -Recurse -Force
+Remove-Item "build" -Recurse
+
 Set-Location $currentDirectory
