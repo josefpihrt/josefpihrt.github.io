@@ -24,7 +24,7 @@ concurrency:
 jobs:
 
   build_roslynator:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: "src/Tools/MetadataGenerator"
@@ -42,7 +42,7 @@ jobs:
           path: src/Tools/MetadataGenerator/_build
 
   build_roslynator_cli:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: "src/CommandLine.DocumentationGenerator"
@@ -60,7 +60,7 @@ jobs:
           path: src/CommandLine.DocumentationGenerator/_build
 
   build_roslynator_ref:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -76,7 +76,7 @@ jobs:
           path: tools/build
 
   build_roslynator_configuration:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: "src/Tools/ConfigurationFileGenerator"
@@ -93,7 +93,7 @@ jobs:
           path: src/Tools/ConfigurationFileGenerator/configuration.md
 
   build_orang:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: src/DocumentationGenerator
@@ -111,7 +111,7 @@ jobs:
           path: src/DocumentationGenerator/_build
 
   build_dotmarkdown:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -156,7 +156,7 @@ jobs:
           path: _build
 
   build_snippetica:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -185,9 +185,11 @@ jobs:
       build_dotmarkdown,
       build_snippetica
     ]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
       - run: dotnet tool install -g GitVersion.Tool --version 5.10.0
       - name: Resolve version
         id: version
@@ -260,7 +262,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/download-artifact@v3
         with:
