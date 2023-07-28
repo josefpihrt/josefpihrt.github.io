@@ -188,6 +188,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
+      - run: dotnet tool install -g GitVersion.Tool --version 5.10.0
+      - name: Resolve version
+        id: version
+        run: |
+          dotnet-gitversion > version.json
+          version="$(jq -r '.MajorMinorPatch' version.json)"
+          echo "Resolved version: $version"
+          echo "version=${version}" >> $GITHUB_OUTPUT
+      - run: >
+          sed -i 's/"version": "1.0.0"/"version": "${{ steps.version.outputs.version }}"/' package.json
       - uses: actions/download-artifact@v3
         name: "Download Roslynator metadata documentation"
         with:
@@ -238,7 +248,7 @@ jobs:
     concurrency:
       group: "pages"
       cancel-in-progress: false
-    if: github.ref_type == 'branch' && github.ref_name == 'main'
+    if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v')
     needs: build_docusaurus
     environment:
       name: github-pages
