@@ -24,7 +24,7 @@ concurrency:
 jobs:
 
   build_roslynator:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: "src/Tools/MetadataGenerator"
@@ -42,7 +42,7 @@ jobs:
           path: src/Tools/MetadataGenerator/_build
 
   build_roslynator_cli:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: "src/CommandLine.DocumentationGenerator"
@@ -60,7 +60,7 @@ jobs:
           path: src/CommandLine.DocumentationGenerator/_build
 
   build_roslynator_ref:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -76,7 +76,7 @@ jobs:
           path: tools/build
 
   build_roslynator_configuration:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: "src/Tools/ConfigurationFileGenerator"
@@ -93,7 +93,7 @@ jobs:
           path: src/Tools/ConfigurationFileGenerator/configuration.md
 
   build_orang:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     defaults:
       run:
         working-directory: src/DocumentationGenerator
@@ -111,7 +111,7 @@ jobs:
           path: src/DocumentationGenerator/_build
 
   build_dotmarkdown:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
         with:
@@ -155,11 +155,57 @@ jobs:
           name: dotmarkdown
           path: _build
 
-  build_docusaurus:
-    needs: [ build_roslynator, build_roslynator_cli, build_roslynator_ref, build_roslynator_configuration, build_orang, build_dotmarkdown ]
-    runs-on: ubuntu-latest
+  build_snippetica:
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/snippetica
+      - run: |
+          dotnet restore src/Tools/DocumentationGenerator/DocumentationGenerator.csproj
+          dotnet build src/Tools/DocumentationGenerator/DocumentationGenerator.csproj --no-restore
+      - run: |
+          cd tools
+          ./generate_docs.ps1
+        name: Generate documentation
+        shell: pwsh
+      - uses: actions/upload-artifact@v3
+        with:
+          name: snippetica
+          path: tools/build
+
+  build_docusaurus:
+    needs: [
+      build_roslynator,
+      build_roslynator_cli,
+      build_roslynator_ref,
+      build_roslynator_configuration,
+      build_orang,
+      build_dotmarkdown,
+      build_snippetica
+    ]
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - run: dotnet tool install -g GitVersion.Tool --version 5.10.0
+      - name: Resolve version
+        id: version
+        run: |
+          echo 0
+          dotnet-gitversion
+          echo 1
+          dotnet-gitversion > version.json
+          echo 2
+          version="$(jq -r '.MajorMinorPatch' version.json)"
+          echo 3
+          echo "Resolved version: $version"
+          echo 4
+          echo "version=${version}" >> $GITHUB_OUTPUT
+          echo 5
+      - run: >
+          sed -i 's/"version": "1.0.0"/"version": "${{ steps.version.outputs.version }}"/' package.json
       - uses: actions/download-artifact@v3
         name: "Download Roslynator metadata documentation"
         with:
@@ -190,6 +236,11 @@ jobs:
         with:
           name: dotmarkdown
           path: docs/dotmarkdown
+      - uses: actions/download-artifact@v3
+        name: "Download Snippetica documentation"
+        with:
+          name: snippetica
+          path: docs/snippetica
       - run: npm install
       - run: npm run build
         env:
@@ -205,12 +256,12 @@ jobs:
     concurrency:
       group: "pages"
       cancel-in-progress: false
-    if: github.ref_type == 'branch' && github.ref_name == 'main'
+    if: github.ref_type == 'tag' && startsWith(github.ref_name, 'v')
     needs: build_docusaurus
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
       - uses: actions/download-artifact@v3
         with:

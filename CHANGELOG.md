@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+## [0.3.0] - 2023-07-28
+
+- Add documentation for Snippetica ([#5](https://github.com/josefpihrt/josefpihrt.github.io/pull/5)).
+
 ## [0.2.0] - 2023-07-27
 
 ### Added

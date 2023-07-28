@@ -80,10 +80,16 @@ const config = {
             type: 'docSidebar',
             sidebarId: 'gitaliasSidebar',
             position: 'left',
-            label: 'gitalias',
+            label: 'Gitalias',
           },
           {
-            href: 'https://github.com/josefpihrt',
+            type: 'docSidebar',
+            sidebarId: 'snippeticaSidebar',
+            position: 'left',
+            label: 'Snippetica',
+          },
+          {
+            href: 'https://github.com/josefpihrt?tab=repositories&sort=stargazers&type=source',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
