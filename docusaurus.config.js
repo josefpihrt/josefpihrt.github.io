@@ -72,6 +72,12 @@ const config = {
           },
           {
             type: 'docSidebar',
+            sidebarId: 'snippeticaSidebar',
+            position: 'left',
+            label: 'Snippetica',
+          },
+          {
+            type: 'docSidebar',
             sidebarId: 'orangSidebar',
             position: 'left',
             label: 'Orang',
@@ -81,12 +87,6 @@ const config = {
             sidebarId: 'gitaliasSidebar',
             position: 'left',
             label: 'Gitalias',
-          },
-          {
-            type: 'docSidebar',
-            sidebarId: 'snippeticaSidebar',
-            position: 'left',
-            label: 'Snippetica',
           },
           {
             href: 'https://github.com/josefpihrt?tab=repositories&sort=stargazers&type=source',

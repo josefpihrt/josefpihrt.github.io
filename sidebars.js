@@ -152,6 +152,9 @@ const sidebars = {
             },
           ],
         },
+        { type: 'doc', id: 'orang/cli/how-to', label: "How to's" },
+        { type: 'doc', id: 'orang/cli/expression-syntax', label: "Expression Syntax" },
+        { type: 'doc', id: 'orang/cli/options-values', label: "Options Values" },
       ],
     },
     {

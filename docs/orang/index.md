@@ -9,11 +9,13 @@ Search, replace, rename and delete files and its content using the power of \.NE
 
 ## CLI
 
-Run following command to install CLI:
+### Installation
 
 ```sh
 dotnet tool install -g orang.dotnet.cli
 ```
+
+### Documentation
 
 See [documentation](cli) for further information.
 
@@ -27,7 +29,7 @@ dotnet add package orang.filesystem
 
 ### Documentation
 
-See [reference documentation](ref).
+See [reference documentation](ref) for further information.
 
 ### Usage
 
@@ -45,7 +47,7 @@ using Orang.FileSystem.Fluent;
 IOperationResult result = new SearchBuilder()
     .MatchDirectory(d => d
         .Name(Pattern.Any("bin", "obj", PatternOptions.Equals))
-        .NonEmptyOnly())
+        .NonEmpty())
     .SkipDirectory(Pattern.Any(".git", ".vs", "node_modules", PatternOptions.Equals | PatternOptions.Literal))
     .Delete(d => d
         .ContentOnly()
@@ -68,6 +70,7 @@ var search = new Search(
     new DirectoryMatcher()
     {
         Name = new Matcher(@"\A(bin|obj)\z"),
+        EmptyOption = FileEmptyOption.NonEmpty,
     },
     new SearchOptions()
     {
