@@ -223,15 +223,14 @@ jobs:
         with:
           name: snippetica
           path: docs/snippetica
-      - run: ls docs -R
-      # - run: npm install
-      # - run: npm run build
-      #   env:
-      #     NODE_OPTIONS: "--max_old_space_size=4096"
-      # - uses: actions/upload-artifact@v3
-      #   with:
-      #     name: docusaurus
-      #     path: build
+      - run: npm install
+      - run: npm run build
+        env:
+          NODE_OPTIONS: "--max_old_space_size=4096"
+      - uses: actions/upload-artifact@v3
+        with:
+          name: docusaurus
+          path: build
 
   deploy:
     # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
