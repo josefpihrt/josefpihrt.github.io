@@ -15,11 +15,11 @@ Install extension from [Visual Studio Marketplace](https://marketplace.visualstu
 
 ### Languages
 
-- [C++](snippetica/vs/cpp)
-- [C#](snippetica/vs/csharp)
-- [HTML](snippetica/vs/html)
-- [Visual Basic](snippetica/vs/vb)
-- [XML](snippetica/vs/xml)
+- [C++](snippets/vs/cpp)
+- [C#](snippets/vs/csharp)
+- [HTML](snippets/vs/html)
+- [Visual Basic](snippets/vs/vb)
+- [XML](snippets/vs/xml)
 
 ## Snippets for VS Code
 
@@ -29,8 +29,8 @@ Install extensions from [VS Code Marketplace](https://marketplace.visualstudio.c
 
 ### Languages
 
-- [C++](snippetica/vscode/cpp)
-- [C#](snippetica/vscode/csharp)
-- [HTML](snippetica/vscode/html)
-- [Visual Basic](snippetica/vscode/vb)
-- [XML](snippetica/vscode/xml)
+- [C++](snippets/vscode/cpp)
+- [C#](snippets/vscode/csharp)
+- [HTML](snippets/vscode/html)
+- [Visual Basic](snippets/vscode/vb)
+- [XML](snippets/vscode/xml)
