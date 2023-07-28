@@ -14,8 +14,11 @@ Remove-Item "../docs/dotmarkdown/ref.md"
 
 Remove-Item "../docs/orang/cli/commands" -Recurse -Force
 Remove-Item "../docs/orang/cli/commands.md"
-Remove-Item "../docs/orang/cli/option-values.md"
+Remove-Item "../docs/orang/cli/options-values.md"
+Remove-Item "../docs/orang/cli/expression-syntax.md"
 Remove-Item "../docs/orang/cli.md"
+Remove-Item "../docs/orang/ref" -Recurse -Force
+Remove-Item "../docs/orang/ref.md"
 
 Remove-Item "../docs/snippetica/snippets" -Recurse -Force
 Remove-Item "../docs/snippetica/quick-reference-cs-vb.md"
