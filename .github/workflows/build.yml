@@ -117,23 +117,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: josefpihrt/roslynator
-          path: roslynator
-      - uses: actions/checkout@v3
-        with:
           repository: josefpihrt/orang
-          path: orang
       - run: |
           dotnet restore
           dotnet build --no-restore
-        working-directory: "roslynator/src/CommandLine"
-      - run: ls orang -R
-      - run: |
-          dotnet restore
-          dotnet build --no-restore
-        working-directory: "orang/src"
+        working-directory: "src"
+      - run: dotnet tool install -g roslynator.dotnet.cli
       - run: >
-          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "orang/src/Orang.sln"
+          roslynator generate-doc "src/Orang.sln"
           --properties "Configuration=Release"
           --projects "Common" "FileSystem"
           --heading ".NET API Reference"
@@ -144,7 +135,7 @@ jobs:
           --ignored-root-parts all
           --max-derived-types 10
       - run: >
-          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc-root "orang/src/Orang.sln"
+          roslynator generate-doc-root "src/Orang.sln"
           --properties "Configuration=Release"
           --projects "Common" "FileSystem"
           -o "_build/ref.md"
@@ -163,22 +154,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: josefpihrt/roslynator
-          path: roslynator
-      - uses: actions/checkout@v3
-        with:
           repository: josefpihrt/dotmarkdown
-          path: dotmarkdown
       - run: |
           dotnet restore
           dotnet build --no-restore
-        working-directory: "roslynator/src/CommandLine"
-      - run: |
-          dotnet restore
-          dotnet build --no-restore
-        working-directory: "dotmarkdown/src/DotMarkdown"
+        working-directory: "src/DotMarkdown"
+      - run: dotnet tool install -g roslynator.dotnet.cli
       - run: >
-          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc "dotmarkdown/src/DotMarkdown.sln"
+          roslynator generate-doc "src/DotMarkdown.sln"
           --properties "Configuration=Release"
           --projects "DotMarkdown(netstandard1.3)" "DotMarkdown.Docusaurus(netstandard1.3)"
           --heading ".NET API Reference"
@@ -189,7 +172,7 @@ jobs:
           --ignored-root-parts all
           --max-derived-types 10
       - run: >
-          "roslynator/src/CommandLine/bin/Release/net7.0/Roslynator" generate-doc-root "dotmarkdown/src/DotMarkdown.sln"
+          roslynator generate-doc-root "src/DotMarkdown.sln"
           --properties "Configuration=Release"
           --projects "DotMarkdown(netstandard1.3)" "DotMarkdown.Docusaurus(netstandard1.3)"
           -o "_build/ref.md"
@@ -242,17 +225,10 @@ jobs:
       - name: Resolve version
         id: version
         run: |
-          echo 0
-          dotnet-gitversion
-          echo 1
           dotnet-gitversion > version.json
-          echo 2
           version="$(jq -r '.MajorMinorPatch' version.json)"
-          echo 3
           echo "Resolved version: $version"
-          echo 4
           echo "version=${version}" >> $GITHUB_OUTPUT
-          echo 5
       - run: >
           sed -i 's/"version": "1.0.0"/"version": "${{ steps.version.outputs.version }}"/' package.json
       - uses: actions/download-artifact@v3
