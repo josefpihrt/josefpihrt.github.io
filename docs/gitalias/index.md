@@ -2,7 +2,7 @@
 sidebar_label: "Intro"
 ---
 
-# gitalias
+# Gitalias
 
 ## Summary
 
@@ -15,6 +15,31 @@ There is special alias `alias` that lists all aliases (alias for `config --globa
 ## Usage
 
 - Copy [list of aliases](https://raw.githubusercontent.com/JosefPihrt/gitalias/main/alias.gitconfig) and paste it to your [.gitconfig](https://git-scm.com/docs/git-config) file.
+
+### Usage Example
+
+#### Implement feature on a new branch
+```sh
+git th                 # reset --hard
+git sm                 # switch main
+git l                  # pull
+git sc feature/foo     # switch --create feature/foo
+                       # Implement feature ...
+git aa                 # add --all
+git cm "Implement foo" # commit --message "Implement foo"
+```
+
+#### Create and Merge PR
+
+Use GitHub CLI or web UI ...
+
+#### Clean feature branch
+```sh
+git sm              # switch main
+git l               # pull
+git opo             # remote prune origin
+git bdf feature/foo # branch --delete --force feature/foo
+```
 
 ## Rules
 
