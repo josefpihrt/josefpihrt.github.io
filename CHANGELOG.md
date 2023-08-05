@@ -7,9 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.1] - 2023-08-05
+
 ### Added
 
+- Improve documentation for Gitalias ([#9](https://github.com/josefpihrt/josefpihrt.github.io/pull/9)).
+
 ## [0.3.0] - 2023-07-28
+
+### Added
 
 - Add documentation for Snippetica ([#5](https://github.com/josefpihrt/josefpihrt.github.io/pull/5)).
 - Add documentation for Orang .NET API ([#8](https://github.com/josefpihrt/josefpihrt.github.io/pull/8)).
