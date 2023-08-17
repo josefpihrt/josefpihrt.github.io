@@ -195,15 +195,12 @@ jobs:
       - run: |
           dotnet restore src/Snippetica.CodeGeneration.DocumentationGenerator/DocumentationGenerator.csproj
           dotnet build src/Snippetica.CodeGeneration.DocumentationGenerator/DocumentationGenerator.csproj --no-restore
-      - run: |
-          cd tools
-          ./generate_docs.ps1
+      - run: "src/Snippetica.CodeGeneration.DocumentationGenerator/bin/Release/net6.0/Snippetica.CodeGeneration.DocumentationGenerator src _build src/Snippetica.CodeGeneration.Metadata/Data"
         name: Generate documentation
-        shell: pwsh
       - uses: actions/upload-artifact@v3
         with:
           name: snippetica
-          path: tools/build
+          path: _build
 
   build_docusaurus:
     needs: [
