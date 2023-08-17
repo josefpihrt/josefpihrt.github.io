@@ -193,8 +193,8 @@ jobs:
         with:
           repository: josefpihrt/snippetica
       - run: |
-          dotnet restore src/Tools/DocumentationGenerator/DocumentationGenerator.csproj
-          dotnet build src/Tools/DocumentationGenerator/DocumentationGenerator.csproj --no-restore
+          dotnet restore src/Snippetica.CodeGeneration.DocumentationGenerator/DocumentationGenerator.csproj
+          dotnet build src/Snippetica.CodeGeneration.DocumentationGenerator/DocumentationGenerator.csproj --no-restore
       - run: |
           cd tools
           ./generate_docs.ps1
