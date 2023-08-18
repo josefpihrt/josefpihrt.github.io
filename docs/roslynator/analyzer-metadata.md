@@ -9,8 +9,11 @@ Analyzers metadata are stored in [Analyzers.xml](https://github.com/JosefPihrt/R
 ## XML
 
 ```xml title="Analyzers.xml"
-<Analyzer Identifier="">
+<Analyzer>
   <Id>RCS</Id>
+  <Identifier></Identifier>
+  <Status></Status>
+  <ObsoleteMessage></ObsoleteMessage>
   <Title></Title>
   <MessageFormat></MessageFormat>
   <Category>General</Category>
@@ -43,6 +46,8 @@ Analyzers metadata are stored in [Analyzers.xml](https://github.com/JosefPihrt/R
 - `Analyzer`
   - `Identifier` - **\[required\]** Identifier that represents analyzer in a source code.
   - `Id` - **\[required\]** Internal ID of the refactoring (prefix `RCS` + sequential number). Common analyzer ID starts with `RCS1`, formatting analyzer ID starts with `RCS0`, code analysis analyzer ID starts with `RCS9`.
+  - `Status` - **\[optional\]** Allowed values are `Enabled` (default), `Disabled` or `Obsolete`.
+  - `ObsoleteMessage` - **\[optional\]** A message to display when `Status` is `Obsolete`.
   - `Title` - **\[required\]** Short description of the analyzer
   - `MessageFormat` - **\[optional\]** Required only if message is parametrized, otherwise same as title.
   - `DefaultSeverity` - **\[required\]** `Hidden`, `Info`, `Warning` or `Error`. 

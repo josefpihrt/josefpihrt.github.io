@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.3] - 2023-08-18
+
+### Changed
+
+- Update analyzer XML schema
+- Remove obsolete analyzers from the list of analyzers
+- Mark obsolete analyzers with admonition
+
 ## [0.3.2] - 2023-08-17
 
 ### Changed
