@@ -229,6 +229,7 @@ jobs:
       - name: Resolve version
         id: version
         run: |
+          dotnet-gitversion
           dotnet-gitversion > version.json
           version="$(jq -r '.MajorMinorPatch' version.json)"
           echo "Resolved version: $version"
