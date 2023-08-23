@@ -34,6 +34,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
+          ref: v4.4.0
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir _build
@@ -52,6 +53,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
+          ref: cli-v0.6.1
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
@@ -67,6 +69,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
+          ref: v4.4.0
       - run: |
           cd tools
           ./generate_ref_docs.ps1
@@ -86,6 +89,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
+          ref: v4.4.0
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet "bin/Release/net7.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
@@ -103,6 +107,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/orang
+          ref: v0.4.0
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
@@ -118,6 +123,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/orang
+          ref: v0.4.0
       - run: |
           dotnet restore
           dotnet build --no-restore
@@ -155,6 +161,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/dotmarkdown
+          ref: v0.3.0
       - run: |
           dotnet restore
           dotnet build --no-restore
@@ -222,6 +229,7 @@ jobs:
       - name: Resolve version
         id: version
         run: |
+          dotnet-gitversion
           dotnet-gitversion > version.json
           version="$(jq -r '.MajorMinorPatch' version.json)"
           echo "Resolved version: $version"
