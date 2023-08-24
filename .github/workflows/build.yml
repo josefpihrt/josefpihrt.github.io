@@ -13,6 +13,11 @@ env:
   WarningsNotAsErrors: 1591
   RunCodeAnalysis: false
 
+  RoslynatorRef: v4.4.0
+  RoslynatorCliRef: cli-v0.6.1
+  DotMarkdownRef: v0.3.0
+  OrangRef: v0.4.0
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -34,7 +39,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: v4.4.0
+          ref: ${{ env.RoslynatorRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir _build
@@ -53,7 +58,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: cli-v0.6.1
+          ref: ${{ env.RoslynatorCliRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
@@ -69,7 +74,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: v4.4.0
+          ref: ${{ env.RoslynatorRef }}
       - run: |
           cd tools
           ./generate_ref_docs.ps1
@@ -89,7 +94,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/roslynator
-          ref: v4.4.0
+          ref: ${{ env.RoslynatorRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet "bin/Release/net7.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
@@ -107,7 +112,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/orang
-          ref: v0.4.0
+          ref: ${{ env.OrangRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
@@ -123,7 +128,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/orang
-          ref: v0.4.0
+          ref: ${{ env.OrangRef }}
       - run: |
           dotnet restore
           dotnet build --no-restore
@@ -161,7 +166,7 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/dotmarkdown
-          ref: v0.3.0
+          ref: "v${{ env.DotMarkdownRef }}"
       - run: |
           dotnet restore
           dotnet build --no-restore
