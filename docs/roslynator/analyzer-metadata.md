@@ -27,6 +27,9 @@ Analyzers metadata are stored in [Analyzers.xml](https://github.com/JosefPihrt/R
     <Sample>
       <Before><![CDATA[]]></Before>
       <After><![CDATA[]]></After>
+      <ConfigOptions>
+        <Option Key="" Value="" />
+      </ConfigOptions>
     </Sample>
   </Samples>
   <ConfigOptions>
@@ -60,6 +63,10 @@ Analyzers metadata are stored in [Analyzers.xml](https://github.com/JosefPihrt/R
     - `Sample` - 
       - `Before` - **\[required\]** A code that will produce a diagnostic.
       - `After` - **\[optional\]** A code with a code fix applied.
+      - `ConfigOptions` - **\[optional\]**
+        - `Option` - EditorConfig option associated with the sample.
+          - `Key` - **\[required\]** Option key in EditorConfig file.
+          - `Value` - **\[required\]** Option value in EditorConfig file.
   - `ConfigOptions` - **\[optional\]** 
     - `Option` - 
       - `Key` - **\[required\]** Option key in EditorConfig file.
