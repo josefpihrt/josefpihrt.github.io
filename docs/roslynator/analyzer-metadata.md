@@ -65,8 +65,8 @@ Analyzers metadata are stored in [Analyzers.xml](https://github.com/JosefPihrt/R
       - `After` - **\[optional\]** A code with a code fix applied.
       - `ConfigOptions` - **\[optional\]**
         - `Option` - EditorConfig option associated with the sample.
-          - `Key` - **\[required\]** Option key in EditorConfig file.
-          - `Value` - **\[required\]** Option value in EditorConfig file.
+          - `Key` - **\[required\]** EditorConfig option key.
+          - `Value` - **\[required\]** EditorConfig option value.
   - `ConfigOptions` - **\[optional\]** 
     - `Option` - 
       - `Key` - **\[required\]** Option key in EditorConfig file.
