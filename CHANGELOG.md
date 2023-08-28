@@ -7,25 +7,31 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.1] - 2023-08-28
+
+### Added
+
+- Add search bar ([#19](https://github.com/josefpihrt/josefpihrt.github.io/pull/19))
+
 ## [0.4.0] - 2023-08-27
 
 ### Changed
 
-- Update analyzer XML schema
-- Bump Roslynator to `4.5.0`
-- Bump Roslynator CLI to `0.7.0`
+- Update analyzer XML schema ([#16](https://github.com/josefpihrt/josefpihrt.github.io/pull/16))
+- Bump Roslynator to `4.5.0` ([#17](https://github.com/josefpihrt/josefpihrt.github.io/pull/17))
+- Bump Roslynator CLI to `0.7.0` ([#17](https://github.com/josefpihrt/josefpihrt.github.io/pull/17))
 
 ## [0.3.4] - 2023-08-23
 
 ### Fixed
 
-- Add tags to GH workflow
+- Add tags to GH workflow ([#13](https://github.com/josefpihrt/josefpihrt.github.io/pull/13))
 
 ## [0.3.3] - 2023-08-18
 
 ### Changed
 
-- Update analyzer XML schema
+- Update analyzer XML schema ([#12](https://github.com/josefpihrt/josefpihrt.github.io/pull/12))
 - Remove obsolete analyzers from the list of analyzers
 - Mark obsolete analyzers with admonition
 
@@ -33,8 +39,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update DotMarkdown documentation to `0.3.0`
-- Update Orang documentation to `0.4.0`
+- Update DotMarkdown documentation to `0.3.0` ([#11](https://github.com/josefpihrt/josefpihrt.github.io/pull/11))
+- Update Orang documentation to `0.4.0` ([#11](https://github.com/josefpihrt/josefpihrt.github.io/pull/11))
 
 ## [0.3.1] - 2023-08-05
 
