@@ -2,8 +2,8 @@
 
 Roslynator provides packages for unit testing of analyzers, refactoring and code fixes:
 
-- [MSTest-based package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit)
-- [Xunit-based package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.MSTest)
+- [MSTest-based package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.MSTest)
+- [Xunit-based package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit)
 
 Roslynator repository contains extensive usage of Roslynator testing framework:
 
