@@ -26,6 +26,12 @@ Contributions are welcome! If you are interested please see:
 Bugfixes or small improvements can be implemented right away. Larger task like adding new analyzer or refactoring should be discussed first.
 :::
 
+## .NET Foundation
+
+Roslynator is supported by the [.NET Foundation](https://www.dotnetfoundation.org/projects)
+and has adopted the code of conduct defined by the Contributor Covenant to clarify expected behavior in our community.
+For more information see the [.NET Foundation Code of Conduct](https://dotnetfoundation.org/code-of-conduct).
+
 ## Command Line Tool
 
 Run following command to install Roslynator command line tool:
