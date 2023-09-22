@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.2] - 2023-09-22
+
+### Fixed
+
+- Fix links to testing Nuget packages ([#20](https://github.com/JosefPihrt/josefpihrt.github.io/pull/20))
+
 ## [0.4.1] - 2023-08-28
 
 ### Added
