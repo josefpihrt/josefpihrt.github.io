@@ -38,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: josefpihrt/roslynator
+          repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
@@ -57,7 +57,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: josefpihrt/roslynator
+          repository: dotnet/roslynator
           ref: ${{ env.RoslynatorCliRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
@@ -73,7 +73,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: josefpihrt/roslynator
+          repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
       - run: |
           cd tools
@@ -93,7 +93,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          repository: josefpihrt/roslynator
+          repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
