@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Migrate Roslynator to .NET Foundation ([#21](https://github.com/josefpihrt/josefpihrt.github.io/pull/21))
+
 ## [0.4.1] - 2023-08-28
 
 ### Added
