@@ -7,11 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.4.2] - 2023-09-22
+## [0.4.2] - 2023-09-25
+
+### Changed
+
+- Migrate Roslynator to .NET Foundation ([#21](https://github.com/josefpihrt/josefpihrt.github.io/pull/21))
 
 ### Fixed
 
-- Fix links to testing Nuget packages ([#20](https://github.com/JosefPihrt/josefpihrt.github.io/pull/20))
+- Fix links to testing Nuget packages ([#20](https://github.com/josefpihrt/josefpihrt.github.io/pull/20))
 
 ## [0.4.1] - 2023-08-28
 
