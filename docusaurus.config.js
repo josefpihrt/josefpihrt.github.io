@@ -54,7 +54,7 @@ const config = {
       navbar: {
         // title: '',
         logo: {
-          alt: 'Logo',
+          alt: 'Josef Pihrt',
           src: 'img/logo-large.png',
         },
         items: [
