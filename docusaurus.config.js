@@ -97,6 +97,34 @@ const config = {
         ],
       },
       footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'GitHub',
+            items: [
+              {
+                label: 'Roslynator',
+                href: 'https://github.com/dotnet/roslynator',
+              },
+              {
+                label: 'DotMarkdown',
+                href: 'https://github.com/josefpihrt/dotmarkdown',
+              },
+              {
+                label: 'Snippetica',
+                href: 'https://github.com/josefpihrt/snippetica',
+              },
+              {
+                label: 'Orang',
+                href: 'https://github.com/josefpihrt/orang',
+              },
+              {
+                label: 'Gitalias',
+                href: 'https://github.com/josefpihrt/gitalias',
+              },
+            ],
+          },
+        ],
         copyright: `Copyright © 2022-${new Date().getFullYear()} Josef Pihrt. Built with Docusaurus.`,
       },
       prism: {
