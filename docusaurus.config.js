@@ -89,7 +89,7 @@ const config = {
             label: 'Gitalias',
           },
           {
-            href: 'https://github.com/josefpihrt?tab=repositories&sort=stargazers&type=source',
+            href: 'https://github.com/josefpihrt',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
@@ -121,6 +121,23 @@ const config = {
               {
                 label: 'Gitalias',
                 href: 'https://github.com/josefpihrt/gitalias',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/JosefPihrt',
+              },
+              {
+                label: 'NuGet',
+                href: 'https://www.nuget.org/profiles/jpihrt',
+              },
+              {
+                label: 'Roslynator on X',
+                href: 'https://www.twitter.com/roslynator',
               },
             ],
           },
