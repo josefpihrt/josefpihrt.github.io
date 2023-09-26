@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'Josef Pihrt',
-  tagline: 'Welcome to My GitHub Pages',
+  title: 'My Docs',
+  tagline: 'Documentation for my open source projects',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
@@ -52,10 +52,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Josef Pihrt',
+        // title: '',
         logo: {
-          alt: 'Logo',
-          src: 'img/logo.svg',
+          alt: 'Josef Pihrt',
+          src: 'img/logo-large.png',
         },
         items: [
           {
