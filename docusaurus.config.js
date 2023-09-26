@@ -52,10 +52,10 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'Josef Pihrt',
+        // title: 'Josef Pihrt',
         logo: {
           alt: 'Logo',
-          src: 'img/logo.svg',
+          src: 'img/logo-large.png',
         },
         items: [
           {
