@@ -3,7 +3,14 @@ import clsx from 'clsx';
 import styles from './styles.module.css';
 import Link from '@docusaurus/Link';
 
-const FeatureList = [
+type FeatureItem = {
+  title: string;
+  imageUrl: string;
+  relativeUrl: string;
+  description: JSX.Element;
+};
+
+const FeatureList: FeatureItem[] = [
   {
     title: 'Roslynator',
     imageUrl: 'https://raw.githubusercontent.com/dotnet/roslynator/main/images/roslynator-logo-large.png',
@@ -36,13 +43,13 @@ const FeatureList = [
   },
 ];
 
-function Feature({title, imageUrl, relativeUrl, description}) {
+function Feature({title, imageUrl, relativeUrl, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Link to={`docs/${relativeUrl}`}>
+       <Link to={`docs/${relativeUrl}`}>
           <img src={imageUrl} className={styles.featureImg} />
-          </Link> 
+        </Link> 
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>
@@ -52,7 +59,7 @@ function Feature({title, imageUrl, relativeUrl, description}) {
   );
 }
 
-export default function HomepageFeatures() {
+export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
       <div className="container">
