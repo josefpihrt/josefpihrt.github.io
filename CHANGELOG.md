@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Update logo ([#22](https://github.com/josefpihrt/josefpihrt.github.io/pull/22))
+
 ## [0.4.2] - 2023-09-25
 
 ### Changed
