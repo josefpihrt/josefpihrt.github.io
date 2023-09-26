@@ -1,11 +1,12 @@
 .features {
   display: flex;
   align-items: center;
-  padding: 3rem 0;
+  padding: 2rem 0;
   width: 100%;
 }
 
 .featureImg {
+  margin-bottom: 1rem;
   height: 128px;
   width: 128px;
 }
