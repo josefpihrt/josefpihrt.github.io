@@ -89,7 +89,7 @@ const config = {
             label: 'Gitalias',
           },
           {
-            href: 'https://github.com/josefpihrt?tab=repositories&sort=stargazers&type=source',
+            href: 'https://github.com/josefpihrt',
             position: 'right',
             className: 'header-github-link',
             'aria-label': 'GitHub repository',
@@ -97,6 +97,51 @@ const config = {
         ],
       },
       footer: {
+        style: 'dark',
+        links: [
+          {
+            title: 'GitHub',
+            items: [
+              {
+                label: 'Roslynator',
+                href: 'https://github.com/dotnet/roslynator',
+              },
+              {
+                label: 'DotMarkdown',
+                href: 'https://github.com/josefpihrt/dotmarkdown',
+              },
+              {
+                label: 'Snippetica',
+                href: 'https://github.com/josefpihrt/snippetica',
+              },
+              {
+                label: 'Orang',
+                href: 'https://github.com/josefpihrt/orang',
+              },
+              {
+                label: 'Gitalias',
+                href: 'https://github.com/josefpihrt/gitalias',
+              },
+            ],
+          },
+          {
+            title: 'More',
+            items: [
+              {
+                label: 'GitHub',
+                href: 'https://github.com/JosefPihrt',
+              },
+              {
+                label: 'NuGet',
+                href: 'https://www.nuget.org/profiles/jpihrt',
+              },
+              {
+                label: 'Roslynator on X',
+                href: 'https://www.twitter.com/roslynator',
+              },
+            ],
+          },
+        ],
         copyright: `Copyright © 2022-${new Date().getFullYear()} Josef Pihrt. Built with Docusaurus.`,
       },
       prism: {

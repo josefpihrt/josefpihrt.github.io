@@ -7,12 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.3] - 2023-09-26
+
 ### Changed
 
 - Update Docusaurus to `2.4.3` ([#23](https://github.com/josefpihrt/josefpihrt.github.io/pull/23))
 - Update Orang to `0.5.0` ([#24](https://github.com/josefpihrt/josefpihrt.github.io/pull/24))
 - Update logo ([#22](https://github.com/josefpihrt/josefpihrt.github.io/pull/22))
 - Migrate to Typescript ([#26](https://github.com/josefpihrt/josefpihrt.github.io/pull/26))
+- Update homepage ([#25](https://github.com/josefpihrt/josefpihrt.github.io/pull/25))
+  - Add featuring projects
+  - Update footer
 
 ## [0.4.2] - 2023-09-25
 
