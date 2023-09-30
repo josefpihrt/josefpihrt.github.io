@@ -15,11 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update Docusaurus to `2.4.3` ([#23](https://github.com/josefpihrt/josefpihrt.github.io/pull/23))
-- Update Orang to `0.5.0` ([#24](https://github.com/josefpihrt/josefpihrt.github.io/pull/24))
-- Update logo ([#22](https://github.com/josefpihrt/josefpihrt.github.io/pull/22))
-- Migrate to Typescript ([#26](https://github.com/josefpihrt/josefpihrt.github.io/pull/26))
-- Update homepage ([#25](https://github.com/josefpihrt/josefpihrt.github.io/pull/25))
+- Update Docusaurus to `2.4.3` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/23))
+- Update Orang to `0.5.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/24))
+- Update logo ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/22))
+- Migrate to Typescript ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/26))
+- Update homepage ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/25))
   - Add featuring projects
   - Update footer
 
@@ -27,37 +27,37 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Migrate Roslynator to .NET Foundation ([#21](https://github.com/josefpihrt/josefpihrt.github.io/pull/21))
+- Migrate Roslynator to .NET Foundation ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/21))
 
 ### Fixed
 
-- Fix links to testing Nuget packages ([#20](https://github.com/josefpihrt/josefpihrt.github.io/pull/20))
+- Fix links to testing Nuget packages ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/20))
 
 ## [0.4.1] - 2023-08-28
 
 ### Added
 
-- Add search bar ([#19](https://github.com/josefpihrt/josefpihrt.github.io/pull/19))
+- Add search bar ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/19))
 
 ## [0.4.0] - 2023-08-27
 
 ### Changed
 
-- Update analyzer XML schema ([#16](https://github.com/josefpihrt/josefpihrt.github.io/pull/16))
-- Bump Roslynator to `4.5.0` ([#17](https://github.com/josefpihrt/josefpihrt.github.io/pull/17))
-- Bump Roslynator CLI to `0.7.0` ([#17](https://github.com/josefpihrt/josefpihrt.github.io/pull/17))
+- Update analyzer XML schema ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/16))
+- Bump Roslynator to `4.5.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/17))
+- Bump Roslynator CLI to `0.7.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/17))
 
 ## [0.3.4] - 2023-08-23
 
 ### Fixed
 
-- Add tags to GH workflow ([#13](https://github.com/josefpihrt/josefpihrt.github.io/pull/13))
+- Add tags to GH workflow ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/13))
 
 ## [0.3.3] - 2023-08-18
 
 ### Changed
 
-- Update analyzer XML schema ([#12](https://github.com/josefpihrt/josefpihrt.github.io/pull/12))
+- Update analyzer XML schema ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/12))
 - Remove obsolete analyzers from the list of analyzers
 - Mark obsolete analyzers with admonition
 
@@ -65,33 +65,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update DotMarkdown documentation to `0.3.0` ([#11](https://github.com/josefpihrt/josefpihrt.github.io/pull/11))
-- Update Orang documentation to `0.4.0` ([#11](https://github.com/josefpihrt/josefpihrt.github.io/pull/11))
+- Update DotMarkdown documentation to `0.3.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/11))
+- Update Orang documentation to `0.4.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/11))
 
 ## [0.3.1] - 2023-08-05
 
 ### Added
 
-- Improve documentation for Gitalias ([#9](https://github.com/josefpihrt/josefpihrt.github.io/pull/9)).
+- Improve documentation for Gitalias ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/9)).
 
 ## [0.3.0] - 2023-07-28
 
 ### Added
 
-- Add documentation for Snippetica ([#5](https://github.com/josefpihrt/josefpihrt.github.io/pull/5)).
-- Add documentation for Orang .NET API ([#8](https://github.com/josefpihrt/josefpihrt.github.io/pull/8)).
+- Add documentation for Snippetica ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/5)).
+- Add documentation for Orang .NET API ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/8)).
 
 ## [0.2.0] - 2023-07-27
 
 ### Added
 
-- Add documentation for gitalias ([#4](https://github.com/josefpihrt/josefpihrt.github.io/pull/4)).
+- Add documentation for gitalias ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/4)).
 - Add reference documentation for [DotMarkdown.Docusaurus](https://www.nuget.org/packages/DotMarkdown.Docusaurus)
 
 ## [0.1.0] - 2023-07-23
 
 ### Added
 
-- Add GitHub icon to navbar ([#3](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
-- Make sidebar hideable ([#3](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
-- Add documentation for [Roslynator](https://github.com/josefpihrt/roslynator), [Orang](https://github.com/josefpihrt/orang) and [DotMarkdown](https://github.com/josefpihrt/dotmarkdown) ([#1](https://github.com/josefpihrt/josefpihrt.github.io/pull/1)).
+- Add GitHub icon to navbar ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
+- Make sidebar hideable ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
+- Add documentation for [Roslynator](https://github.com/josefpihrt/roslynator), [Orang](https://github.com/josefpihrt/orang) and [DotMarkdown](https://github.com/josefpihrt/dotmarkdown) ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/1)).
