@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Change footer style to 'light' ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/27))
+
 ## [0.4.3] - 2023-09-26
 
 ### Changed
