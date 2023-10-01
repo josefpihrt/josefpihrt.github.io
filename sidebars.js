@@ -42,8 +42,8 @@ const sidebars = {
         slug: 'roslynator/developers'
       },
       items: [
-        'roslynator/how-to-use-net-api',
         'roslynator/testing',
+        'roslynator/how-to-use-net-api',
         'roslynator/how-to-add-new-analyzer',
         'roslynator/how-to-add-new-refactoring',
         {
