@@ -35,7 +35,7 @@ Therefore it's necessary to include `dll` files themselves:
     <developmentDependency>true</developmentDependency>
   </metadata>
   <files>
-    <file src="bin\$Configuration$\netstandard2.0\Foo.Analyzers*.dll" target="analyzers\dotnet\cs" />
+    <file src="bin\$Configuration$\netstandard2.0\Foo.Analyzers.dll" target="analyzers\dotnet\cs" />
     <file src="bin\$Configuration$\netstandard2.0\Roslynator*.dll" target="analyzers\dotnet\cs" />
     <file src="tools\*.ps1" target="tools\" />
   </files>
@@ -49,8 +49,7 @@ Therefore it's necessary to include `dll` files themselves:
     - `dotnet`
       - `cs`
         - `Foo.Analyzers.dll`
-        - `Foo.Analyzers.CodeFixes.dll`
-        - `Roslynator.Core.dll`
-        - `Roslynator.CSharp.dll`
-        - `Roslynator.CSharp.Workspaces.dll`
-        - `Roslynator.Workspace.Core.dll`
+        - **`Roslynator.Core.dll`**
+        - **`Roslynator.CSharp.dll`**
+        - **`Roslynator.CSharp.Workspaces.dll`**
+        - **`Roslynator.Workspace.Core.dll`**
