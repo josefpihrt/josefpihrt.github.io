@@ -56,6 +56,7 @@ See [documentation](cli) for further information.
 - Roslynator .NET API extends Roslyn API and it can be used for development of custom analyzers/refactorings.
 - Packages do not contain any analyzers/refactorings themselves.
 - See [reference documentation](ref).
+- See "[How to use Roslynator .NET API](how-to-use-net-api)"
 
 | Package | Version | Extends |
 | --- | --- | --- |
