@@ -44,6 +44,7 @@ const sidebars = {
       items: [
         'roslynator/how-to-add-new-analyzer',
         'roslynator/how-to-add-new-refactoring',
+        'roslynator/how-to-use-net-api',
         'roslynator/testing',
         {
           type: 'category',
