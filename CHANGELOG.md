@@ -90,4 +90,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add GitHub icon to navbar ([#3](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
 - Make sidebar hideable ([#3](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
-- Add documentation for [Roslynator](https://github.com/josefpihrt/roslynator), [Orang](https://github.com/josefpihrt/orang) and [DotMarkdown](https://github.com/josefpihrt/dotmarkdown) ([#1](https://github.com/josefpihrt/josefpihrt.github.io/pull/1)).
+- Add documentation for [Roslynator](https://github.com/dotnet/roslynator), [Orang](https://github.com/josefpihrt/orang) and [DotMarkdown](https://github.com/josefpihrt/dotmarkdown) ([#1](https://github.com/josefpihrt/josefpihrt.github.io/pull/1)).

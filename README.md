@@ -2,7 +2,7 @@
 
 This website contains documentation for following projects:
 
-- [Roslynator](https://github.com/josefpihrt/roslynator)
+- [Roslynator](https://github.com/dotnet/roslynator)
 - [DotMarkdown](https://github.com/josefpihrt/dotmarkdown)
 - [Orang](https://github.com/josefpihrt/orang)
 - [Snippetica](https://github.com/josefpihrt/snippetica)
@@ -13,7 +13,7 @@ This website is built using [Docusaurus 2](https://docusaurus.io/), a modern sta
 
 For local development it's necessary to pull following repositories and place them next to this repository:
 
-- [Roslynator](https://github.com/josefpihrt/roslynator)
+- [Roslynator](https://github.com/dotnet/roslynator)
 - [DotMarkdown](https://github.com/josefpihrt/dotmarkdown)
 - [Orang](https://github.com/josefpihrt/orang)
 - [Snippetica](https://github.com/josefpihrt/snippetica)
