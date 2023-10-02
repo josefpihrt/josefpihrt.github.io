@@ -302,7 +302,7 @@ jobs:
               _wordb/data/tech.names.txt \
               _wordb/data/tech.acronyms.txt \
             --exclude \
-              docs/dotmarkdown/ref/**/languageidentifiers/** \
+              docs/dotmarkdown/ref/**/LanguageIdentifiers/** \
               docs/snippetica/snippets/vs*/html.md
       - run: npm install
       - run: npm run build
