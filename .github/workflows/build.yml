@@ -42,8 +42,9 @@ jobs:
           ref: feature/glob
       - run: dotnet restore Orang.sln
       - run: dotnet build Orang.sln --no-restore
+      - run: ls -R ./CommandLine/bin/Release
       - run: |
-          ./src/CommandLine/bin/Release/net6.0/Orang spellcheck --dry-run --min-word-length 4 \
+          ./CommandLine/bin/Release/net6.0/Orang spellcheck --dry-run --min-word-length 4 \
             --words \
               src/spellcheck
 
