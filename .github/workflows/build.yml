@@ -45,7 +45,7 @@ jobs:
       - run: |
           ./CommandLine/bin/Release/net6.0/Orang spellcheck --dry-run --min-word-length 4 \
             --words \
-              spellcheck
+              spellcheck -v di
 
   build_roslynator:
     runs-on: ubuntu-20.04
