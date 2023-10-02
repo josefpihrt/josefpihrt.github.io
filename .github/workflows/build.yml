@@ -293,7 +293,7 @@ jobs:
       - run: dotnet restore _orang/src/Orang.sln
       - run: dotnet build _orang/src/Orang.sln --no-restore
       - run: |
-           _orang/src/CommandLine/bin/Release/net6.0/Orang spellcheck docs --dry-run --min-word-length 4 \
+          _orang/src/CommandLine/bin/Release/net6.0/Orang spellcheck docs --dry-run --min-word-length 4 \
             --words \
               spellcheck \
               _wordb/data/en \
