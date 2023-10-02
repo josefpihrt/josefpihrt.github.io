@@ -43,9 +43,7 @@ jobs:
       - run: dotnet restore Orang.sln
       - run: dotnet build Orang.sln --no-restore
       - run: |
-          CommandLine/bin/Release/net6.0/Orang spellcheck ../tools --dry-run --min-word-length 4 \
-            --words \
-              spellcheck --output foo
+          "CommandLine/bin/Release/net6.0/Orang" spellcheck ../tools --dry-run --min-word-length 4 --words spellcheck --output foo
       - run: cat foo
 
   build_roslynator:
