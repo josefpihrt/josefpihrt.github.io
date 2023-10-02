@@ -23,7 +23,7 @@ using Xunit;
 public class AccessibilityModifiersTests
     : XunitDiagnosticVerifier<AccessibilityModifiersAnalyzer, AccessibilityModifiersCodeFixProvider>
 {
-    public override DiagnosticDescriptor Descriptor { get; } = DiagnosticDescriptors.AddOrRemoveAccessibilityModifiers;
+    public override DiagnosticDescriptor Descriptor { get; } = AccessibilityModifiersAnalyzer.Descriptor;
 
     [Fact]
     public async Task Test()
