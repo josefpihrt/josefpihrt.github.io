@@ -284,23 +284,23 @@ jobs:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/wordb
-          path: wordb
+          path: _wordb
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/orang
           ref: feature/glob
-          path: orang
-      - run: dotnet restore orang
-      - run: dotnet build orang --no-restore
+          path: _orang
+      - run: dotnet restore _orang/Orang.sln
+      - run: dotnet build _orang/Orang.sln --no-restore
       - run: |
-          orang/src/CommandLine/bin/Release/net6.0/Orang spellcheck docs --dry-run --min-word-length 4 \
+          _orang/src/CommandLine/bin/Release/net6.0/Orang spellcheck docs --dry-run --min-word-length 4 \
             --words \
               spellcheck \
-              ../wordb/data/en \
-              ../wordb/data/en-us \
-              ../wordb/data/names.txt \
-              ../wordb/data/tech.names.txt \
-              ../wordb/data/tech.acronyms.txt \
+              _wordb/data/en \
+              _wordb/data/en-us \
+              _wordb/data/names.txt \
+              _wordb/data/tech.names.txt \
+              _wordb/data/tech.acronyms.txt \
             --exclude \
               dotmarkdown/ref/**/languageidentifiers/** \
               snippetica/snippets/vs*/html.md
