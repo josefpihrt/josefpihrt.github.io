@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add spellcheck to CI/CD ([#PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/30))
+
 ## [0.4.4] - 2023-10-02
 
 ### Added
