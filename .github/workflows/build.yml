@@ -30,6 +30,20 @@ concurrency:
 
 jobs:
 
+  spellcheck_test:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/orang
+          ref: feature/glob
+      - run: dotnet restore orang
+      - run: dotnet build orang --no-restore
+      - run: |
+          ./src/CommandLine/bin/Release/net6.0/Orang spellcheck src --dry-run --min-word-length 4
+            --words \
+              src/spellcheck
+
   build_roslynator:
     runs-on: ubuntu-20.04
     defaults:
@@ -285,9 +299,16 @@ jobs:
         with:
           repository: josefpihrt/wordb
           path: wordb
-      - run: dotnet tool install -g orang.dotnet.cli --version 0.5.0
+      - uses: actions/checkout@v3
+        with:
+          repository: josefpihrt/orang
+          ref: feature/glob
+          path: orang
+      - run: dotnet restore orang
+      - run: dotnet build orang --no-restore
+      # - run: dotnet tool install -g orang.dotnet.cli --version 0.5.0
       - run: |
-          orang spellcheck docs --dry-run --min-word-length 4 \
+          ./orang/src/CommandLine/bin/Release/net6.0/Orang spellcheck docs --dry-run --min-word-length 4 \
             --words \
               spellcheck \
               ../wordb/data/en \
