@@ -290,8 +290,8 @@ jobs:
           repository: josefpihrt/orang
           ref: feature/glob
           path: _orang
-      - run: dotnet restore _orang/Orang.sln
-      - run: dotnet build _orang/Orang.sln --no-restore
+      - run: dotnet restore _orang/src/Orang.sln
+      - run: dotnet build _orang/src/Orang.sln --no-restore
       - run: |
           _orang/src/CommandLine/bin/Release/net6.0/Orang spellcheck docs --dry-run --min-word-length 4 \
             --words \
