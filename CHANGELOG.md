@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add page "How to use Roslynator .NET API" ([#PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/29))
+
 ## [0.4.3] - 2023-09-26
 
 ### Changed
