@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Roslynator: Add documentation for unit tests ([#28](https://github.com/josefpihrt/josefpihrt.github.io/pull/28))
+- Add documentation for Roslynator unit tests ([#PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/28))
 
 ## [0.4.4] - 2023-10-02
 
