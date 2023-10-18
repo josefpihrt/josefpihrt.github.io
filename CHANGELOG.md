@@ -7,11 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.5] - 2023-10-18
+
+### Changed
+
+- Update Roslynator to `4.6.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/29))
+- Update Roslynator CLI to `0.7.1` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/29))
+
 ## [0.4.4] - 2023-10-02
 
 ### Added
 
-- Add page "How to use Roslynator .NET API" ([#PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/29))
+- Add page "How to use Roslynator .NET API" ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/29))
 
 ### Changed
 
