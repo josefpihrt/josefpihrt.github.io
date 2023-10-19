@@ -16,7 +16,7 @@ env:
   RoslynatorRef: v4.6.0
   RoslynatorCliRef: cli-v0.7.1
   DotMarkdownRef: v0.3.0
-  OrangRef: v0.5.0
+  OrangRef: v0.6.0-beta
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -298,25 +298,19 @@ jobs:
         with:
           repository: josefpihrt/wordb
           path: _wordb
-      - uses: actions/checkout@v3
-        with:
-          repository: josefpihrt/orang
-          ref: feature/glob
-          path: _orang
-      - run: dotnet restore _orang/src/Orang.sln
-      - run: dotnet build _orang/src/Orang.sln --no-restore
-      - run: |
-          _orang/src/CommandLine/bin/Release/net6.0/Orang spellcheck docs --dry-run --min-word-length 4 \
-            --words \
-              spellcheck \
-              _wordb/data/en \
-              _wordb/data/en-us \
-              _wordb/data/names.txt \
-              _wordb/data/tech.names.txt \
-              _wordb/data/tech.acronyms.txt \
-            --exclude \
-              dotmarkdown/ref/**/LanguageIdentifiers/** \
-              snippetica/snippets/vs*/html.md
+      - run: dotnet tool install -g orang.dotnet.cli
+      - run: >
+          orang spellcheck docs --dry-run --min-word-length 4
+          --words
+          spellcheck
+          _wordb/data/en
+          _wordb/data/en-us
+          _wordb/data/names.txt
+          _wordb/data/tech.names.txt
+          _wordb/data/tech.acronyms.txt
+          --exclude
+          dotmarkdown/ref/**/LanguageIdentifiers/**
+          snippetica/snippets/vs*/html.md
       - run: npm install
       - run: npm run build
         env:
