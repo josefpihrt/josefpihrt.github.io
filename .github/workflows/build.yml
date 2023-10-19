@@ -16,7 +16,7 @@ env:
   RoslynatorRef: v4.6.0
   RoslynatorCliRef: cli-v0.7.1
   DotMarkdownRef: v0.3.0
-  OrangRef: v0.6.0-beta
+  OrangRef: fix/links # v0.6.0-beta
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
@@ -156,18 +156,8 @@ jobs:
           --host docusaurus
           --group-by-common-namespace
           --ignored-common-parts content
-          --ignored-root-parts all
           --max-derived-types 10
-      - run: >
-          roslynator generate-doc-root "src/Orang.sln"
-          --properties "Configuration=Release"
-          --projects "Common" "FileSystem"
-          -o "_build/ref.md"
-          --host docusaurus
-          --heading ".NET API Reference"
-          --ignored-parts content
-          --root-directory-url "ref"
-        
+          --root-file-path "build/ref.md"
       - uses: actions/upload-artifact@v3
         with:
           name: orang_ref
