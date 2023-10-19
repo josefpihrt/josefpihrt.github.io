@@ -69,7 +69,7 @@ jobs:
           path: src/CommandLine.DocumentationGenerator/_build
 
   build_roslynator_ref:
-    runs-on: ubuntu-20.04
+    runs-on: windows-latest
     steps:
       - uses: actions/checkout@v3
         with:
@@ -79,7 +79,6 @@ jobs:
           cd tools
           ./generate_ref_docs.ps1
         name: Generate reference documentation
-        shell: pwsh
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_ref
