@@ -298,7 +298,7 @@ jobs:
         with:
           repository: josefpihrt/wordb
           path: _wordb
-      - run: dotnet tool install -g orang.dotnet.cli
+      - run: dotnet tool install -g orang.dotnet.cli --version 0.6.0-beta
       - run: >
           orang spellcheck docs --dry-run --min-word-length 4
           --words
