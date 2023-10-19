@@ -96,7 +96,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_ref
-          path: build
+          path: tools/build
 
   build_roslynator_configuration:
     runs-on: ubuntu-20.04
