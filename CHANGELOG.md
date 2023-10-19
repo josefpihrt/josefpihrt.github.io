@@ -9,13 +9,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add spellcheck to CI/CD ([#PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/30))
+- Add spellcheck to CI/CD ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/30))
+
+## [0.4.5] - 2023-10-19
+
+### Added
+
+- Add documentation for Roslynator unit tests ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/28))
+
+### Changed
+
+- Update Roslynator to `4.6.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/31))
+- Update Roslynator CLI to `0.7.1` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/31))
 
 ## [0.4.4] - 2023-10-02
 
 ### Added
 
-- Add page "How to use Roslynator .NET API" ([#PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/29))
+- Add page "How to use Roslynator .NET API" ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/29))
 
 ### Changed
 
@@ -104,4 +115,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add GitHub icon to navbar ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
 - Make sidebar hideable ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/3)).
-- Add documentation for [Roslynator](https://github.com/josefpihrt/roslynator), [Orang](https://github.com/josefpihrt/orang) and [DotMarkdown](https://github.com/josefpihrt/dotmarkdown) ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/1)).
+- Add documentation for [Roslynator](https://github.com/dotnet/roslynator), [Orang](https://github.com/josefpihrt/orang) and [DotMarkdown](https://github.com/josefpihrt/dotmarkdown) ([#1](https://github.com/josefpihrt/josefpihrt.github.io/pull/1)).

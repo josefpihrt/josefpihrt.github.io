@@ -48,6 +48,16 @@ const sidebars = {
         'roslynator/how-to-add-new-refactoring',
         {
           type: 'category',
+          label: 'Testing',
+          link: { type: 'doc', id: 'roslynator/testing' },
+          items: [
+            'roslynator/analyzers-testing',
+            'roslynator/refactorings-testing',
+            'roslynator/compiler-diagnostic-fixes-testing',
+          ],
+        },
+        {
+          type: 'category',
           label: 'Metadata Reference',
           link: {
             type: 'generated-index',
