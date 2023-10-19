@@ -70,14 +70,17 @@ jobs:
 
   build_roslynator_ref:
     runs-on: ubuntu-20.04
+    defaults:
+      run:
+        working-directory: "tools"
     steps:
       - uses: actions/checkout@v3
         with:
           repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
       - run: |
-          dotnet restore tools/generate_ref_docs.ps1
-          dotnet build --no-restore tools/generate_ref_docs.ps1
+          dotnet restore generate_ref_docs.sln
+          dotnet build --no-restore generate_ref_docs.sln
       - run: dotnet tool install -g roslynator.dotnet.cli
       - name: Generate reference documentation
         run: >
@@ -93,7 +96,7 @@ jobs:
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_ref
-          path: tools/build
+          path: build
 
   build_roslynator_configuration:
     runs-on: ubuntu-20.04
