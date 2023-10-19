@@ -157,7 +157,7 @@ jobs:
           --group-by-common-namespace
           --ignored-common-parts content
           --max-derived-types 10
-          --root-file-path "build/ref.md"
+          --root-file-path "_build/ref.md"
       - uses: actions/upload-artifact@v3
         with:
           name: orang_ref
