@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add spellcheck to CI/CD ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/30))
 
+### Changed
+
+- Update Orang to `0.6.0-beta` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/30))
+
 ## [0.4.5] - 2023-10-19
 
 ### Added
