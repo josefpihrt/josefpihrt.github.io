@@ -89,6 +89,11 @@ const config = {
             label: 'Gitalias',
           },
           {
+            to: 'docs/ghjoe',
+            label: 'GH Joe',
+            position: 'left',
+          },
+          {
             href: 'https://github.com/josefpihrt',
             position: 'right',
             className: 'header-github-link',
