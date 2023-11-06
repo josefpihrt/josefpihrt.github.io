@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.8] - 2023-11-06
+
 ### Added
 
 - Add 'GH Joe' ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/33))
