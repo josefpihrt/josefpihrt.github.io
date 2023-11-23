@@ -63,7 +63,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
-      - run: dotnet "bin/Release/net7.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
+      - run: dotnet "bin/Release/net8.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_cli
