@@ -29,6 +29,7 @@ const sidebars = {
         'roslynator/analyzers-vs-refactorings',
         'roslynator/how-to-suppress-diagnostic',
         'roslynator/how-to-fix-all-diagnostics',
+        'roslynator/how-to-remove-unused-code',
         'roslynator/how-to-update-documentation',
         'roslynator/how-to-generate-net-api-docs',
       ],
