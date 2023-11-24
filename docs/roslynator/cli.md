@@ -7,6 +7,7 @@ sidebar_label: Roslynator CLI
 ## Commands
 
 - [analyze](cli/commands/analyze)
+- [find-symbol](cli/commands/find-symbol)
 - [fix](cli/commands/fix)
 - [format](cli/commands/format)
 - [generate-doc](cli/commands/generate-doc)
