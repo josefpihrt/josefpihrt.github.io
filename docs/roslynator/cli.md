@@ -23,9 +23,10 @@ Run `dotnet tool install -g roslynator.dotnet.cli`
 
 ## Requirements
 
-- Version `0.5.0` or higher required .NET Core SDK 6 or 7
-- Version `0.4.0` or higher requires .NET Core SDK 6
-- Version `0.2.0` or higher requires .NET Core SDK 5
+- Version `0.8.0` or higher requires .NET Core SDK 6, 7 or 8.
+- Version `0.5.0` or higher requires .NET Core SDK 6 or 7.
+- Version `0.4.0` or higher requires .NET Core SDK 6.
+- Version `0.2.0` or higher requires .NET Core SDK 5.
 
 ## Exit Code
 
