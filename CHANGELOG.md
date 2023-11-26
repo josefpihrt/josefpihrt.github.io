@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.13] - 2023-11-26
+
+- Fix sidebar ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/38))
+
 ## [0.4.12] - 2023-11-24
 
 - Update Roslynator to `4.6.4` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/37))
