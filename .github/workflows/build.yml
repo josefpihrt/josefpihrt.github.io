@@ -10,7 +10,7 @@ on:
 env:
   Configuration: Release
   TreatWarningsAsErrors: true
-  WarningsNotAsErrors: 1591
+  WarningsNotAsErrors: 1573,1591
   RunCodeAnalysis: false
 
   RoslynatorRef: v4.8.0
