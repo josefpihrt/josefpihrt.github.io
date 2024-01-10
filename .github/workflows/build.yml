@@ -16,7 +16,7 @@ env:
   RoslynatorRef: v4.8.0
   RoslynatorCliRef: cli-v0.8.2
   DotMarkdownRef: v0.3.0
-  OrangRef: v0.6.0
+  OrangRef: v0.7.0
   SnippeticaRef: v2.0.2
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
