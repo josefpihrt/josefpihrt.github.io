@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.16] - 2024-01-10
+
+### Changed
+
+- Update Orang to `0.7.0` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/41))
+
 ## [0.4.15] - 2024-01-02
 
 ### Changed
