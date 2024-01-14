@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.18] - 2024-01-14
+
+### Fixed
+
+- Fix markdown link ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/45))
+
 ## [0.4.17] - 2024-01-11
 
 ### Changed
