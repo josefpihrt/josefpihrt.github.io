@@ -6,17 +6,17 @@ sidebar_label: Roslynator CLI
 
 ## Commands
 
-- [analyze](cli/commands/analyze)
-- [find-symbol](cli/commands/find-symbol)
-- [fix](cli/commands/fix)
-- [format](cli/commands/format)
-- [generate-doc](cli/commands/generate-doc)
-- [generate-doc-root](cli/commands/generate-doc-root)
-- [list-symbols](cli/commands/list-symbols)
-- [loc](cli/commands/loc)
-- [lloc](cli/commands/lloc)
-- [rename-symbol](cli/commands/rename-symbol)
-- [spellcheck](cli/commands/spellcheck)
+- [analyze](commands/analyze)
+- [find-symbol](commands/find-symbol)
+- [fix](commands/fix)
+- [format](commands/format)
+- [generate-doc](commands/generate-doc)
+- [generate-doc-root](commands/generate-doc-root)
+- [list-symbols](commands/list-symbols)
+- [loc](commands/loc)
+- [lloc](commands/lloc)
+- [rename-symbol](commands/rename-symbol)
+- [spellcheck](commands/spellcheck)
 
 ## Installation
 
