@@ -4,23 +4,11 @@ sidebar_label: Roslynator CLI
 
 # Roslynator Command Line Tool
 
-## Commands
-
-- [analyze](cli/commands/analyze)
-- [find-symbol](cli/commands/find-symbol)
-- [fix](cli/commands/fix)
-- [format](cli/commands/format)
-- [generate-doc](cli/commands/generate-doc)
-- [generate-doc-root](cli/commands/generate-doc-root)
-- [list-symbols](cli/commands/list-symbols)
-- [loc](cli/commands/loc)
-- [lloc](cli/commands/lloc)
-- [rename-symbol](cli/commands/rename-symbol)
-- [spellcheck](cli/commands/spellcheck)
-
 ## Installation
 
 Run `dotnet tool install -g roslynator.dotnet.cli`
+
+Run `roslynator --help` to see a list of available [commands](./cli/category/commands).
 
 ## Requirements
 
@@ -41,7 +29,7 @@ Value | Comment
 
 \*\* A diagnostic was found (`analyze` command) or not all diagnostics were fixed (`fix` command) etc.
 
-### Legacy .NET Framework Package
+## Legacy .NET Framework Package
 
 - Stand-alone application that requires .NET Framework (Windows only).
 - It can be used for .NET Framework projects (old style `csproj`).
