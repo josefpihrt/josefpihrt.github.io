@@ -7,9 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.22] - 2024-06-15
+
 ### Changed
 
 - Autogenerate the page with Roslynator CLI commands ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/50))
+- Update Roslynator to `4.12.4` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/51))
+- Update Roslynator CLI to `0.8.9` ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/51))
 
 ## [0.4.21] - 2024-03-19
 
