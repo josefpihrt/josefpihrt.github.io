@@ -44,7 +44,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir _build
-      - run: dotnet "bin/Release/net7.0/Roslynator.MetadataGenerator.dll" "../.." "_build"
+      - run: dotnet "bin/Release/net8.0/Roslynator.MetadataGenerator.dll" "../.." "_build"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator
@@ -111,7 +111,7 @@ jobs:
           ref: ${{ env.RoslynatorRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
-      - run: dotnet "bin/Release/net7.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
+      - run: dotnet "bin/Release/net8.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
       - uses: actions/upload-artifact@v3
         with:
           name: roslynator_configuration
@@ -130,7 +130,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
-      - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
+      - run: dotnet "bin/Release/net8.0/Orang.DocumentationGenerator.dll" "_build" "data"
       - uses: actions/upload-artifact@v3
         with:
           name: orang_cli
