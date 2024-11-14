@@ -12,10 +12,11 @@ Run `roslynator --help` to see a list of available [commands](./cli/category/com
 
 ## Requirements
 
-- Version `0.8.0` or higher requires .NET Core SDK 6, 7 or 8.
-- Version `0.5.0` or higher requires .NET Core SDK 6 or 7.
-- Version `0.4.0` or higher requires .NET Core SDK 6.
-- Version `0.2.0` or higher requires .NET Core SDK 5.
+- Version `0.9.0` or higher requires .NET SDK 7 or 8.
+- Version `0.8.0` or higher requires .NET SDK 6, 7 or 8.
+- Version `0.5.0` or higher requires .NET SDK 6 or 7
+- Version `0.4.0` or higher requires .NET SDK 6
+- Version `0.2.0` or higher requires .NET SDK 5
 
 ## Exit Code
 
@@ -25,7 +26,7 @@ Value | Comment
 1 | Not a success\*\*
 2 | Error occurred or execution canceled
 
-\* No diagnostic was found (`analyze` command ) or all diagnostics were fixed (`fix` command) etc.
+\* No diagnostic was found (`analyze` command) or all diagnostics were fixed (`fix` command) etc.
 
 \*\* A diagnostic was found (`analyze` command) or not all diagnostics were fixed (`fix` command) etc.
 
