@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.26] - 2024-11-20
+
+### Added
+
+- Add special donations to Roslynator readme. ([PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/54))
+
 ## [0.4.25] - 2024-10-12
 
 ### Changed
