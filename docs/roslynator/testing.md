@@ -1,8 +1,8 @@
 # Testing
 
-- [Unit testing of analyzers](analyzers-testing)
-- [Unit testing of refactorings](refactorings-testing)
-- [Unit testing of compiler diagnostic fixes](compiler-diagnostic-fixes-testing)
+- [Unit testing of analyzers](/docs/roslynator/analyzers-testing)
+- [Unit testing of refactorings](/docs/roslynator/refactorings-testing)
+- [Unit testing of compiler diagnostic fixes](/docs/roslynator/compiler-diagnostic-fixes-testing)
 
 ## NuGet Packages
 
