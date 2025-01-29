@@ -122,6 +122,8 @@ jobs:
     defaults:
       run:
         working-directory: src/DocumentationGenerator
+    env:
+      DOTNET_ROOT: "/usr/share/dotnet/sdk/7.0.410"
     steps:
       - uses: actions/checkout@v3
         with:
@@ -130,6 +132,7 @@ jobs:
       - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '7.0.x'
+      - run: dotnet --list-sdks
       - run: dotnet build --no-restore
       - run: mkdir "_build"
       - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
