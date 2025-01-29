@@ -127,7 +127,9 @@ jobs:
         with:
           repository: josefpihrt/orang
           ref: ${{ env.OrangRef }}
-      - run: dotnet restore
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '7.0.x'
       - run: dotnet build --no-restore
       - run: mkdir "_build"
       - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
