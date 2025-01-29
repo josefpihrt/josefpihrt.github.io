@@ -16,7 +16,7 @@ env:
   RoslynatorRef: v4.12.11
   RoslynatorCliRef: cli-v0.10.0
   DotMarkdownRef: v0.3.0
-  OrangRef: v0.7.0
+  OrangRef: fix/generator-net
   SnippeticaRef: v2.0.2
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -122,17 +122,11 @@ jobs:
     defaults:
       run:
         working-directory: src/DocumentationGenerator
-    env:
-      DOTNET_ROOT: "/usr/share/dotnet/sdk/7.0.410"
     steps:
       - uses: actions/checkout@v3
         with:
           repository: josefpihrt/orang
           ref: ${{ env.OrangRef }}
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '7.0.x'
-      - run: dotnet --list-sdks
       - run: dotnet build --no-restore
       - run: mkdir "_build"
       - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
