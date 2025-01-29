@@ -13,10 +13,10 @@ env:
   WarningsNotAsErrors: 1573,1591
   RunCodeAnalysis: false
 
-  RoslynatorRef: v4.12.9
-  RoslynatorCliRef: cli-v0.9.3
+  RoslynatorRef: v4.12.11
+  RoslynatorCliRef: cli-v0.10.0
   DotMarkdownRef: v0.3.0
-  OrangRef: v0.7.0
+  OrangRef: fix/generator-net
   SnippeticaRef: v2.0.2
 
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
@@ -130,7 +130,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: mkdir "_build"
-      - run: dotnet "bin/Release/net7.0/Orang.DocumentationGenerator.dll" "_build" "data"
+      - run: dotnet "bin/Release/net8.0/Orang.DocumentationGenerator.dll" "_build" "data"
       - uses: actions/upload-artifact@v3
         with:
           name: orang_cli
