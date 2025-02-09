@@ -246,42 +246,42 @@ jobs:
           echo "version=${version}" >> $GITHUB_OUTPUT
       - run: >
           sed -i 's/"version": "1.0.0"/"version": "${{ steps.version.outputs.version }}"/' package.json
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator metadata documentation"
         with:
           name: roslynator
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator CLI documentation"
         with:
           name: roslynator_cli
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator reference documentation"
         with:
           name: roslynator_ref
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator configuration"
         with:
           name: roslynator_configuration
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Orang CLI documentation"
         with:
           name: orang_cli
           path: docs/orang
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Orang reference documentation"
         with:
           name: orang_ref
           path: docs/orang
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download DotMarkdown documentation"
         with:
           name: dotmarkdown
           path: docs/dotmarkdown
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Snippetica documentation"
         with:
           name: snippetica
@@ -325,7 +325,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: docusaurus
           path: docusaurus
