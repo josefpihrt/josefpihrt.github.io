@@ -13,8 +13,8 @@ env:
   WarningsNotAsErrors: 1573,1591
   RunCodeAnalysis: false
 
-  RoslynatorRef: v4.12.11
-  RoslynatorCliRef: cli-v0.10.0
+  RoslynatorRef: v4.13.0
+  RoslynatorCliRef: cli-v0.10.1
   DotMarkdownRef: v0.3.0
   OrangRef: fix/generator-net
   SnippeticaRef: v2.0.2
@@ -45,7 +45,7 @@ jobs:
       - run: dotnet build --no-restore
       - run: mkdir _build
       - run: dotnet "bin/Release/net8.0/Roslynator.MetadataGenerator.dll" "../.." "_build"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: roslynator
           path: src/Tools/MetadataGenerator/_build
@@ -64,7 +64,7 @@ jobs:
       - run: dotnet build --no-restore
       - run: mkdir "_build"
       - run: dotnet "bin/Release/net8.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: roslynator_cli
           path: src/CommandLine.DocumentationGenerator/_build
@@ -94,7 +94,7 @@ jobs:
           --ignored-common-parts content
           --max-derived-types 10
           --root-file-path "build/ref.md"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: roslynator_ref
           path: tools/build
@@ -112,7 +112,7 @@ jobs:
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet "bin/Release/net8.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: roslynator_configuration
           path: src/Tools/ConfigurationFileGenerator/configuration.md
@@ -131,7 +131,7 @@ jobs:
       - run: dotnet build --no-restore
       - run: mkdir "_build"
       - run: dotnet "bin/Release/net8.0/Orang.DocumentationGenerator.dll" "_build" "data"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: orang_cli
           path: src/DocumentationGenerator/_build
@@ -159,7 +159,7 @@ jobs:
           --ignored-common-parts content
           --max-derived-types 10
           --root-file-path "_build/ref.md"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: orang_ref
           path: _build
@@ -197,7 +197,7 @@ jobs:
           --ignored-parts content
           --root-directory-url ref
         
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: dotmarkdown
           path: _build
@@ -214,7 +214,7 @@ jobs:
           dotnet build src/Snippetica.CodeGeneration.DocumentationGenerator/DocumentationGenerator.csproj --no-restore
       - run: "src/Snippetica.CodeGeneration.DocumentationGenerator/bin/Release/net6.0/Snippetica.CodeGeneration.DocumentationGenerator src _build src/Snippetica.CodeGeneration.Metadata/Data"
         name: Generate documentation
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: snippetica
           path: _build
@@ -246,42 +246,42 @@ jobs:
           echo "version=${version}" >> $GITHUB_OUTPUT
       - run: >
           sed -i 's/"version": "1.0.0"/"version": "${{ steps.version.outputs.version }}"/' package.json
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator metadata documentation"
         with:
           name: roslynator
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator CLI documentation"
         with:
           name: roslynator_cli
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator reference documentation"
         with:
           name: roslynator_ref
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Roslynator configuration"
         with:
           name: roslynator_configuration
           path: docs/roslynator
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Orang CLI documentation"
         with:
           name: orang_cli
           path: docs/orang
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Orang reference documentation"
         with:
           name: orang_ref
           path: docs/orang
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download DotMarkdown documentation"
         with:
           name: dotmarkdown
           path: docs/dotmarkdown
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         name: "Download Snippetica documentation"
         with:
           name: snippetica
@@ -307,7 +307,7 @@ jobs:
       - run: npm run build
         env:
           NODE_OPTIONS: "--max_old_space_size=4096"
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4
         with:
           name: docusaurus
           path: build
@@ -325,7 +325,7 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-20.04
     steps:
-      - uses: actions/download-artifact@v3
+      - uses: actions/download-artifact@v4
         with:
           name: docusaurus
           path: docusaurus
