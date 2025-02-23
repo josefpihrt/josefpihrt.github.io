@@ -13,7 +13,7 @@ env:
   WarningsNotAsErrors: 1573,1591
   RunCodeAnalysis: false
 
-  RoslynatorRef: v4.13.0
+  RoslynatorRef: v4.13.1
   RoslynatorCliRef: cli-v0.10.1
   DotMarkdownRef: v0.3.0
   OrangRef: fix/generator-net
