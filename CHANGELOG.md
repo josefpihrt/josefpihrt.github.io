@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- Update Roslynator to `4.13.1` ( [PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/61))
+- Update Roslynator to `4.13.1` ( [PR](https://github.com/josefpihrt/josefpihrt.github.io/pull/62))
 
 ## [0.4.29] - 2025-02-09
 
