@@ -12,6 +12,7 @@ Run `roslynator --help` to see a list of available [commands](./cli/category/com
 
 ## Requirements
 
+- Version `0.10.0` or higher requires .NET SDK 7, 8 or 9.
 - Version `0.9.0` or higher requires .NET SDK 7 or 8.
 - Version `0.8.0` or higher requires .NET SDK 6, 7 or 8.
 - Version `0.5.0` or higher requires .NET SDK 6 or 7
