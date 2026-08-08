@@ -2,8 +2,8 @@
 
 ## Code Analysis Reference
 
-- Documentation for analyzers can be updated by updating [Analyzers.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Analyzers.xml).
-- Documentation for refactorings can be updated by updating [Refactorings.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings.xml).
+- Documentation for analyzers can be updated by updating [Analyzers.xml](https://github.com/dotnet/roslynator/blob/main/src/Analyzers.xml).
+- Documentation for refactorings can be updated by updating [Refactorings.xml](https://github.com/dotnet/roslynator/blob/main/src/Refactorings.xml).
 
 See [metadata reference](category/metadata) for further information.
 

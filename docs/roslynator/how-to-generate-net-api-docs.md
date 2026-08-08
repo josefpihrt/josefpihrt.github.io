@@ -50,4 +50,4 @@ roslynator generate-doc-root MY_SOLUTION.sln `
  --root-directory-url "ref"
  ```
 
- See the actual [script](https://github.com/JosefPihrt/Roslynator/blob/main/tools/generate_ref_docs.ps1).
+ See the actual [script](https://github.com/dotnet/roslynator/blob/main/tools/generate_ref_docs.ps1).
