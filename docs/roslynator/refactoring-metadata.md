@@ -4,7 +4,7 @@ sidebar_label: Refactoring
 
 # Refactoring Metadata
 
-Refactorings metadata are stored in [Refactorings.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings.xml).
+Refactorings metadata are stored in [Refactorings.xml](https://github.com/dotnet/roslynator/blob/main/src/Refactorings.xml).
 
 ## XML
 
@@ -36,7 +36,7 @@ Refactorings metadata are stored in [Refactorings.xml](https://github.com/JosefP
 
 - `Refactoring`
   - `Id` - **\[required\]** Internal ID of the refactoring (prefix `RR` + sequential number).
-  - `Identifier` - **\[required\]** Identifier which represents refactoring in a code (see [RefactoringIdentifiers.Generated.cs](https://github.com/JosefPihrt/Roslynator/blob/main/src/Refactorings/CSharp/RefactoringIdentifiers.Generated.cs)).
+  - `Identifier` - **\[required\]** Identifier which represents refactoring in a code (see [RefactoringIdentifiers.Generated.cs](https://github.com/dotnet/roslynator/blob/main/src/Refactorings/CSharp/RefactoringIdentifiers.Generated.cs)).
   - `Title` - **\[required\]** Short description of the refactoring.
   - `OptionKey` - **\[required\]** Refactoring identifier in the EditorConfig.
   - `Syntaxes`

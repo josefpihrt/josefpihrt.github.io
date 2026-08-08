@@ -13,8 +13,8 @@ env:
   WarningsNotAsErrors: 1573,1591
   RunCodeAnalysis: false
 
-  RoslynatorRef: v4.14.0
-  RoslynatorCliRef: cli-v0.10.2
+  RoslynatorRef: v4.16.0
+  RoslynatorCliRef: cli-v0.13.0
   DotMarkdownRef: v0.3.0
   OrangRef: fix/generator-net
   SnippeticaRef: v2.0.2
@@ -41,10 +41,10 @@ jobs:
         with:
           repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
-      - run: dotnet restore
+      - run: dotnet restore -p:NuGetAudit=false
       - run: dotnet build --no-restore
       - run: mkdir _build
-      - run: dotnet "bin/Release/net8.0/Roslynator.MetadataGenerator.dll" "../.." "_build"
+      - run: dotnet "bin/Release/net10.0/Roslynator.MetadataGenerator.dll" "../.." "_build"
       - uses: actions/upload-artifact@v4
         with:
           name: roslynator
@@ -60,10 +60,10 @@ jobs:
         with:
           repository: dotnet/roslynator
           ref: ${{ env.RoslynatorCliRef }}
-      - run: dotnet restore
+      - run: dotnet restore -p:NuGetAudit=false
       - run: dotnet build --no-restore
       - run: mkdir "_build"
-      - run: dotnet "bin/Release/net8.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
+      - run: dotnet "bin/Release/net10.0/Roslynator.CommandLine.DocumentationGenerator.dll" "_build" "data" "help,migrate"
       - uses: actions/upload-artifact@v4
         with:
           name: roslynator_cli
@@ -111,7 +111,7 @@ jobs:
           ref: ${{ env.RoslynatorRef }}
       - run: dotnet restore
       - run: dotnet build --no-restore
-      - run: dotnet "bin/Release/net8.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
+      - run: dotnet "bin/Release/net10.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"
       - uses: actions/upload-artifact@v4
         with:
           name: roslynator_configuration
@@ -209,6 +209,9 @@ jobs:
         with:
           repository: josefpihrt/snippetica
           ref: ${{ env.SnippeticaRef }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
       - run: |
           dotnet restore src/Snippetica.CodeGeneration.DocumentationGenerator/DocumentationGenerator.csproj
           dotnet build src/Snippetica.CodeGeneration.DocumentationGenerator/DocumentationGenerator.csproj --no-restore
@@ -290,6 +293,9 @@ jobs:
         with:
           repository: josefpihrt/wordb
           path: _wordb
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
       - run: dotnet tool install -g orang.dotnet.cli --version 0.6.0-beta
       - run: >
           orang spellcheck docs --dry-run --min-word-length 4

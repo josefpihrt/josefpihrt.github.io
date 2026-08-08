@@ -4,7 +4,7 @@ sidebar_label: Analyzer
 
 # Analyzer Metadata
 
-Analyzers metadata are stored in [Analyzers.xml](https://github.com/JosefPihrt/Roslynator/blob/main/src/Analyzers.xml).
+Analyzers metadata are stored in [Analyzers.xml](https://github.com/dotnet/roslynator/blob/main/src/Analyzers.xml).
 
 ## XML
 

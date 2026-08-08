@@ -20,7 +20,7 @@ Roslynator is a set of code analysis tools for C#, powered by [Roslyn](https://g
 
 Contributions are welcome! If you are interested please see:
 - documentation for [developers](developers)
-- available [issues](https://github.com/JosefPihrt/Roslynator/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aup-for-grabs)
+- available [issues](https://github.com/dotnet/roslynator/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aup-for-grabs)
 
 :::tip
 Bugfixes or small improvements can be implemented right away. Larger task like adding new analyzer or refactoring should be discussed first.
@@ -33,6 +33,7 @@ Special thanks to:
   - Microsoft for donating $1000.00 USD.
   - @IanKemp for donating $13.00 USD / month starting July 2021.
   - @Genbox for donating $5.00 USD / month starting October 2024.
+  - Timo Nürnberg for donating $5.00 USD / month starting March 2025.
 
 ## .NET Foundation
 

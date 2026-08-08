@@ -83,17 +83,6 @@ const config = {
             label: 'Orang',
           },
           {
-            type: 'docSidebar',
-            sidebarId: 'gitaliasSidebar',
-            position: 'left',
-            label: 'Gitalias',
-          },
-          {
-            to: 'docs/ghjoe',
-            label: 'GH Joe',
-            position: 'left',
-          },
-          {
             href: 'https://github.com/josefpihrt',
             position: 'right',
             className: 'header-github-link',
