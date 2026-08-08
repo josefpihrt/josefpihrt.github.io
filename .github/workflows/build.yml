@@ -293,6 +293,9 @@ jobs:
         with:
           repository: josefpihrt/wordb
           path: _wordb
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '6.0.x'
       - run: dotnet tool install -g orang.dotnet.cli --version 0.6.0-beta
       - run: >
           orang spellcheck docs --dry-run --min-word-length 4
