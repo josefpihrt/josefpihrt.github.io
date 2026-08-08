@@ -12,6 +12,7 @@ Run `roslynator --help` to see a list of available [commands](./cli/category/com
 
 ## Requirements
 
+- Version `1.0.0` or higher requires .NET SDK 8, 9 or 10 and targets Roslyn 5.0.
 - Version `0.11.0` or higher requires .NET SDK 8, 9 or 10.
 - Version `0.10.0` or higher requires .NET SDK 8 or 9.
 - Version `0.9.0` or higher requires .NET SDK 7 or 8.

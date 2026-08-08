@@ -13,8 +13,8 @@ env:
   WarningsNotAsErrors: 1573,1591
   RunCodeAnalysis: false
 
-  RoslynatorRef: v4.16.0
-  RoslynatorCliRef: cli-v0.13.0
+  RoslynatorRef: v5.0.0
+  RoslynatorCliRef: cli-v1.0.0
   DotMarkdownRef: v0.3.0
   OrangRef: fix/generator-net
   SnippeticaRef: v2.0.2
@@ -41,6 +41,12 @@ jobs:
         with:
           repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
       - run: dotnet restore -p:NuGetAudit=false
       - run: dotnet build --no-restore
       - run: mkdir _build
@@ -60,6 +66,12 @@ jobs:
         with:
           repository: dotnet/roslynator
           ref: ${{ env.RoslynatorCliRef }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
       - run: dotnet restore -p:NuGetAudit=false
       - run: dotnet build --no-restore
       - run: mkdir "_build"
@@ -79,10 +91,20 @@ jobs:
         with:
           repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
       - run: |
           dotnet restore generate_ref_docs.sln
           dotnet build --no-restore generate_ref_docs.sln
-      - run: dotnet tool install -g roslynator.dotnet.cli
+      - name: Resolve Roslynator CLI version
+        run: echo "version=${ROSLYNATOR_CLI_REF#cli-v}" >> $GITHUB_ENV
+        env:
+          ROSLYNATOR_CLI_REF: ${{ env.RoslynatorCliRef }}
+      - run: dotnet tool install -g roslynator.dotnet.cli --version $version
       - name: Generate reference documentation
         run: >
           roslynator generate-doc generate_ref_docs.sln
@@ -109,6 +131,12 @@ jobs:
         with:
           repository: dotnet/roslynator
           ref: ${{ env.RoslynatorRef }}
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: |
+            8.0.x
+            9.0.x
+            10.0.x
       - run: dotnet restore
       - run: dotnet build --no-restore
       - run: dotnet "bin/Release/net10.0/Roslynator.ConfigurationFileGenerator.dll" "../.." "configuration.md" "configuration.md"

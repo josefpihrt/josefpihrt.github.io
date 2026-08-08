@@ -2,12 +2,16 @@
 
 Roslynator is a set of code analysis tools for C#, powered by [Roslyn](https://github.com/dotnet/roslyn).
 
+Analyzers are not included in Roslynator IDE extensions. Use Roslynator NuGet packages (e.g. [Roslynator.Analyzers](https://www.nuget.org/packages/roslynator.analyzers)) for diagnostics.
+
 ## Tools
 
 - IDE extensions for:
-  - [Visual Studio](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
-  - [VS Code](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator)
+  - [Visual Studio 2026](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2026) (refactorings and code fixes; analyzers via NuGet)
+  - [VS Code](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator) (refactorings and compiler diagnostic fixes; analyzers via NuGet)
+    - Requires legacy OmniSharp (`dotnet.server.useOmnisharp`: `true`). With C# Dev Kit, use NuGet packages instead.
   - [Open VSX](https://open-vsx.org/extension/josefpihrt-vscode/roslynator)
+- See [IDE extensions](ide-extensions) for details on what each extension includes.
 - [NuGet packages](#nuget-packages) that contain collection of analyzers
   - [Roslynator.Analyzers](https://www.nuget.org/packages/Roslynator.Analyzers)
   - [Roslynator.CodeAnalysis.Analyzers](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers)
@@ -56,9 +60,9 @@ See [documentation](cli) for further information.
 - Roslynator Testing Framework can be used for unit testing of analyzers, refactorings and code fixes.
 - Framework is distributed as NuGet [package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit). &ensp;[![NuGet](https://img.shields.io/nuget/v/Roslynator.Testing.CSharp.Xunit.svg)](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit)
 - Learn how to use the framework from actual usages in Roslynator repo:
-  - Tests of analyzers are [here](https://github.com/JosefPihrt/Roslynator/tree/main/src/Tests/Analyzers.Tests), [here](https://github.com/JosefPihrt/Roslynator/tree/main/src/Tests/CodeAnalysis.Analyzers.Tests) and [here](https://github.com/JosefPihrt/Roslynator/tree/main/src/Tests/Formatting.Analyzers.Tests)
-  - Tests of refactorings are [here](https://github.com/JosefPihrt/Roslynator/tree/main/src/Tests/Refactorings.Tests)
-  - Tests of fixes of compiler diagnostics are [here](https://github.com/JosefPihrt/Roslynator/tree/main/src/Tests/CodeFixes.Tests)
+  - Tests of analyzers are [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/Analyzers.Tests), [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeAnalysis.Analyzers.Tests) and [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/Formatting.Analyzers.Tests)
+  - Tests of refactorings are [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/Refactorings.Tests)
+  - Tests of fixes of compiler diagnostics are [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeFixes.Tests)
 
 ## .NET API
 
