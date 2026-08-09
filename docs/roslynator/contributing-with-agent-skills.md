@@ -1,6 +1,6 @@
 # Contributing with Agent Skills
 
-Contributions are welcome — including from developers who are new to the [Roslyn API](https://github.com/dotnet/roslyn). That is common. Roslynator is **metadata-driven**: you edit XML, run codegen, implement a focused class, and add a test. The repo also ships [client libraries](ref) (`BaseDiagnosticAnalyzer`, syntax helpers, in-repo test verifiers) so most tasks do not require deep Roslyn expertise.
+Contributions are welcome. Roslynator is **metadata-driven**: you edit XML, run codegen, implement a focused class, and add a test. The repo also ships [client libraries](ref) (`BaseDiagnosticAnalyzer`, syntax helpers, in-repo test verifiers) so most tasks do not require deep [Roslyn API](https://github.com/dotnet/roslyn) expertise.
 
 ## Agent skills
 
