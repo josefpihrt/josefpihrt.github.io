@@ -21,7 +21,7 @@ Source of truth: XML in **roslynator** repo (`Analyzers.xml`, `Refactorings.xml`
 
 ## Hand-written (`docs/roslynator/`)
 
-`index.md`, `cli.md`, `testing.md`, how-to pages (`how-to-add-new-analyzer`, `how-to-add-new-refactoring`, `how-to-add-compiler-diagnostic-fix`, etc.), `analyzer-metadata.md`, `refactoring-metadata.md`, guides.
+`index.md`, `cli.md`, `testing.md`, how-to pages (`how-to-add-new-analyzer`, `how-to-add-new-refactoring`, `how-to-add-compiler-diagnostic-fix`, etc.), `contributing-with-agent-skills.md`, `analyzer-metadata.md`, `refactoring-metadata.md`, guides.
 
 Boundary: `roslynator/cli/` is generated; `roslynator/cli.md` is hand-written. For orang, `orang/cli.md` is generated.
 

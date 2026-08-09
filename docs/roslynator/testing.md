@@ -15,3 +15,5 @@
 - [Unit testing of refactorings](https://github.com/dotnet/roslynator/tree/main/src/Tests/Refactorings.Tests)
 - [Unit testing of code fixes](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeFixes.Tests)
 
+Contributors: see [contributing with agent skills](contributing-with-agent-skills) and [.claude/skills](https://github.com/dotnet/roslynator/tree/main/.claude/skills) in the roslynator repo for in-repo test patterns (`AbstractCSharpDiagnosticVerifier`, etc.) — not only the NuGet packages above.
+

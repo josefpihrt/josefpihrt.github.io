@@ -18,10 +18,10 @@ Roslynator is a set of code analysis tools for C#, powered by [Roslyn](https://g
 
 ## Contributions
 
-Contributions are welcome! See the [developer docs](developers) and [open issues](https://github.com/dotnet/roslynator/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aup-for-grabs).
+Contributions are welcome! See the [developer docs](developers), [contributing with agent skills](contributing-with-agent-skills), and [open issues](https://github.com/dotnet/roslynator/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aup-for-grabs).
 
 :::tip
-Bugfixes or small improvements can be implemented right away. Larger tasks, such as adding a new analyzer or refactoring, should be discussed first.
+New to the Roslyn API? That is normal. Agent skills in the roslynator repo guide step-by-step workflows for bug fixes and new rules — and you can read them as plain contributor docs. Bugfixes or small improvements can be implemented right away. Larger tasks, such as adding a new analyzer or refactoring, should be discussed first.
 :::
 
 ## Donations
