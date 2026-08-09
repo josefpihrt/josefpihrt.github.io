@@ -16,7 +16,6 @@ Analyzer metadata is stored in [Analyzers.xml](https://github.com/dotnet/roslyna
   <ObsoleteMessage></ObsoleteMessage>
   <Title></Title>
   <MessageFormat></MessageFormat>
-  <Category>General</Category>
   <DefaultSeverity>Info</DefaultSeverity>
   <IsEnabledByDefault>true</IsEnabledByDefault>
   <SupportsFadeOut>false</SupportsFadeOut>

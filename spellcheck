@@ -11,6 +11,7 @@ blockquote
 colgroup
 completionlist
 constexpr
+codegen
 cref
 csproj
 datalist
@@ -44,6 +45,7 @@ orang
 paramref
 pcamdt
 Pihrt
+pwsh
 RCS
 RCSXXXX
 RECS

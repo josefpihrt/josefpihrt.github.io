@@ -1,5 +1,9 @@
 ﻿# How to Add New Refactoring
 
+:::tip
+See [Contributing with agent skills](contributing-with-agent-skills) and the [add-refactoring](https://github.com/dotnet/roslynator/tree/main/.claude/skills/add-refactoring) skill in the roslynator repo.
+:::
+
 ## Discuss the Idea
 
 Start by opening an [issue](https://github.com/dotnet/roslynator/issues/new) to describe your idea. Once maintainers approve it, you can begin implementation.
