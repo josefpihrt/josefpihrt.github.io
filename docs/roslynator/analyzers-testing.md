@@ -4,6 +4,10 @@ sidebar_label: Analyzers Testing
 
 # Unit Testing of Analyzers
 
+:::info
+Contributors in the roslynator repo should use in-repo test patterns — see [contributing with agent skills](contributing-with-agent-skills) and [fix-analyzer-bug](https://github.com/dotnet/roslynator/tree/main/.claude/skills/fix-analyzer-bug). The examples below target consumers of the NuGet testing packages.
+:::
+
 ## NuGet Package
 
 ```
