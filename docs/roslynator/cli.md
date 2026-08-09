@@ -34,6 +34,6 @@ Value | Comment
 
 ## Legacy .NET Framework Package
 
-- Stand-alone application that requires .NET Framework (Windows only).
-- It can be used for .NET Framework projects (old style `csproj`).
+- Standalone Windows app requiring .NET Framework.
+- Supports legacy .NET Framework projects (old-style `csproj`).
 - Download [package](https://www.nuget.org/packages/Roslynator.CommandLine) and run `Roslynator.exe`.

@@ -12,6 +12,6 @@
 ## Unit Testing in Roslynator Repository
 
 - [Unit testing of analyzers](https://github.com/dotnet/roslynator/tree/main/src/Tests/Analyzers.Tests)
-- [Unit testing of refactoring](https://github.com/dotnet/roslynator/tree/main/src/Tests/Refactorings.Tests)
+- [Unit testing of refactorings](https://github.com/dotnet/roslynator/tree/main/src/Tests/Refactorings.Tests)
 - [Unit testing of code fixes](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeFixes.Tests)
 

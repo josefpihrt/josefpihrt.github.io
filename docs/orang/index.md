@@ -5,7 +5,7 @@ sidebar_label: Intro
 
 # Orang
 
-Search, replace, rename and delete files and its content using the power of \.NET regular expressions\.
+Search, replace, rename, and delete files and their contents with .NET regular expressions\.
 
 ## CLI
 
@@ -17,7 +17,7 @@ dotnet tool install -g orang.dotnet.cli
 
 ### Documentation
 
-See [documentation](cli) for further information.
+See the [CLI documentation](cli).
 
 ## .NET API
 
@@ -29,11 +29,11 @@ dotnet add package orang.filesystem
 
 ### Documentation
 
-See [reference documentation](ref) for further information.
+See the [API reference](ref).
 
 ### Usage
 
-Clean .NET project temporary folders:
+Clean temporary folders in a .NET project:
 
 #### Fluent API
 

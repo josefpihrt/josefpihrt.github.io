@@ -2,19 +2,17 @@
 
 ## Discuss the Idea
 
-It is recommended to create [issue](https://github.com/dotnet/roslynator/issues/new) where you can describe and discuss the idea and if it is accepted by the maintainers you can start with a development.
+Start by opening an [issue](https://github.com/dotnet/roslynator/issues/new) to describe your idea. Once maintainers approve it, you can begin implementation.
 
 ## Add Metadata
 
-Add new refactoring metadata to [Refactorings.xml](https://github.com/dotnet/roslynator/blob/main/src/Refactorings.xml) file. It's possible to use [template](https://github.com/dotnet/roslynator/blob/main/src/Template.Refactorings.xml).
+Add refactoring metadata to [Refactorings.xml](https://github.com/dotnet/roslynator/blob/main/src/Refactorings.xml). A [template](https://github.com/dotnet/roslynator/blob/main/src/Template.Refactorings.xml) is available.
 
-See [metadata reference](refactoring-metadata) for further information.
+See the [metadata reference](refactoring-metadata) for details.
 
 ## Generate Code
 
-Run script [`tools/generate_code.ps1`](https://github.com/dotnet/roslynator/blob/main/tools/generate_code.ps1).
-
-Another option is to launch project `CodeGenerator` from Visual Studio.
+Run [`tools/generate_code.ps1`](https://github.com/dotnet/roslynator/blob/main/tools/generate_code.ps1), or open the `CodeGenerator` project in Visual Studio.
 
 ## Implement Refactoring
 
@@ -25,7 +23,7 @@ Go to class [RefactoringContext](https://github.com/dotnet/roslynator/blob/main/
 - Add new file to a folder [Refactorings.Tests](https://github.com/dotnet/roslynator/tree/main/src/Tests/Refactorings.Tests). Convention is to name the file `[Id][Identifier]Tests.cs`.
 
 :::tip
-When writing a test code, tokens `[|` and `|]` represents start and end of a selected text respectively.
+In test code, `[|` and `|]` mark the start and end of the selected text.
 :::
 
 ## Update Changelog

@@ -4,7 +4,7 @@ sidebar_label: Refactoring
 
 # Refactoring Metadata
 
-Refactorings metadata are stored in [Refactorings.xml](https://github.com/dotnet/roslynator/blob/main/src/Refactorings.xml).
+Refactoring metadata is stored in [Refactorings.xml](https://github.com/dotnet/roslynator/blob/main/src/Refactorings.xml).
 
 ## XML
 
