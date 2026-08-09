@@ -2,23 +2,23 @@
 
 ## Discuss the Idea
 
-It is recommended to create [issue](https://github.com/dotnet/roslynator/issues/new) where you can describe and discuss the idea and if it is accepted by the maintainers you can start with a development.
+Start by opening an [issue](https://github.com/dotnet/roslynator/issues/new) to describe your idea. Once maintainers approve it, you can begin implementation.
 
 ## Choose Project/Package
 
 ### Analyzers
 
-Suitable for analyzers that do no fit into any of the following packages.
+Use the `Analyzers` package for analyzers that do not fit into any of the following packages.
 ID prefix for these analyzers is `RCS1`.
 
 ### Formatting.Analyzers
 
-Suitable for analyzers that reports invalid formatting. Code fix for these analyzers usually only manipulates with whitespace.
+Use the `Formatting.Analyzers` package for analyzers that report invalid formatting. Code fixes for these analyzers typically adjust whitespace only.
 ID prefix for these analyzers is `RCS0`.
 
 ### CodeAnalysis.Analyzers
 
-Suitable for analyzers that analyze types from Roslyn API (`Microsoft.CodeAnalysis*` packages).
+Use the `CodeAnalysis.Analyzers` package for analyzers that analyze types from Roslyn API (`Microsoft.CodeAnalysis*` packages).
 ID prefix for these analyzers is `RCS9`.
 
 
@@ -28,34 +28,32 @@ It's rare, but it's possible to introduce new project/package.
 
 ## Add Metadata
 
-Add new analyzer metadata to [Analyzers.xml](https://github.com/dotnet/roslynator/blob/main/src/Analyzers.xml) file. It's possible to use a [template](https://github.com/dotnet/roslynator/blob/main/src/Template.Analyzers.xml).
+Add analyzer metadata to [Analyzers.xml](https://github.com/dotnet/roslynator/blob/main/src/Analyzers.xml). A [template](https://github.com/dotnet/roslynator/blob/main/src/Template.Analyzers.xml) is available.
 
-See [metadata reference](analyzer-metadata) for further information.
+See the [metadata reference](analyzer-metadata) for details.
 
 ## Generate Code
 
-Run script [`tools/generate_code.ps1`](https://github.com/dotnet/roslynator/blob/main/tools/generate_code.ps1).
-
-Another option is to launch project `CodeGenerator` from Visual Studio.
+Run [`tools/generate_code.ps1`](https://github.com/dotnet/roslynator/blob/main/tools/generate_code.ps1), or open the `CodeGenerator` project in Visual Studio.
 
 ## Implement Analyzer
 
-Add class that derives from `BaseDiagnosticAnalyzer` or possibly use some already existing analyzer class.
+Add a class deriving from `BaseDiagnosticAnalyzer`, or reuse an existing analyzer class.
 
 ## Implement Code Fix
 
 :::info
-It's strongly recommended to implement code fix for the analyzer.
+Implement a code fix for the analyzer (strongly recommended).
 :::
 
-Add class that derives from `BaseCodeFixProvider` or possibly use some already existing code fix provider class.
+Add a class deriving from `BaseCodeFixProvider`, or reuse an existing code fix provider class.
 
 ## Add Tests  
 
 - Add new file to a folder [Analyzers.Tests](https://github.com/dotnet/roslynator/tree/main/src/Tests/Analyzers.Tests). Convention is to name the file `[Id][Identifier]Tests.cs`.
 
 :::tip
-When writing a test code, tokens `[|` and `|]` represents start and end of a selected text respectively.
+In test code, `[|` and `|]` mark the start and end of the selected text.
 :::
 
 ## Update Changelog

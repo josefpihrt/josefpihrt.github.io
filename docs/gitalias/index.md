@@ -6,15 +6,15 @@ sidebar_label: "Intro"
 
 ## Summary
 
-Essential goal of gitalias is to turns [git](https://git-scm.com/) command into shortest possible sequence of characters (an alias) where the alias does not have to be remembered but it can be mnemotechnically derived from the full command.
+Gitalias maps each [git](https://git-scm.com/) command to the shortest possible alias. You don't need to memorize aliases — you can derive them from the full command.
 
 :::tip
-There is special alias `alias` that lists all aliases (alias for `config --global --get-regexp ^alias\\.`)
+The `alias` command lists all aliases (alias for `config --global --get-regexp ^alias\\.`)
 :::
 
 ## Usage
 
-- Copy [list of aliases](https://raw.githubusercontent.com/JosefPihrt/gitalias/main/alias.gitconfig) and paste it to your [.gitconfig](https://git-scm.com/docs/git-config) file.
+- Copy the [alias list](https://raw.githubusercontent.com/josefpihrt/gitalias/main/alias.gitconfig) and paste it into your [.gitconfig](https://git-scm.com/docs/git-config) file.
 
 ### Usage Example
 
@@ -48,7 +48,7 @@ Each alias is created according to several simple rules:
 1. **Each command is represented by a single letter.**
    - For example `merge`  is represented by `m`.
 
-2. **Each parameter/value is represented by combination of first letter of words it consists of.**
+2. **Each parameter/value is formed from the first letter of each word.**
    - For example `--no-commit` is represented by `nc`.
    - Branch `main` is represented by letter `m`
    - If the short parameter is uppercase letter then the letter is doubled.

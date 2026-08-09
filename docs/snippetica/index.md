@@ -11,7 +11,7 @@ A collection of snippets for C\#, C\+\+ and VB\.
 
 ### Installation
 
-Install extension from [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Snippetica)\.
+Install the extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Snippetica)\.
 
 ### Languages
 
@@ -23,7 +23,7 @@ Install extension from [Visual Studio Marketplace](https://marketplace.visualstu
 
 ### Installation
 
-Install extensions from [VS Code Marketplace](https://marketplace.visualstudio.com/search?term=snippetica&target=VSCode&category=All%20categories&sortBy=Relevance)\.
+Install extensions from the [VS Code Marketplace](https://marketplace.visualstudio.com/search?term=snippetica&target=VSCode&category=All%20categories&sortBy=Relevance)\.
 
 ### Languages
 
