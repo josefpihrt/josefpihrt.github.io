@@ -6,6 +6,8 @@ Contributions are welcome. Roslynator is **metadata-driven**: you edit XML, run 
 
 **Agent skills** in the [roslynator repository](https://github.com/dotnet/roslynator/tree/main/.claude/skills) are step-by-step workflows for AI coding agents (Cursor, Claude Code). When you clone the repo, agents can load them automatically from `.claude/skills/`.
 
+Global agent rules (never push to `main`, PR workflow, ask before push/commit): [AGENTS.md](https://github.com/dotnet/roslynator/blob/main/AGENTS.md) in roslynator and [AGENTS.md](https://github.com/josefpihrt/josefpihrt.github.io/blob/main/AGENTS.md) in this docs repo.
+
 You can also read `SKILL.md` files directly — they are useful contributor guides even without an AI agent.
 
 | Skill | Use when |
