@@ -14,3 +14,8 @@ The following command finds and removes types (classes, structs etc.) with inter
 roslynator find-symbol --symbol-kind type --unused --remove --without-attribute System.ObsoleteAttribute
 ```
 
+If you're surfacing an ASP.NET API, you might want to exclude classes marked with the `ApiController` attribute as well:
+
+```
+dotnet roslynator find-symbol --symbol-kind type --unused --remove --without-attribute System.ObsoleteAttribute Microsoft.AspNetCore.Mvc.ApiControllerAttribute
+```
