@@ -66,9 +66,9 @@ Compiler fix tests do not use `[|` and `|]` span markers — the compiler diagno
 
 ## Update Changelog
 
-File: `ChangeLog.md` at the repository root (not `CHANGELOG.md`).
+File: `CHANGELOG.md` at the repository root.
 
-```markdown title="ChangeLog.md"
+```markdown title="CHANGELOG.md"
 ### Added
 
 - Add code fix "FIX_TITLE" for CS#### ([#PR_ID](https://github.com/dotnet/roslynator/pull/PR_ID))
