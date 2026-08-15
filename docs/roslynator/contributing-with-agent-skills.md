@@ -17,7 +17,7 @@ You can also read `SKILL.md` files directly — they are useful contributor guid
 | [deprecate-analyzer-or-refactoring](https://github.com/dotnet/roslynator/tree/main/.claude/skills/deprecate-analyzer-or-refactoring) | Obsoleting or retiring a rule |
 | [release-roslynator](https://github.com/dotnet/roslynator/tree/main/.claude/skills/release-roslynator) | Preparing a release (maintainers) |
 
-Skills encode repo-specific details that are easy to get wrong when following generic Roslyn tutorials alone — for example running codegen from the `tools` directory, using `ChangeLog.md`, and using in-repo test base classes instead of the public NuGet testing packages.
+Skills encode repo-specific details that are easy to get wrong when following generic Roslyn tutorials alone — for example running codegen from the `tools` directory, using `CHANGELOG.md`, and using in-repo test base classes instead of the public NuGet testing packages.
 
 ## Where to start
 
