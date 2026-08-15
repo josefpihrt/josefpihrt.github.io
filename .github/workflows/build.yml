@@ -187,15 +187,7 @@ jobs:
           --ignored-common-parts content
           --ignored-root-parts all
           --max-derived-types 10
-      - run: >
-          roslynator generate-doc-root "src/DotMarkdown.sln"
-          --properties "Configuration=Release"
-          --projects "DotMarkdown(netstandard1.3)" "DotMarkdown.Docusaurus(netstandard1.3)"
-          -o "_build/ref.md"
-          --host docusaurus
-          --heading ".NET API Reference"
-          --ignored-parts content
-          --root-directory-url ref
+          --root-file-path "_build/ref.md"
         
       - uses: actions/upload-artifact@v4
         with:
