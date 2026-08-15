@@ -1,5 +1,7 @@
 # Generated Paths and Regeneration
 
+Supporting facts for `update-roslynator-docs`. The gated publish ritual (pins → PR → squash-merge → version → deploy tag) lives in SKILL.md. This file covers generated-path rules and optional local regen.
+
 ## Gitignored generated paths (`docs/.gitignore`)
 
 Do not hand-edit:
@@ -17,7 +19,7 @@ roslynator/ref.md
 roslynator/refactorings.md
 ```
 
-Source of truth: XML in **roslynator** repo (`Analyzers.xml`, `Refactorings.xml`, `CodeFixes.xml`, `Diagnostics.xml`) plus CLI/API generators.
+Source of truth: XML in the **roslynator** repo (`Analyzers.xml`, `Refactorings.xml`, `CodeFixes.xml`, `Diagnostics.xml`) plus CLI/API generators. CI checks out roslynator at `RoslynatorRef` / `RoslynatorCliRef` from `.github/workflows/build.yml`.
 
 ## Hand-written (`docs/roslynator/`)
 
@@ -25,7 +27,7 @@ Source of truth: XML in **roslynator** repo (`Analyzers.xml`, `Refactorings.xml`
 
 Boundary: `roslynator/cli/` is generated; `roslynator/cli.md` is hand-written. For orang, `orang/cli.md` is generated.
 
-## Local regeneration
+## Local regeneration (optional — not a publish gate)
 
 Sibling layout:
 
@@ -45,6 +47,8 @@ Invokes roslynator `generate_cli_docs`, `generate_ref_docs`, `generate_metadata`
 
 Cleanup: `tools/delete_docs.ps1`.
 
+Pin bumps do **not** require local regen; CI jobs rebuild from the workflow pins.
+
 ## CI jobs (`.github/workflows/build.yml`)
 
 | Job | Output |
@@ -54,13 +58,13 @@ Cleanup: `tools/delete_docs.ps1`.
 | `build_roslynator_ref` | `ref/`, `ref.md` |
 | `build_roslynator_configuration` | `configuration.md` |
 
-Pins:
+Pins (examples may lag; always read `build.yml`):
 
 ```yaml
 RoslynatorRef: v4.16.0
 RoslynatorCliRef: cli-v0.13.0
 ```
 
-`build_docusaurus` merges artifacts, spellcheck, `npm run build`. Deploy on `v*` tag.
+`build_docusaurus` merges artifacts, spellcheck, `npm run build`. Deploy when a `v*` tag is pushed.
 
-Verify locally: `npm run build` or `npm start`.
+Verify locally (optional): `npm run build` or `npm start`.
