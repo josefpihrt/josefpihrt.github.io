@@ -38,12 +38,12 @@ Generated paths / local regen: [references/generated-paths.md](references/genera
 1. Resolve latest Roslynator analyzer tag (`v*`) from sibling clone or remote (`git ls-remote --tags`, `gh release list --repo dotnet/roslynator`).
 2. List tags on **that commit**. Require a `cli-v*` on the **same commit**. If missing: **STOP. Do NOT proceed** until the user explicitly overrides or a matching CLI tag exists.
 3. Branch from latest docs `main` (e.g. `bump/roslynator-X.Y.Z`).
-4. Edit [`.github/workflows/build.yml`](../../.github/workflows/build.yml):
+4. Edit [`.github/workflows/build.yml`](../../../.github/workflows/build.yml):
    ```yaml
    RoslynatorRef: vX.Y.Z
    RoslynatorCliRef: cli-vA.B.C
    ```
-5. Edit [`CHANGELOG.md`](../../CHANGELOG.md): under `## [Unreleased]`, insert a dated section using the **provisional** next site version (latest docs-site `v*` tag’s patch/revision **+ 1**; **tags win** over older changelog headers):
+5. Edit [`CHANGELOG.md`](../../../CHANGELOG.md): under `## [Unreleased]`, insert a dated section using the **provisional** next site version (latest docs-site `v*` tag’s patch/revision **+ 1**; **tags win** over older changelog headers):
    ```markdown
    ## [0.4.N] - YYYY-MM-DD
 
@@ -80,7 +80,7 @@ gh pr merge <PR_NUMBER> --squash
 
 1. `git checkout main && git pull origin main`
 2. Default site version = latest docs tag `v0.A.B` with **B+1** (e.g. `v0.4.33` → `0.4.34`). User may supply another version.
-3. If the confirmed version differs from the changelog header from Step 1, update `CHANGELOG.md` on `main` (small follow-up PR or amend via new commit — never force-push) **before** tagging so header and tag match.
+3. If the confirmed version differs from the changelog header from Step 1, update `CHANGELOG.md` on `main` (small follow-up PR or a new commit — never force-push) **before** tagging so header and tag match.
 
 **STOP.** Wait for Step 5 confirmation.
 
