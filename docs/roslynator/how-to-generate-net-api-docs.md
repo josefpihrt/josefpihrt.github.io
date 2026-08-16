@@ -27,27 +27,8 @@ roslynator generate-doc MY_SOLUTION.sln `
  --group-by-common-namespace `
  --ignored-common-parts content `
  --ignored-root-parts all `
- --max-derived-types 10
+ --max-derived-types 10 `
+ --root-file-path "build/ref.md"
 ```
 
-### Generate Documentation Root File
-
-Run the following command to generate documentation root file:
-
-```sh
-roslynator generate-doc-root
-```
-
-#### Usage
-
-```powershell title="generate-doc-root-file.ps1"
-roslynator generate-doc-root MY_SOLUTION.sln `
- --properties Configuration=Release `
- -o "build/ref.md" `
- --host docusaurus `
- --heading ".NET API Reference" `
- --ignored-parts content `
- --root-directory-url "ref"
- ```
-
- See the actual [script](https://github.com/dotnet/roslynator/blob/main/tools/generate_ref_docs.ps1).
+See the actual [script](https://github.com/dotnet/roslynator/blob/main/tools/generate_ref_docs.ps1).
