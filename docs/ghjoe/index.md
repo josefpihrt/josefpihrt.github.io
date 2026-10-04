@@ -8,13 +8,13 @@ sidebar_label: "Intro"
 
 GH Joe is a managed list of [GitHub CLI](https://cli.github.com/manual/gh) [aliases](https://cli.github.com/manual/gh_alias).
 
-Main idea is that each command should be represented by shortest possible sequence of characters (an alias) where the alias does not have to be remembered but it can be mnemotechnically derived from the full command.
+GH Joe maps each command to the shortest possible alias. You don't need to memorize aliases — you can derive them from the full command.
 
-For a full list of aliases please see [aliases.yml](https://github.com/josefpihrt/ghjoe/blob/main/aliases.yml).
+See [aliases.yml](https://github.com/josefpihrt/ghjoe/blob/main/aliases.yml) for the full list of aliases.
 
 ## Installation
 
-Import list of aliases to your GitHub CLI config file:
+Import the list of aliases into your GitHub CLI config file:
 
 ```sh
 curl https://raw.githubusercontent.com/josefpihrt/ghjoe/main/aliases.yml | gh alias import -
@@ -58,7 +58,7 @@ Each alias is created according to several simple rules:
 1. **Each root command is represented by a single letter.**
    - For example `issue`  is represented by `i`.
 
-2. **Each subcommand/parameter/value is represented by combination of first letter of words it consists of.**
+2. **Each subcommand/parameter/value is formed from the first letter of each word.**
    - For example subcommand `release delete-asset` is represented by `rda`.
    - For example parameter `--exclude-pre-releases` is represented by `epr`.
 

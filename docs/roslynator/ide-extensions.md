@@ -2,20 +2,20 @@
 
 Starting with Roslynator **5.0**, analyzers are no longer bundled in IDE extensions. Use [Roslynator NuGet packages](https://www.nuget.org/profiles/josefpihrt) for diagnostics in the editor and `dotnet build`.
 
-## Visual Studio 2026
+## Visual Studio
 
 - Extension: [Roslynator 2026](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2026)
-- Requires Visual Studio 2026 (`[18.0,19.0)`)
-- **Included:** refactorings, RCS analyzer code fixes, compiler diagnostic code fixes
+- Installs on Visual Studio 2022 17.14+ and Visual Studio 2026 (API `[17.14,)`)
+- **Included:** refactorings and compiler diagnostic code fixes
 - **Not included:** analyzers (use [Roslynator.Analyzers](https://www.nuget.org/packages/roslynator.analyzers) NuGet package)
 
-The Visual Studio 2022 extension ([Roslynator 2022](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)) is no longer updated. On Visual Studio 2022, pin the last 4.x release or use NuGet packages.
+[Roslynator 2022](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022) remains available as the last 4.x release.
 
 ## Visual Studio Code
 
 - Extension: [Roslynator](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator) / [Open VSX](https://open-vsx.org/extension/josefpihrt-vscode/roslynator)
-- **Included:** refactorings, compiler diagnostic code fixes
-- **Not included:** analyzers, RCS analyzer code fixes (use NuGet packages)
+- **Included:** refactorings and compiler diagnostic code fixes
+- **Not included:** analyzers (use NuGet packages)
 
 ### Prerequisites
 
@@ -50,4 +50,4 @@ Optional NuGet packages when you need Roslyn features without an IDE extension:
 
 - [Configuration](configuration)
 - [Analyzers vs. Refactorings](analyzers-vs-refactorings)
-- [Roslynator 5.0 release notes](https://github.com/dotnet/roslynator/blob/main/ChangeLog.md)
+- [Roslynator 5.0.1 release notes](https://github.com/dotnet/roslynator/blob/main/CHANGELOG.md)

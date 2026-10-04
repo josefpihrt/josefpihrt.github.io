@@ -4,6 +4,10 @@ sidebar_label: Compiler Diagnostic Fix Testing
 
 # Unit Testing of Compiler Diagnostic Fixes
 
+:::info
+Contributors implementing fixes in the roslynator repo should follow [How to Add Compiler Diagnostic Fix](how-to-add-compiler-diagnostic-fix) and use `AbstractCSharpCompilerDiagnosticFixVerifier`. The examples below target consumers of the NuGet testing packages.
+:::
+
 ## NuGet Package
 
 ```

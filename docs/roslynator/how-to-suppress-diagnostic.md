@@ -1,8 +1,8 @@
 ﻿# How to Suppress Diagnostic
 
-Suppression of diagnostics is useful to suppress rare cases that are not or cannot be covered by an analyzer.
+Suppressing a diagnostic is appropriate for rare edge cases that an analyzer cannot or should not cover.
 
-This approach should not be used as a replacement for configuration of analyzers since analyzers that produce diagnostics still execute even if diagnostics are suppressed.
+Don't use suppression as a substitute for analyzer configuration — suppressed diagnostics still run the analyzer.
 
 ### Suppress Diagnostic for a Declaration
 

@@ -6,28 +6,27 @@ Analyzers are not included in Roslynator IDE extensions. Use Roslynator NuGet pa
 
 ## Tools
 
-- IDE extensions for:
-  - [Visual Studio 2026](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2026) (refactorings and code fixes; analyzers via NuGet)
+- IDE extensions:
+  - [Roslynator 2026](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2026) (VS 2022 17.14+ and VS 2026; refactorings and compiler diagnostic fixes; analyzers via NuGet)
+  - [Roslynator 2022](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022) (last 4.x release; pin or use NuGet packages)
   - [VS Code](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator) (refactorings and compiler diagnostic fixes; analyzers via NuGet)
     - Requires legacy OmniSharp (`dotnet.server.useOmnisharp`: `true`). With C# Dev Kit, use NuGet packages instead.
   - [Open VSX](https://open-vsx.org/extension/josefpihrt-vscode/roslynator)
 - See [IDE extensions](ide-extensions) for details on what each extension includes.
-- [NuGet packages](#nuget-packages) that contain collection of analyzers
+- [NuGet packages](#nuget-packages) that contain a collection of analyzers
   - [Roslynator.Analyzers](https://www.nuget.org/packages/Roslynator.Analyzers)
   - [Roslynator.CodeAnalysis.Analyzers](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers)
   - [Roslynator.Formatting.Analyzers](https://www.nuget.org/packages/Roslynator.Formatting.Analyzers)
-- [Testing framework](testing) that allows unit testing of analyzers, refactoring and code fixes
-- [.NET API](ref) that extend Roslyn API
+- [Testing framework](testing) for unit-testing analyzers, refactorings, and code fixes
+- [.NET API](ref) that extends the Roslyn API
 - [Command line tool](cli)
 
 ## Contributions
 
-Contributions are welcome! If you are interested please see:
-- documentation for [developers](developers)
-- available [issues](https://github.com/dotnet/roslynator/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aup-for-grabs)
+Contributions are welcome! See the [developer docs](developers), [contributing with agent skills](contributing-with-agent-skills), and [open issues](https://github.com/dotnet/roslynator/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc+label%3Aup-for-grabs).
 
 :::tip
-Bugfixes or small improvements can be implemented right away. Larger task like adding new analyzer or refactoring should be discussed first.
+Agent skills in the roslynator repo provide step-by-step workflows for bug fixes and new rules — and you can read them as plain contributor docs. Bugfixes or small improvements can be implemented right away. Larger tasks, such as adding a new analyzer or refactoring, should be discussed first.
 :::
 
 ## Donations
@@ -48,26 +47,26 @@ For more information see the [.NET Foundation Code of Conduct](https://dotnetfou
 
 ## Command Line Tool
 
-Run following command to install Roslynator command line tool:
+To install the CLI:
 ```sh
 dotnet tool install -g roslynator.dotnet.cli
 ```
 
-See [documentation](cli) for further information.
+See the [CLI documentation](cli).
 
 ## Testing Framework
 
-- Roslynator Testing Framework can be used for unit testing of analyzers, refactorings and code fixes.
-- Framework is distributed as NuGet [package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit). &ensp;[![NuGet](https://img.shields.io/nuget/v/Roslynator.Testing.CSharp.Xunit.svg)](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit)
-- Learn how to use the framework from actual usages in Roslynator repo:
-  - Tests of analyzers are [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/Analyzers.Tests), [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeAnalysis.Analyzers.Tests) and [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/Formatting.Analyzers.Tests)
-  - Tests of refactorings are [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/Refactorings.Tests)
-  - Tests of fixes of compiler diagnostics are [here](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeFixes.Tests)
+- Use the testing framework to unit-test analyzers, refactorings, and code fixes.
+- The framework is available as a NuGet [package](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit). &ensp;[![NuGet](https://img.shields.io/nuget/v/Roslynator.Testing.CSharp.Xunit.svg)](https://www.nuget.org/packages/Roslynator.Testing.CSharp.Xunit)
+- Examples in the Roslynator repo:
+  - Analyzer tests: [Analyzers.Tests](https://github.com/dotnet/roslynator/tree/main/src/Tests/Analyzers.Tests), [CodeAnalysis.Analyzers.Tests](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeAnalysis.Analyzers.Tests), and [Formatting.Analyzers.Tests](https://github.com/dotnet/roslynator/tree/main/src/Tests/Formatting.Analyzers.Tests)
+  - Refactoring tests: [Refactorings.Tests](https://github.com/dotnet/roslynator/tree/main/src/Tests/Refactorings.Tests)
+  - Compiler diagnostic fix tests: [CodeFixes.Tests](https://github.com/dotnet/roslynator/tree/main/src/Tests/CodeFixes.Tests)
 
 ## .NET API
 
-- Roslynator .NET API extends Roslyn API and it can be used for development of custom analyzers/refactorings.
-- Packages do not contain any analyzers/refactorings themselves.
+- The .NET API extends Roslyn and is intended for building custom analyzers and refactorings.
+- These packages do not include analyzers or refactorings.
 - See [reference documentation](ref).
 - See "[How to use Roslynator .NET API](how-to-use-net-api)"
 

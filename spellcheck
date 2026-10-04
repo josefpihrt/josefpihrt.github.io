@@ -11,6 +11,7 @@ blockquote
 colgroup
 completionlist
 constexpr
+codegen
 cref
 csproj
 datalist
@@ -44,11 +45,13 @@ orang
 paramref
 pcamdt
 Pihrt
+pwsh
 RCS
 RCSXXXX
 RECS
 REVB
 roslynatorconfig
+sarif
 seealso
 singleline
 sizeof

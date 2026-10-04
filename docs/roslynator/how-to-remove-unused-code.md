@@ -8,9 +8,14 @@ dotnet tool install -g roslynator.dotnet.cli
 
 2) Run [find-symbol](cli/commands/find-symbol) command
 
-Following command will find and remove types (classes, structs etc.) with internal or private visibility skipping types that are marked with `Obsolete` attribute:
+The following command finds and removes types (classes, structs etc.) with internal or private visibility, skipping types marked with the `Obsolete` attribute:
 
 ```
 roslynator find-symbol --symbol-kind type --unused --remove --without-attribute System.ObsoleteAttribute
 ```
 
+If you're surfacing an ASP.NET API, you might want to exclude classes marked with the `ApiController` attribute as well:
+
+```
+dotnet roslynator find-symbol --symbol-kind type --unused --remove --without-attribute System.ObsoleteAttribute Microsoft.AspNetCore.Mvc.ApiControllerAttribute
+```

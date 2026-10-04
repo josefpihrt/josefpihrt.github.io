@@ -1,8 +1,8 @@
 ﻿# How to Generate .NET API Documentation
 
-Roslynator [CLI](cli) allows you to generate documentation for .NET library.
+Roslynator [CLI](cli) allows you to generate documentation for a .NET library.
 
-Documentation can be published to following hosts:
+Documentation can be published to the following hosts:
 
 - [Docusaurus](https://docusaurus.io/docs)
 - [GitHub](https://github.com)
@@ -10,7 +10,7 @@ Documentation can be published to following hosts:
 
 ### Generate Documentation Files
 
-Run following command to generate documentation:
+Run the following command to generate documentation:
 
 ```sh
 roslynator generate-doc
@@ -32,7 +32,7 @@ roslynator generate-doc MY_SOLUTION.sln `
 
 ### Generate Documentation Root File
 
-Run following command to generate documentation root file:
+Run the following command to generate documentation root file:
 
 ```sh
 roslynator generate-doc-root

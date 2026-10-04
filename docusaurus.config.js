@@ -18,7 +18,7 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  // organizationName: 'JosefPihrt', // Usually your GitHub org/user name.
+  // organizationName: 'josefpihrt', // Usually your GitHub org/user name.
   // projectName: 'Roslynator', // Usually your repo name.
 
   onBrokenLinks: 'throw',
@@ -123,7 +123,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/JosefPihrt',
+                href: 'https://github.com/josefpihrt',
               },
               {
                 label: 'NuGet',

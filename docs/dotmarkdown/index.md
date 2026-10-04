@@ -1,6 +1,6 @@
 # DotMarkdown
 
-DotMarkdown is a framework for creating markdown content.
+DotMarkdown is a .NET library for generating Markdown.
 
 ## Supported Target Frameworks
 
@@ -9,12 +9,12 @@ DotMarkdown is a framework for creating markdown content.
 
 ## Installation
 
-Run following command to install DotMarkdown basic package:
+To install the `DotMarkdown` package:
 ```sh
 dotnet add package DotMarkdown
 ```
 
-Run following command to include support for Docusaurus markdown:
+To add the `DotMarkdown.Docusaurus` package:
 ```sh
 dotnet add package DotMarkdown.Docusaurus
 ```

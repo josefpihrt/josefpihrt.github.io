@@ -4,7 +4,7 @@ sidebar_label: How to Use .NET API
 
 # How to Use Roslynator .NET API
 
-Roslynator .NET API extends Roslyn API and it can be used for development of custom analyzers/refactorings.
+Roslynator extends the Roslyn API and is useful when building custom analyzers and refactorings.
 
 ## Packages
 
@@ -17,8 +17,7 @@ Roslynator .NET API extends Roslyn API and it can be used for development of cus
 
 ## Analyzer Package Configuration
 
-Unfortunately it's not possible to reference any package in the analyzer package.
-Therefore it's necessary to include `dll` files themselves:
+Analyzer NuGet packages cannot reference other packages, so you need to bundle the Roslynator DLLs directly:
 ```xml
 <file src="bin\$Configuration$\netstandard2.0\Roslynator*.dll" target="analyzers\dotnet\cs" />
 ```
