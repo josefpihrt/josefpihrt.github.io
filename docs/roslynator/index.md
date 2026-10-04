@@ -2,12 +2,17 @@
 
 Roslynator is a set of code analysis tools for C#, powered by [Roslyn](https://github.com/dotnet/roslyn).
 
+Analyzers are not included in Roslynator IDE extensions. Use Roslynator NuGet packages (e.g. [Roslynator.Analyzers](https://www.nuget.org/packages/roslynator.analyzers)) for diagnostics.
+
 ## Tools
 
-- IDE extensions for:
-  - [Visual Studio](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022)
-  - [VS Code](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator)
+- IDE extensions:
+  - [Roslynator 2026](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2026) (VS 2022 17.14+ and VS 2026; refactorings and compiler diagnostic fixes; analyzers via NuGet)
+  - [Roslynator 2022](https://marketplace.visualstudio.com/items?itemName=josefpihrt.Roslynator2022) (last 4.x release; pin or use NuGet packages)
+  - [VS Code](https://marketplace.visualstudio.com/items?itemName=josefpihrt-vscode.roslynator) (refactorings and compiler diagnostic fixes; analyzers via NuGet)
+    - Requires legacy OmniSharp (`dotnet.server.useOmnisharp`: `true`). With C# Dev Kit, use NuGet packages instead.
   - [Open VSX](https://open-vsx.org/extension/josefpihrt-vscode/roslynator)
+- See [IDE extensions](ide-extensions) for details on what each extension includes.
 - [NuGet packages](#nuget-packages) that contain a collection of analyzers
   - [Roslynator.Analyzers](https://www.nuget.org/packages/Roslynator.Analyzers)
   - [Roslynator.CodeAnalysis.Analyzers](https://www.nuget.org/packages/Roslynator.CodeAnalysis.Analyzers)

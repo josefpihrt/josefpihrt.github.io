@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.4.35] - 2026-10-04
+
+### Changed
+
+- Update Roslynator to `5.0.1`
+- Update Roslynator CLI to `1.0.1`
+- Document Roslyn 5 extension changes (Roslynator 2026 on Visual Studio 2022 17.14+ and Visual Studio 2026; analyzers via NuGet)
+
 ## [0.4.34] - 2026-08-16
 
 ### Changed

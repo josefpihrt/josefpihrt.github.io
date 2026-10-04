@@ -26,6 +26,7 @@ const sidebars = {
       },
       items: [
         'roslynator/configuration',
+        'roslynator/ide-extensions',
         'roslynator/analyzers-vs-refactorings',
         'roslynator/how-to-suppress-diagnostic',
         'roslynator/how-to-fix-all-diagnostics',
