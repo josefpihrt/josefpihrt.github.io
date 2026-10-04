@@ -50,4 +50,4 @@ Optional NuGet packages when you need Roslyn features without an IDE extension:
 
 - [Configuration](configuration)
 - [Analyzers vs. Refactorings](analyzers-vs-refactorings)
-- [Roslynator 5.0.1 release notes](https://github.com/dotnet/roslynator/blob/main/CHANGELOG.md)
+- [Roslynator changelog](https://github.com/dotnet/roslynator/blob/main/CHANGELOG.md)
