@@ -213,9 +213,9 @@ jobs:
           --host docusaurus
           --group-by-common-namespace
           --ignored-common-parts content
-          --ignored-root-parts content
           --max-derived-types 10
           --root-file-path "_build/ref.md"
+        
       - uses: actions/upload-artifact@v4
         with:
           name: dotmarkdown
