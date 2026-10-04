@@ -26,7 +26,6 @@ roslynator generate-doc MY_SOLUTION.sln `
  --heading ".NET API Reference" `
  --group-by-common-namespace `
  --ignored-common-parts content `
- --ignored-root-parts all `
  --max-derived-types 10 `
  --root-file-path "build/ref.md"
 ```
